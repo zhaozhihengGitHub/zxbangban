@@ -346,7 +346,7 @@
                                                 </a>
                                             </c:when>
                                             <c:otherwise>
-                                                <button class="btn btn-success" id="tellNum" type="button" >
+                                                <button class="btn btn-success" id="phoneNum" type="button" >
                                                          获取手机号&nbsp;(--)
                                                  </button>
                                             </c:otherwise>
@@ -357,8 +357,8 @@
                         </div>
                     </div>
                     <div class="row" >
-                        <div class="col-md-3"></div>
-                        <div  id="mess"  class="col-md-9 col-sm-12 col-xs-12 column">
+                        <div class="col-md-3 hidden-lg hidden-sm"></div>
+                        <div  id="mess"  class="col-md-9 col-sm-12 col-xs-12  column">
                             <span style="color: white;font-size: 21px ">工人手机号：${workerinfo.tel}</span><br/>
                             <span  style="color: red;font-size:20px"><br/><p style="text-indent:2em;line-height: 25px;" class="tip">
                             温馨提示：在选择平台工人给您提供服务时，过低的报价可能存在家装风险，为了您的装修资金、施工服务、售后服务得到保障，
@@ -461,5 +461,8 @@
         $("#mess").toggleClass("show");
     });
 
+    $("#phoneNum").click(function(){
+        $("#mess").toggleClass("show");
+    });
 </script>
 </html>

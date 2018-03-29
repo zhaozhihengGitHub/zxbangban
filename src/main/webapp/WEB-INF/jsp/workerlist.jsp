@@ -21,14 +21,14 @@
 			<ul>
 				<li class="active" value="1">
 					<div>
-						<img src="http://bpic.588ku.com/element_origin_min_pic/03/88/33/1557d6ce7c978b1.jpg" alt="" />
+						<img src="../../resources/images/worker/b_sheji.jpg" alt="" />
 					</div>
 
 					<p>设计师</p>
 				</li>
 				<li value="2">
 					<div>
-						<img src="http://bpic.588ku.com/element_origin_min_pic/16/12/02/70f34e59f44bf1fbd895aac7217dabfe.jpg" alt="" />
+						<img src="../../resources/images/worker/b_shigong.jpg" alt="" />
 					</div>
 					<p>施工队</p>
 				</li>
@@ -37,7 +37,7 @@
 			<ul>
 				<li value="3">
 					<div>
-						<img src="http://img01.cztv.com/201605/19/0c10a2bdeb231f5b8fba264500abb4fe.jpg" alt="" />
+						<img src="../../resources/images/worker/b_shuidian.jpg" alt="" />
 					</div>
 
 					<p>水电工</p>
@@ -50,18 +50,18 @@
 				</li>
 				<li value="5">
 					<div>
-						<img src="http://bpic.588ku.com/element_origin_min_pic/16/11/08/215821d39c6d9fd.jpg" alt="" /></div>
+						<img src="../../resources/images/worker/b_cizhuan.jpg" alt="" /></div>
 					<p>瓷砖工</p>
 				</li>
 				<li value="6">
 					<div>
-						<img src="http://bpic.588ku.com/element_origin_min_pic/16/11/17/18582d826f01565.jpg" alt="" /></div>
+						<img src="../../resources/images/worker/b_mugong.jpg" alt="" /></div>
 					<p>木工</p>
 				</li>
 				<li value="7">
 					<div>
-						<img src="http://bpic.588ku.com/element_origin_min_pic/16/07/17/16578b442687b37.jpg" alt="" /></div>
-					<p>腻子工</p>
+						<img src="../../resources/images/worker/b_youqi.jpg" alt="" /></div>
+					<p>油漆工</p>
 				</li>
 			</ul>
 			<ul>
