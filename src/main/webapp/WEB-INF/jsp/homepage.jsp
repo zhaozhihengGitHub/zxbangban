@@ -88,7 +88,7 @@
                 padding-left:0;
                 padding-right: 0;
             }
-            .col-md-2,.col-sm-2,.col-mxs-2{
+            .col-md-2,.col-sm-2,.col-xs-2{
                 padding-left:0;
                 padding-right: 0;
                 font-size:14px ;
@@ -109,6 +109,24 @@
             }
             .sm_ov .sm_sc{
                 width:280%;
+            }
+        }
+        .worker-introduction p{
+            padding:20px 0 0;
+            text-indent:2em;
+            font-size:20px;
+            line-height:32px;
+        }
+        @media screen and (max-width:660px){
+            .workerHomePageCard{
+                font-size:16px;
+            }
+            .workerHomePageCard li{
+                line-height: 28px;
+            }
+            .worker-introduction p{
+                font-size:14px;
+                line-height:22px;
             }
         }
     </style>
@@ -164,18 +182,19 @@
                                     </c:choose>
                                 </li>
                                 <li>
+                                    年龄:<span class="" id="a">${workerProfile.age}</span>
+                                </li>
+                                <li>
                                     工龄:<span class="loading" id="age">${workerProfile.age}</span>
                                 </li>
                                 <li>
-                                    星级：
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
+                                    籍贯:<span  id="address">${workerinfo.address}</span>
                                 </li>
                                 <li>
-                                    籍贯:<span  id="address">${workerinfo.address}</span>
+                                    擅长分格:<span  id="">${workerinfo.address}</span>
+                                </li>
+                                <li>
+                                    施工队人数:<span  id="">${workerinfo.address}</span>
                                 </li>
                                 <li>
                                     现工程地址:<span  id="location">${workerinfo.location}</span>
@@ -186,7 +205,16 @@
                     <div class="col-md-4 col-sm-6 col-xs-12 hidden-xs column">
                         <div>
                             <ul class="workerHomePageCard">
+                                <li>
+                                    出身工种:
+                                    <span id="jobId">
+                                        <c:forTokens items="设计师,工长,水电工,防水工,贴砖工,木工,油漆工,吊顶工,土建工,集成墙吊顶,家俱安装工,石材安装工,壁纸工,室内门安装工,卫浴安装工,灯饰安装,窗帘安装工,搬运工,家政,送货工,木地工,美缝工,包立管
+" delims="," var="item" varStatus="status" >
+                                            <c:if test="${workerinfo.jobId==status.count}">${item}</c:if>
+                                        </c:forTokens>
+                                    </span>
 
+                                </li>
                                 <li>
                                     <span>综合评分:<span class="" id="oARating">${workerinfo.overAllRating}</span></span>
                                 </li>
@@ -194,14 +222,15 @@
                                     <span>浏览量：<span class="loading" id="pageview"></span><span class="glyphicon glyphicon-eye-open"></span> </span>
                                 </li>
                                 <li>
-                                    出身工种:
-                                    <span id="jobId">
-                                        <c:forTokens items="设计师,工长,水电工,防水工,贴砖工,木工,油漆工,吊顶工,土建工,集成墙吊顶,家俱安装工,石材安装工,壁纸工,室内门安装工,卫浴安装工,灯饰安装,窗帘安装工,搬运工,家政,送货工,木地工,美缝工,包立管
-" delims="," var="item" varStatus="status" >
-                                        <c:if test="${workerinfo.jobId==status.count}">${item}</c:if>
-                                        </c:forTokens>
-                                    </span>
-
+                                    星级：
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </li>
+                                <li>
+                                    <span>同时接单数:<span class="" id="11">${workerinfo.overAllRating}</span></span>
                                 </li>
                                 <c:choose>
                                         <c:when test="${workerinfo.state == true}">
@@ -369,8 +398,14 @@
             </div>
         </div>
     </div>
-    <div class="container">
 
+    <div class="container">
+        <div class="sm_dt worker-introduction">
+            <p class="">通常text-indent缩进属性将对段落首行开头文本文字进行缩进显示。如果使用html br换行标签，第二个换行开始也不会出现缩进效果。如果使用了html P段落标签段落换行，将会出现每个p段落换行开头都将缩进，这里我们给大家通过案例演示给大家，希望通过DIVCSS5案例掌握CSS text-indent缩进样式。</p>
+        </div>
+        <div class="row">
+            <img src="/resources/images/worker/workinfo.png" width="100%">
+        </div>
         <div class="row clearfix">
             <div class="col-md-12 column worker_desc" style="padding-left:0;padding-right: 0;" >
                 <div class="panel panel-warning">
@@ -424,6 +459,8 @@
                 </div>
             </div>
         </div>
+        </div>
+
         <div class="row clearfix">
             <div class="col-md-12 column worker_desc" style="padding-left:0;padding-right: 0;">
                 <div class="panel panel-warning">

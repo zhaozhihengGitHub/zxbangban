@@ -11,7 +11,7 @@
     <select id="queryAllByCtype" resultType="Company" parameterType="int">
         SELECT
         cid,cname,curl
-        FROM company  where ctype=#{ctype}  limit  5
+        FROM company  where ctype=#{ctype}  ORDER BY  cid DESC limit  5
     </select>
 
     <delete id="delete" parameterType="long">
