@@ -106,6 +106,9 @@ public class CustomerController {
             Customer customer = new Customer(name,tel,location,new Date(),"");
             customer.setNotes("房屋报价");
             customerService.newCustomer(customer);
+            UserInfo userInfo = userInfoService.queryByRoleId(8);
+            String telphone = userInfo.getTelphone();
+            aliyunMNService.SMSNotification(4,telphone);
             model.addAttribute("msg","保存成功！");
             return "appointment/appointmentsuccess";
         }catch (Exception e){
