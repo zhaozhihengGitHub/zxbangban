@@ -196,7 +196,7 @@
     }
     .heder_nav > span {
         display: inline-block;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 600;
         color: #fff;
     }
@@ -1429,13 +1429,19 @@ table{border-collapse:collapse;border-spacing:0}
   .worker {
     display: none;
   }
+  .small_worker ul{
+    overflow:hidden;
+  }
   .small_worker ul li {
     float: left;
     background: #fff;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    width: 46%;
-    margin-right: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 23.5%;
+    margin-right:2%;
+  }
+   .small_worker ul li:nth-child(4n){
+    margin-right:0;
   }
   .small_worker ul li div {
     display: inline-block;
@@ -1447,5 +1453,88 @@ table{border-collapse:collapse;border-spacing:0}
   }
   .small_worker ul li > img {
     width: 100%;
+  }
+  .small_worker ul li div.worker-list{
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    width:50px;
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -10px -20px;
+    height:55px;
+  }
+  .small_worker ul li div.worker-sjs{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1367px -15px;
+  }
+  .small_worker ul li div.worker-sgd{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -140px -15px;
+  }
+  .small_worker ul li div.worker-shuidian{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1627px -15px;
+  }
+  .small_worker ul li div.worker-fangshui{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1951px -15px;
+  }
+  .small_worker ul li div.worker-cizhuan{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -2017px -15px;
+  }
+  .small_worker ul li div.worker-mugong{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -786px -15px;
+  }
+  .small_worker ul li div.worker-youqi{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1690px -14px;
+  }
+  .small_worker ul li div.worker-shicai{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -527px -16px;
+  }
+  .small_worker ul li div.worker-diaoding{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -462px -16px;
+  }
+  .small_worker ul li div.worker-jicheng{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -2072px -16px;
+  }
+  .small_worker ul li div.worker-jiaju{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -850px -16px;
+  }
+  .small_worker ul li div.worker-bizhi{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1044px -15px;
+  }
+  .small_worker ul li div.worker-shinmen{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1497px -15px;
+  }
+  .small_worker ul li div.worker-weiyu{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1819px -13px;
+  }
+  .small_worker ul li div.worker-dengs{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -722px -15px;
+  }
+  .small_worker ul li div.worker-chuanglian{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -399px -15px;
+  }
+  .small_worker ul li div.worker-banyungong{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -1756px -15px;
+  }
+  .small_worker ul li div.worker-jiazheng{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -1239px -15px;
+  }
+  .small_worker ul li div.worker-songhuo{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -5px -15px;
+  }
+  .small_worker ul li div.worker-mudi{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -270px -15px;
+  }
+  .small_worker ul li div.worker-tujian{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -2128px -15px;
+  }
+  .small_worker ul li div.worker-meifeng{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -336px -15px;
+  }
+  .small_worker ul li div.worker-baolg{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat  -1561px -15px;
+  }
+  .small_worker ul li p{
+   text-align:center;
+   margin-bottom:10px;
+   font-size:80%;
+   font-weight:bold;
   }
 }
