@@ -4,9 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 
-/**
- * Created by pingyr on 2017/7/11.
- */
 @Repository
 public class WorkerInfo {
 
@@ -20,7 +17,7 @@ public class WorkerInfo {
      */
     private String name;
 
-    /**
+    /*
      * 头像图标
      */
     private String headImgUrl;
@@ -30,7 +27,7 @@ public class WorkerInfo {
      */
     private String tel;
 
-    /**
+    /*
      * 工种
      */
     private Integer jobId;
@@ -40,7 +37,7 @@ public class WorkerInfo {
      */
     private String address;
 
-    /**
+    /*
      * 现所在地
      */
     private String location;
@@ -55,17 +52,17 @@ public class WorkerInfo {
      */
     private String projectImgUrl;
 
-    /**
+    /*
      * 工人施工状态，
      */
     private boolean state;
 
-    /**
+    /*
      * 实名认证状态，未认证false，已认证true
      */
     private boolean authenticated;
 
-    /**
+    /*
      * 平台工人资质认证状态，未认证false，已认证true
      */
     private boolean certificated;
@@ -96,6 +93,48 @@ public class WorkerInfo {
      */
     private Date createTime;
 
+    /*
+    * 工龄
+    *
+    * */
+    private  Integer jobYear;
+
+
+    /*
+        * 擅长风格
+        * */
+    private String style;
+
+    /*
+    * 施工队人数
+    * */
+    private Integer teamCount;
+
+    /*
+    * 接单数量
+    * */
+    private Integer ordersCount;
+
+    /*
+    * 自我介绍
+    * */
+    private String teamDesc;
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
+    public Integer getTeamCount() {return teamCount; }
+
+    public void setTeamCount(Integer teamCount) {  this.teamCount = teamCount;   }
+
+    public Integer getOrdersCount() {   return ordersCount;   }
+
+    public void setOrdersCount(Integer ordersCount) {  this.ordersCount = ordersCount;  }
 
     public long getWorkerId() {
         return workerId;
@@ -194,7 +233,9 @@ public class WorkerInfo {
         this.certificated = certificated;
     }
 
+    public Integer getJobYear() { return jobYear;  }
 
+    public void setJobYear(Integer jobYear) {   this.jobYear = jobYear; }
 
     public boolean getPr() {
         return pr;
@@ -236,8 +277,13 @@ public class WorkerInfo {
         this.createTime = createTime;
     }
 
+    public String getTeamDesc() {return teamDesc;  }
+
+    public void setTeamDesc(String teamDesc) {  this.teamDesc = teamDesc; }
+
     public WorkerInfo() {
     }
+
 
     public WorkerInfo(long workerId, String name, String headImgUrl, Integer jobId, String location,
                       boolean state, boolean authenticated, boolean certificated, boolean pr, boolean isShow, double overAllRating) {

@@ -182,19 +182,19 @@
                                     </c:choose>
                                 </li>
                                 <li>
-                                    年龄:<span class="" id="a">${workerProfile.age}</span>
+                                    年龄:<span class="" id="age">${workerProfile.age}</span>
                                 </li>
                                 <li>
-                                    工龄:<span class="loading" id="age">${workerProfile.age}</span>
+                                    工龄:<span class="loading" id="jobyear">${workerinfo.jobYear}</span>
                                 </li>
                                 <li>
                                     籍贯:<span  id="address">${workerinfo.address}</span>
                                 </li>
                                 <li>
-                                    擅长分格:<span  id="">${workerinfo.address}</span>
+                                    擅长风--格:<span  id="style">${workerinfo.style}</span>
                                 </li>
                                 <li>
-                                    施工队人数:<span  id="">${workerinfo.address}</span>
+                                    施工队人数:<span  id="teamCount">${workerinfo.teamCount}</span>
                                 </li>
                                 <li>
                                     现工程地址:<span  id="location">${workerinfo.location}</span>
@@ -230,7 +230,7 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                 </li>
                                 <li>
-                                    <span>同时接单数:<span class="" id="11">${workerinfo.overAllRating}</span></span>
+                                    <span>同时接单数:<span class="" id="ordersCount">${workerinfo.ordersCount}</span></span>
                                 </li>
                                 <c:choose>
                                         <c:when test="${workerinfo.state == true}">
@@ -269,7 +269,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-5 col-sm-6 col-xs-8 hidden-md hidden-lg hidden-sm column">
+                    <div class="col-md-6 col-sm-10 col-xs-12 hidden-md hidden-lg hidden-sm column">
                         <div style="">
                             <ul class="workerHomePageCard" style="padding-left: 0">
                                 <li>
@@ -306,18 +306,6 @@
                                     </c:choose>
                                 </li>
                                 <li>
-                                    工龄:<span class="loading" id="age">${workerProfile.age}</span>
-                                </li>
-
-
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 hidden-md hidden-lg hidden-sm  column">
-                        <div class=" ">
-                            <ul class="workerHomePageCard">
-                                <li>
                                     星级：
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -327,17 +315,19 @@
 
                                 </li>
                                 <li>
-                                    籍贯:<span  id="address">${workerinfo.address}</span>
+                                    <span>浏览量：<span class="loading" id="pageview"></span><span class="glyphicon glyphicon-eye-open"></span> </span>
                                 </li>
-                                <li>
-                                    现工程地址:<span  id="location">${workerinfo.location}</span>
-                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 hidden-md hidden-lg hidden-sm  column">
+                        <div class=" ">
+                            <ul class="workerHomePageCard">
+
                                 <li>
                                     <span>综合评分:<span class="" id="oARating">${workerinfo.overAllRating}</span></span>
                                 </li>
-                                <li>
-                                    <span>浏览量：<span class="loading" id="pageview"></span><span class="glyphicon glyphicon-eye-open"></span> </span>
-                                </li>
+
                                 <li>
                                     出身工种:
                                     <span id="jobId">
@@ -348,6 +338,30 @@
                                     </span>
 
                                 </li>
+
+                                <li>
+                                    工龄:<span class="loading" id="jobYear">${workerinfo.jobYear}</span>
+                                </li>
+                                <li>
+                                    年龄:<span class="" id="age">${workerProfile.age}</span>
+                                </li>
+                                <li>
+                                    擅长风--格:<span  id="style">${workerinfo.style}</span>
+                                </li>
+                                <li>
+                                    <span>同时接单数:<span class="" id="ordersCount">${workerinfo.ordersCount}</span></span>
+                                </li>
+                                <li>
+                                    施工队人数:<span  id="teamCount">${workerinfo.teamCount}</span>
+                                </li>
+                                <li>
+                                <li>
+                                    籍贯:<span  id="address">${workerinfo.address}</span>
+                                </li>
+                                <li>
+                                    现工程地址:<span  id="location">${workerinfo.location}</span>
+                                </li>
+
                                 <c:choose>
                                     <c:when test="${workerinfo.state == true}">
                                         <li>
@@ -384,10 +398,11 @@
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                     <div class="row" >
-                        <div class="col-md-3 hidden-lg hidden-sm"></div>
-                        <div  id="mess"  class="col-md-9 col-sm-12 col-xs-12  column">
+
+                        <div  id="mess"  class="col-md- col-sm-12 col-xs-12  column" style="b">
                             <span style="color: white;font-size: 21px ">工人手机号：${workerinfo.tel}</span><br/>
                             <span  style="color: red;font-size:20px"><br/><p style="text-indent:2em;line-height: 25px;" class="tip">
                             温馨提示：在选择平台工人给您提供服务时，过低的报价可能存在家装风险，为了您的装修资金、施工服务、售后服务得到保障，
@@ -401,7 +416,7 @@
 
     <div class="container">
         <div class="sm_dt worker-introduction">
-            <p class="">通常text-indent缩进属性将对段落首行开头文本文字进行缩进显示。如果使用html br换行标签，第二个换行开始也不会出现缩进效果。如果使用了html P段落标签段落换行，将会出现每个p段落换行开头都将缩进，这里我们给大家通过案例演示给大家，希望通过DIVCSS5案例掌握CSS text-indent缩进样式。</p>
+            <p class="" id="introduce">${workerinfo.teamDesc}</p>
         </div>
         <div class="row">
             <img src="/resources/images/worker/workinfo.png" width="100%">
