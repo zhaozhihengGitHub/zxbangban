@@ -11,7 +11,7 @@ public class WorkerProfile {
 
     private long workerid;
 
-    //工龄
+    //年龄
     private int age;
 
     //担保金
