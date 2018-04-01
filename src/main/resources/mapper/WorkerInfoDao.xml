@@ -64,7 +64,13 @@
         w.authenticated,
         w.certificated,
         w.location,
-        w.over_all_rating
+        w.address,
+        w.over_all_rating,
+        w.jobYear,
+        w.teamDesc,
+        w.ordersCount,
+        w.style,
+        w.teamCount
         FROM workerinfo AS w
         WHERE w.workerId = #{workerid}
     </select>
