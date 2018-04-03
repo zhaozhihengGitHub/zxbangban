@@ -191,7 +191,7 @@
                                     籍贯:<span  id="address">${workerinfo.address}</span>
                                 </li>
                                 <li>
-                                    擅长风--格:<span  id="style">${workerinfo.style}</span>
+                                    擅长风格:<span  id="style">${workerinfo.style}</span>
                                 </li>
                                 <li>
                                     施工队人数:<span  id="teamCount">${workerinfo.teamCount}</span>
@@ -346,7 +346,7 @@
                                     年龄:<span class="" id="age">${workerProfile.age}</span>
                                 </li>
                                 <li>
-                                    擅长风--格:<span  id="style">${workerinfo.style}</span>
+                                    擅长风格:<span  id="style">${workerinfo.style}</span>
                                 </li>
                                 <li>
                                     <span>同时接单数:<span class="" id="ordersCount">${workerinfo.ordersCount}</span></span>

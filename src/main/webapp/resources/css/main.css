@@ -1425,6 +1425,8 @@ table{border-collapse:collapse;border-spacing:0}
     }
   .small_worker {
     display: block;
+    width: 95%;
+    margin: 15px 2.5% 10px;
   }
   .worker {
     display: none;
@@ -1481,8 +1483,11 @@ table{border-collapse:collapse;border-spacing:0}
     background:url(../../resources/images/worker/worker-list.png) no-repeat -786px -15px;
   }
   .small_worker ul li div.worker-youqi{
-    background:url(../../resources/images/worker/worker-list.png) no-repeat -1690px -14px;
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1884px -14px;
   }
+  .small_worker ul li div.worker-nizigong{
+    background:url(../../resources/images/worker/worker-list.png) no-repeat -1690px -14px;
+    }
   .small_worker ul li div.worker-shicai{
     background:url(../../resources/images/worker/worker-list.png) no-repeat -527px -16px;
   }
