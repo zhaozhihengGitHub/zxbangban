@@ -108,7 +108,11 @@ public class WorkerInfoController {
             model.addAttribute("customers",customers);
             model.addAttribute("workerinfo",workerInfo);
             model.addAttribute("workerProfile",workerProfile);
-            return "homepage";
+            if(workerInfo.getJobId()==2){
+                return "workerpage";
+            }else {
+                return "homepage";
+            }
         }else {
             return "redirect:/error";
         }
