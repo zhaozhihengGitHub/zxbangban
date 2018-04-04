@@ -97,7 +97,7 @@ var homepagestate = {
                             }
                             var a = $($eva).toArray();
                             $(a.slice(0, star)).css("color", "yellow");
-                            $age.removeClass("loading").text(y + "年");
+                            $age.removeClass("loading").text(y + "岁");
 
                             var $c = $.cookie("pv");
                             $count = result.homePV;
@@ -107,7 +107,7 @@ var homepagestate = {
                             }
                         } else {
                             $count += 1;
-                            $age.removeClass("loading").text("--年");
+                            $age.removeClass("loading").text("--岁");
                         }
                         $pageView.removeClass("loading").text($count);
                         $.ajax({
