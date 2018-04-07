@@ -38,7 +38,7 @@ var navbar = {
                     "\t\t\t\t\t<a class=\"\" href=\"/account/signin\">用户登录</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
-                    "\t\t\t\t\t<a class=\"\" href=\"/account/signin\">工人登录</a>\n" +
+                    "\t\t\t\t\t<a class=\"work_login\" href=\"/account/signin\">工人登录</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
                     "\t\t\t\t\t<a target=\"\" href=\"\">施工队入驻</a>\n" +

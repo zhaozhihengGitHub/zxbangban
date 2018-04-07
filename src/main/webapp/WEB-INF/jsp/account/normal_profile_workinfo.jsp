@@ -12,19 +12,14 @@
 <head>
     <title>装修帮办|你的个人资料</title>
     <%@include file="../common/head.jsp" %>
-
-
     <style type="text/css">
         .headimg {
             background-color: #cccccc;
         }
-
         .noneBtn {
             display: none;
         }
-        .imgLen{
-
-        }
+        .imgLen{}
         .imgLen span{
             position: relative;
             display: inline-block;
@@ -45,7 +40,6 @@
         }
         .imgLen img{
             width:100%;
-
         }
         dd,dt{
             font-size:17px;
@@ -64,6 +58,41 @@
             #clas{
                 width:281%;
             }
+        }
+        .ul_work_info{
+            width:100%;
+            margin:0 0 15px 0;
+        }
+        .ul_work_info ul{
+            text-align:left;
+            overflow:hidden;
+            border-top:1px solid #ccc;
+            margin-bottom:10px;
+        }
+        .ul_work_info ul li{
+            overflow:hidden;
+            border:1px solid #ccc;
+            margin-top:-1px;
+        }
+        .ul_work_info ul li p {
+            font-size:14px;
+            padding:10px;
+        }
+        .team_intro{
+            width:100%;
+            margin:10px 0;
+        }
+        .team_intro{
+            height:200px;
+            text-indent:2rem;
+            font-size:14px;
+            line-height:20px;
+            width:100%;
+            height:150px;
+            resize: none;
+            border:1px solid #ccc;
+            padding:10px 15px;
+
         }
     </style>
 </head>
@@ -104,20 +133,55 @@
                             </span>
                 </div>
             </div>
-            <div class="col-md-10 col-sm-10  col-xs-12 column">
-                <div class="jumbotron">
-                    <div>
-                        <h4 style="margin-bottom: 0">姓名：${worker.name}</h4>
-                        <span><a href="#"></a> </span>
-                        <span></span><br/>
+            <div class="col-md-10 col-sm-10  col-xs-12 column" style="padding:0;">
+                <div class="jumbotron" style="padding:0;">
+                    <span style="margin-bottom: 5px;display: block;">工人信息:</span><br/>
+                    <div class="row ul_work_info">
+                        <ul>
+                            <li>
+                                <p class="col-md-1 col-sm-1 col-xs-1">姓名</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">尚师傅</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">年龄</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">40</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">工龄</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">15</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">手机号码</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">15898988858</p>
+                            </li>
+                            <li>
+                                <p class="col-md-1 col-sm-1 col-xs-1">出身工种</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">工长</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">综合评分</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">0.0</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">浏览量</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">158</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">星级</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">2</p>
+                            </li>
+                            <li>
+                                <p class="col-md-1 col-sm-1 col-xs-1">籍贯</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">山西省长治市市区</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">擅长风格</p>
+                                <p class="col-md-3 col-sm-3 col-xs-3">田园，中式，欧式</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">施工队人数</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">22</p>
+
+                            </li>
+                            <li>
+                                <p class="col-md-1 col-sm-1 col-xs-1">同时接单数</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">6</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">现工程地址</p>
+                                <p class="col-md-3 col-sm-3 col-xs-3">山西省长治市市　区</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">施工状态</p>
+                                <p class="col-md-1 col-sm-1 col-xs-1">可预约</p>
+                            </li>
+                        </ul>
+                        <span style="display: block;">团队描述:</span>
+                        <textarea class="team_intro" name="" id="" readonly>古典文学常见论文一词，谓交谈辞章或交流思想。当代，论文常用来指进行各个学术领域的研究和描述学术研究成果的文章，简称之为论文。它既是探讨问题进行学术研究的一种手段，又是描述学术研究成果进行学术交流的一种工具。它包括学年论文、毕业论文、学位论文、科技论文、成果论文等。
+                        </textarea>
+                        <a href="${pageContext.request.contextPath}/account-support/modify"><span style="font-size: 20px" class="btn btn-info">修改</span></a>
                     </div>
-                    <div>
-                        <span>工作地址：${worker.location}</span>
-                        <button class='btn btn-link pull-right edit' type='button'
-                                onclick='editloc(this)' value="${worker.workerId}">编辑
-                        </button>
-                    </div>
-                    <span style="margin-bottom: 0">工程描述:</span><br/>
+                    <span style="margin-bottom: 5px;display: block;">工程描述:</span><br/>
                     <div class="sm_over">
                         <dl class="row" id="clas">
                             <dt class="col-md-2 col-sm-2 col-xs-2">小区</dt>

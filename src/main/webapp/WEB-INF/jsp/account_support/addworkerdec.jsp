@@ -7,11 +7,8 @@
     <%@include file="../common/head.jsp"%>
     <STYLE type="text/css">
         .jumbotron{
-
             margin-top: 50px;
-
             text-align: center;
-
         }
         form{
             margin: 0 auto;
@@ -24,9 +21,7 @@
             text-align: left;
             font-size:14px;
             padding:10px;
-
         }
-
         .sss{
             display: none;
         }
@@ -103,7 +98,8 @@
 
                             </div>
                             <div class="col-md-12 aas">
-                                <h4 class="inline" >当前状态：</h4><select name="state"><option value="已完成">已完成</option><option value="进行中">进行中</option></select>
+                                <h4 class="inline" >当前状态：</h4><select name="state">
+                                <option value="已完成">已完成</option><option value="可参观">可参观</option></select>
                             </div>
                              <input type="submit" value="提交" class="btn btn-success btn-lg btn-submit">
                         </form>
