@@ -19,229 +19,389 @@
 	<div class="container">
 		<div class="bbb worker">
 			<ul>
-				<li class="active" value="1">
-					<div>
-						<img src="../../resources/images/worker/b_sheji.jpg" alt="" />
-					</div>
-
-					<p>设计师</p>
-				</li>
 				<li value="2">
-					<div>
-						<img src="../../resources/images/worker/b_shigong.jpg" alt="" />
-					</div>
 					<p>施工队</p>
 				</li>
-
+				<li class="active" value="1">
+					<p>设计师</p>
+				</li>
+				<li value="14">
+					<p>监理</p>
+				</li>
 			</ul>
 			<ul>
 				<li value="3">
-					<div>
-						<img src="../../resources/images/worker/b_shuidian.jpg" alt="" />
-					</div>
-
 					<p>水电工</p>
 				</li>
-				<li value="4">
-					<div>
-						<img src="http://www.gzbjfs.com/upload/image/20170615/1497490002375151.jpg" alt="" />
-					</div>
-					<p>防水工</p>
-				</li>
 				<li value="5">
-					<div>
-						<img src="../../resources/images/worker/b_cizhuan.jpg" alt="" /></div>
-					<p>瓷砖工</p>
+					<p>瓦工</p>
 				</li>
 				<li value="6">
-					<div>
-						<img src="../../resources/images/worker/b_mugong.jpg" alt="" /></div>
 					<p>木工</p>
 				</li>
 				<li value="7">
-					<div>
-						<img src="../../resources/images/worker/b_youqi.jpg" alt="" /></div>
+					<p>腻子工</p>
+				</li>
+				<li value="13">
 					<p>油漆工</p>
+				</li>
+				<li value="4">
+					<p>防水工</p>
+				</li>
+				<li value="18">
+					<p>学徒工</p>
 				</li>
 			</ul>
 			<ul>
-				<li value="8">
-					<div>
-						<img src="../../resources/images/worker/b_shicai.jpg" alt="" />
-					</div>
-					<p>石材工</p>
-				</li>
-				<li value="9">
-					<div>
-						<img src="../../resources/images/worker/b_diaod.jpg" alt="" />
-					</div>
-					<p>吊顶工</p>
-				</li>
 				<li value="10">
-					<div >
-
-
-						<img src="../../resources/images/worker/b_jic.jpg" alt="" /></div>
-					<p>集成墙吊顶</p>
+					<p>石材安装</p>
+				</li>
+				<li value="27">
+					<p>拆墙开槽</p>
+				</li>
+				<li value="8">
+					<p>集成吊顶</p>
+				</li>
+				<li value="31">
+					<p>集成墙板</p>
 				</li>
 				<li value="11">
-					<div>
-						<img src="../../resources/images/worker/b_jiaj.jpg" alt="" /></div>
-						<p>家具安装工</p>
+					<p>壁纸壁布</p>
+				</li>
+				<li value="32">
+					<p>成品家具</p>
+				</li>
+				<li value="9">
+					<p>定制家具</p>
 				</li>
 				<li value="12">
-					<div >
-						<img src="../../resources/images/worker/b_biz.jpg" alt="" /></div>
-					<p>壁纸工</p>
+					<p>木门安装</p>
 				</li>
-				<li value="13">
-					<div>
-						<img src="../../resources/images/worker/b_shin.jpg" alt="" /></div>
-					<p>室内门安装工</p>
+				<li value="33">
+					<p>橱柜安装</p>
 				</li>
-				<li value="14">
-					<div >
-						<img src="../../resources/images/worker/b_weiy.jpg" alt="" /></div>
-					<p>卫浴安装工</p>
+				<li value="34">
+					<p>软包硬包</p>
 				</li>
-				<li value="15">
-					<div>
-						<img src="../../resources/images/worker/b_dengs.jpg" alt="" /></div>
-					<p>灯饰安装工</p>
+				<li value="35">
+					<p>五金挂件</p>
 				</li>
 				<li value="16">
-					<div >
-						<img src="../../resources/images/worker/b_chuanl.jpg" alt="" /></div>
-					<p>窗帘安装工</p>
+					<p>灯饰灯具</p>
+				</li>
+				<li value="15">
+					<p>卫浴洁具</p>
 				</li>
 				<li value="17">
-					<div>
-						<img src="../../resources/images/worker/b_bany.png" alt="" /></div>
-					<p>搬运工</p>
-				</li>
-				<li value="18">
-					<div>
-						<img src="../../resources/images/worker/b_jiaz.jpg" alt="" /></div>
-					<p>家政</p>
-				</li>
-				<li value="19">
-					<div >
-						<img src="../../resources/images/worker/b_songh.jpg" alt="" /></div>
-					<p>送货工</p>
-				</li>
-				<li value="20">
-					<div >
-						<img src="../../resources/images/worker/b_mud.jpg" alt="" /></div>
-					<p>木地板工</p>
-				</li>
-				<li value="21">
-					<div>
-						<img src="../../resources/images/worker/b_tuj.jpg" alt="" /></div>
-					<p>土建工</p>
+					<p>窗帘安装</p>
 				</li>
 				<li value="22">
-					<div>
-						<img src="../../resources/images/worker/b_meif.jpg" alt="" /></div>
-					<p>美缝工</p>
+					<p>地板安装</p>
 				</li>
-				<li value="23">
-					<div >
-						<img src="../../resources/images/worker/b_baol.png" alt="" /></div>
+				<li value="25">
+					<p>瓷砖美缝</p>
+				</li>
+			</ul>
+			<ul>
+				<li value="36">
+					<p>家具补漆</p>
+				</li>
+				<li value="37">
+					<p>开荒保洁</p>
+				</li>
+				<li value="21">
+					<p>租车送货</p>
+				</li>
+				<li value="38">
+					<p>厨卫电器</p>
+				</li>
+				<li value="39">
+					<p>空调安装</p>
+				</li>
+				<li value="40">
+					<p>新风系统</p>
+				</li>
+				<li value="41">
+					<p>净水系统</p>
+				</li>
+				<li value="42">
+					<p>安防系统</p>
+				</li>
+				<li value="43">
+					<p>智能家居</p>
+				</li>
+				<li value="44">
+					<p>玻璃安装</p>
+				</li>
+				<li value="45">
+					<p>铁艺制作</p>
+				</li>
+				<li value="46">
+					<p>更换窗纱</p>
+				</li>
+				<li value="47">
+					<p>栏杆护栏</p>
+				</li>
+				<li value="48">
+					<p>暖通设备</p>
+				</li>
+				<li value="49">
+					<p>广告招牌</p>
+				</li>
+			</ul>
+			<ul>
+				<li value="26">
 					<p>包立管</p>
+				</li>
+				<li value="19">
+					<p>搬运工</p>
+				</li>
+				<li value="50">
+					<p>晾衣架</p>
+				</li>
+				<li value="51">
+					<p>背景墙</p>
+				</li>
+				<li value="52">
+					<p>硅藻泥</p>
+				</li>
+				<li value="53">
+					<p>淋浴房</p>
+				</li>
+				<li value="54">
+					<p>防盗门</p>
+				</li>
+				<li value="55">
+					<p>防盗网</p>
+				</li>
+				<li value="56">
+					<p>铝门窗</p>
+				</li>
+				<li value="57">
+					<p>遮阳棚</p>
+				</li>
+				<li value="58">
+					<p>阳光房</p>
+				</li>
+				<li value="59">
+					<p>卷闸门</p>
+				</li>
+				<li value="60">
+					<p>铜艺门</p>
+				</li>
+			</ul>
+			<ul>
+				<li value="20">
+					<p>家政服务</p>
+				</li>
+				<li value="61">
+					<p>开锁解锁</p>
+				</li>
+				<li value="62">
+					<p>水钻开孔</p>
+				</li>
+				<li value="63">
+					<p>空调清洗</p>
+				</li>
+				<li value="64">
+					<p>烟机清洗</p>
+				</li>
+				<li value="65">
+					<p>甲醛治理</p>
 				</li>
 			</ul>
 		</div>
 		<div class="small_worker bbb ">
 			<ul>
-				<li value="1">
-					<div>
-						<img src="../../resources/images/worker/07.png" alt="设计师" />
-					</div>
-				</li>
 				<li value="2">
-					<div>
-						<img src="../../resources/images/worker/04.png" alt="施工队" />
-					</div>
+					<p>施工队</p>
+				</li>
+				<li class="active" value="1">
+					<p>设计师</p>
+				</li>
+				<li value="14">
+					<p>监理</p>
 				</li>
 			</ul>
 			<ul>
 				<li value="3">
-					<img src="../../resources/images/worker/06.png" alt="" />
-				</li>
-				<li value="4">
-					<img src="../../resources/images/worker/fangshui.png" alt="" />
-					<!--<span>防水工</span>-->
+					<p>水电工</p>
 				</li>
 				<li value="5">
-					<img src="../../resources/images/worker/cizhuan.png" alt="" />
-					<!--<span>瓷砖工</span>-->
-
-				</li>
-
-				<li value="7">
-					<img src="../../resources/images/worker/youqi.png" alt="" />
-					<!--<span>油漆工</span>-->
-
+					<p>瓦工</p>
 				</li>
 				<li value="6">
-					<img src="../../resources/images/worker/mug.png" alt="" />
-					<!--<span>木工</span>-->
-
+					<p>木工</p>
+				</li>
+				<li value="7">
+					<p>腻子工</p>
+				</li>
+				<li value="13">
+					<p>油漆工</p>
+				</li>
+				<li value="4">
+					<p>防水工</p>
+				</li>
+				<li value="18">
+					<p>学徒工</p>
 				</li>
 			</ul>
 			<ul>
-				<li value="13">
-					<img src="../../resources/images/worker/jiaz.png" alt="" />
-					<!--<span>家政</span>-->
+				<li value="10">
+					<p>石材安装</p>
+				</li>
+				<li value="27">
+					<p>拆墙开槽</p>
 				</li>
 				<li value="8">
-					<img src="../../resources/images/worker/shicai.png" alt="" />
-					<!--<span>石材工</span>-->
+					<p>集成吊顶</p>
 				</li>
-				<li value="9">
-					<img src="../../resources/images/worker/diaoding.png" alt="" />
-					<!--<span>吊顶工</span>-->
-
-				</li>
-
-				<li value="12">
-					<img src="../../resources/images/worker/bizhi.png" alt="" />
-					<!--<span>壁纸工</span>-->
-				</li>
-
-				<li value="14">
-					<img src="../../resources/images/worker/songhuo.png" alt="" />
-					<!--<span>送货工</span>-->
-
-				</li>
-
-				<li value="16">
-					<img src="../../resources/images/worker/tuj.png" alt="" />
-					<!--<span>土建工</span>-->
-
-				</li>
-				<li value="17">
-					<img src="../../resources/images/worker/meifeng.png" alt="" />
-					<!--<span>美缝工</span>-->
-				</li>
-
-				<li value="15">
-					<img src="../../resources/images/worker/mudiban.png" alt="" />
-					<!--<span>木地板工</span>-->
-
-				</li>
-				<li value="18">
-					<img src="../../resources/images/worker/blig.png" alt="" />
-					<!--<span>包立管</span>-->
-				</li>
-
-				<li value="10">
-					<img src="../../resources/images/worker/jic.png" alt="" />
-					<!--<span>集成墙吊顶</span>-->
+				<li value="31">
+					<p>集成墙板</p>
 				</li>
 				<li value="11">
-					<img src="../../resources/images/worker/jiaj.png" alt="" />
-					<!--<span>家俱安装工</span>-->
+					<p>壁纸壁布</p>
+				</li>
+				<li value="32">
+					<p>成品家具</p>
+				</li>
+				<li value="9">
+					<p>定制家具</p>
+				</li>
+				<li value="12">
+					<p>木门安装</p>
+				</li>
+				<li value="33">
+					<p>橱柜安装</p>
+				</li>
+				<li value="34">
+					<p>软包硬包</p>
+				</li>
+				<li value="35">
+					<p>五金挂件</p>
+				</li>
+				<li value="16">
+					<p>灯饰灯具</p>
+				</li>
+				<li value="15">
+					<p>卫浴洁具</p>
+				</li>
+				<li value="17">
+					<p>窗帘安装</p>
+				</li>
+				<li value="22">
+					<p>地板安装</p>
+				</li>
+				<li value="25">
+					<p>瓷砖美缝</p>
+				</li>
+			</ul>
+			<ul>
+				<li value="36">
+					<p>家具补漆</p>
+				</li>
+				<li value="37">
+					<p>开荒保洁</p>
+				</li>
+				<li value="21">
+					<p>租车送货</p>
+				</li>
+				<li value="38">
+					<p>厨卫电器</p>
+				</li>
+				<li value="39">
+					<p>空调安装</p>
+				</li>
+				<li value="40">
+					<p>新风系统</p>
+				</li>
+				<li value="41">
+					<p>净水系统</p>
+				</li>
+				<li value="42">
+					<p>安防系统</p>
+				</li>
+				<li value="43">
+					<p>智能家居</p>
+				</li>
+				<li value="44">
+					<p>玻璃安装</p>
+				</li>
+				<li value="45">
+					<p>铁艺制作</p>
+				</li>
+				<li value="46">
+					<p>更换窗纱</p>
+				</li>
+				<li value="47">
+					<p>栏杆护栏</p>
+				</li>
+				<li value="48">
+					<p>暖通设备</p>
+				</li>
+				<li value="49">
+					<p>广告招牌</p>
+				</li>
+			</ul>
+			<ul>
+				<li value="26">
+					<p>包立管</p>
+				</li>
+				<li value="19">
+					<p>搬运工</p>
+				</li>
+				<li value="50">
+					<p>晾衣架</p>
+				</li>
+				<li value="51">
+					<p>背景墙</p>
+				</li>
+				<li value="52">
+					<p>硅藻泥</p>
+				</li>
+				<li value="53">
+					<p>淋浴房</p>
+				</li>
+				<li value="54">
+					<p>防盗门</p>
+				</li>
+				<li value="55">
+					<p>防盗网</p>
+				</li>
+				<li value="56">
+					<p>铝门窗</p>
+				</li>
+				<li value="57">
+					<p>遮阳棚</p>
+				</li>
+				<li value="58">
+					<p>阳光房</p>
+				</li>
+				<li value="59">
+					<p>卷闸门</p>
+				</li>
+				<li value="60">
+					<p>铜艺门</p>
+				</li>
+			</ul>
+			<ul>
+				<li value="20">
+					<p>家政服务</p>
+				</li>
+				<li value="61">
+					<p>开锁解锁</p>
+				</li>
+				<li value="62">
+					<p>水钻开孔</p>
+				</li>
+				<li value="63">
+					<p>空调清洗</p>
+				</li>
+				<li value="64">
+					<p>烟机清洗</p>
+				</li>
+				<li value="65">
+					<p>甲醛治理</p>
 				</li>
 			</ul>
 		</div>

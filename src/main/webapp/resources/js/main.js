@@ -38,7 +38,7 @@ var navbar = {
                     "\t\t\t\t\t<a class=\"\" href=\"/account/signin\">用户登录</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
-                    "\t\t\t\t\t<a class=\"\" href=\"/account/signin\">工人登录</a>\n" +
+                    "\t\t\t\t\t<a class=\"work_login\" href=\"/account/signin\">工人登录</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
                     "\t\t\t\t\t<a target=\"\" href=\"\">施工队入驻</a>\n" +
@@ -97,7 +97,7 @@ var homepagestate = {
                             }
                             var a = $($eva).toArray();
                             $(a.slice(0, star)).css("color", "yellow");
-                            $age.removeClass("loading").text(y + "年");
+                            $age.removeClass("loading").text(y + "岁");
 
                             var $c = $.cookie("pv");
                             $count = result.homePV;
@@ -107,7 +107,7 @@ var homepagestate = {
                             }
                         } else {
                             $count += 1;
-                            $age.removeClass("loading").text("--年");
+                            $age.removeClass("loading").text("--岁");
                         }
                         $pageView.removeClass("loading").text($count);
                         $.ajax({

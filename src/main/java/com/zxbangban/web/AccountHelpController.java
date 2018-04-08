@@ -30,6 +30,11 @@ public class AccountHelpController {
         return "account_support/can_not_login";
     }
 
+    @RequestMapping("/modify")
+    public String modify(){
+        return "account_support/modify";
+    }
+
     @RequestMapping(value = "/reset",method = RequestMethod.POST)
     public String resetOpt(@RequestParam("option")String option){
         if(option.equals("1")){

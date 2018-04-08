@@ -111,6 +111,20 @@
                 width:280%;
             }
         }
+        .worker-introduction{
+            margin:20px 0 20px;
+            background-color: #fff;
+            border: 1px solid #faebcc;
+            border-radius: 4px;
+            -webkit-box-shadow:0px 0px 12px 0px #000;
+            box-shadow: 0px 0px 12px 0px #000;
+        }
+        .worker-introduction p{
+            margin:15px;
+            text-indent:2em;
+            font-size:20px;
+            line-height:32px;
+        }
         .worker_workinfo{
             background:#fff;
             margin:10px 0 10px;
@@ -150,7 +164,7 @@
                             <ul class="workerHomePageCard" style="padding-left: 0">
 
                                 <li>
-                                    <span>姓名：${workerinfo.name}</span>
+                                    <span>队长：${workerinfo.name}</span>
                                     <c:choose>
                                         <c:when test="${workerinfo.authenticated}">
                                             <img class="worker-badge-tiny" src="https://zxbangban.oss-cn-beijing.aliyuncs.com/worker/Worker_Authenticated.png" data-toggle="tooltip"
@@ -183,7 +197,7 @@
                                     </c:choose>
                                 </li>
                                 <li>
-                                    年龄:<span class="" id="age">${workerProfile.age}岁</span>
+                                    年龄:<span class="loading" id="age">${workerProfile.age}岁</span>
                                 </li>
                                 <li>
                                     工龄:<span class="" id="jobyear">${workerinfo.jobYear}</span>
@@ -193,6 +207,9 @@
                                 </li>
                                 <li>
                                     擅长风格:<span  id="style">${workerinfo.style}</span>
+                                </li>
+                                <li>
+                                    施工队人数:<span  id="teamCount">${workerinfo.teamCount}</span>
                                 </li>
                                 <li>
                                     现工程地址:<span  id="location">${workerinfo.location}</span>
@@ -217,7 +234,7 @@
                                     <span>综合评分:<span class="" id="oARating">${workerinfo.overAllRating}</span></span>
                                 </li>
                                 <li>
-                                    <span>浏览量：<span class="" id="pageview"></span><span class="glyphicon glyphicon-eye-open"></span> </span>
+                                    <span>浏览量：<span class="loading" id="pageview"></span><span class="glyphicon glyphicon-eye-open"></span> </span>
                                 </li>
                                 <li>
                                     星级：
@@ -226,6 +243,9 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
+                                </li>
+                                <li>
+                                    <span>同时接单数:<span class="" id="ordersCount">${workerinfo.ordersCount}</span></span>
                                 </li>
                                 <c:choose>
                                         <c:when test="${workerinfo.state == true}">
@@ -265,6 +285,7 @@
                         </div>
                     </div>
                     <div class="row" >
+
                         <div  id="mess"  class="col-md- col-sm-12 col-xs-12  column">
                             <span style="color: white;font-size: 21px ">工人手机号：${workerinfo.tel}</span><br/>
                             <span  style="color: red;font-size:20px"><br/><p style="text-indent:2em;line-height: 25px;" class="tip">
@@ -278,6 +299,9 @@
     </div>
 
     <div class="container">
+        <div class="sm_dt worker-introduction">
+            <p class="" id="introduce">${workerinfo.teamDesc}</p>
+        </div>
         <div class="row worker_workinfo">
             <img src="/resources/images/worker/workinfo.png" width="100%">
         </div>
@@ -370,6 +394,10 @@
         $(".sm_sc dd:nth-child(6n)").attr("class","col-xs-3");
     });
     $("#tellNum").click(function(){
+        $("#mess").toggleClass("show");
+    });
+
+    $("#phoneNum").click(function(){
         $("#mess").toggleClass("show");
     });
 </script>

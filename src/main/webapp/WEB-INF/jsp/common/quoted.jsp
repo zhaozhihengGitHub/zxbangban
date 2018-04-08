@@ -12,7 +12,7 @@
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <button type="button" class="close" id="a" >
-                    <img src="${pageContext.request.contextPath}/resources/images/activity/closebtn.png" class="close_img"
+                    <img src="${pageContext.request.contextPath}/resources/images/activity/closebtn.png" width="35" class="close_img"
                          alt="close">
                 </button>
             </div>
@@ -117,6 +117,9 @@
     }
     .close img:hover{
        	transform: scale(1);
+    }
+    .close{
+        margin:10px 0;
     }
 </style>
 <script type="text/javascript">
