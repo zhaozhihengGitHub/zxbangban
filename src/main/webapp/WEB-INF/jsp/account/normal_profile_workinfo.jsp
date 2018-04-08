@@ -42,7 +42,7 @@
             width:100%;
         }
         dd,dt{
-            font-size:17px;
+           font-weight: normal;
         }
         dl{
             border: 1px solid #ccc;
@@ -72,11 +72,17 @@
         .ul_work_info ul li{
             overflow:hidden;
             border:1px solid #ccc;
+            /*border-right:1px solid #ccc;*/
             margin-top:-1px;
         }
         .ul_work_info ul li p {
             font-size:14px;
             padding:10px;
+            /*border-left: 1px solid #ccc;*/
+            /*border-bottom: 1px solid #ccc;*/
+        }
+        .jumbotron p{
+            margin: 0;
         }
         .team_intro{
             width:100%;
@@ -139,41 +145,40 @@
                     <div class="row ul_work_info">
                         <ul>
                             <li>
-                                <p class="col-md-1 col-sm-1 col-xs-1">姓名</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">尚师傅</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">年龄</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">40</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">工龄</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">15</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">手机号码</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">15898988858</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">姓名</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">尚师傅</p>
+                                <p class="col-md-1 col-sm-3 col-xs-2">年龄</p>
+                                <p class="col-md-1 col-sm-3 col-xs-4">40</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">工龄</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">15</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">手机</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">15898988858</p>
                             </li>
                             <li>
-                                <p class="col-md-1 col-sm-1 col-xs-1">出身工种</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">工长</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">综合评分</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">0.0</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">浏览量</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">158</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">星级</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">2</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">工种</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">工长</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">综合评分</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">0.0</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">浏览量</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">158</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">星级</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">2</p>
                             </li>
                             <li>
-                                <p class="col-md-1 col-sm-1 col-xs-1">籍贯</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">山西省长治市市区</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">擅长风格</p>
-                                <p class="col-md-3 col-sm-3 col-xs-3">田园，中式，欧式</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">施工队人数</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">22</p>
-
-                            </li>
-                            <li>
-                                <p class="col-md-1 col-sm-1 col-xs-1">同时接单数</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">施工队人数</p>
+                                <p class="col-md-1 col-sm-2 col-xs-2">22</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">同时接单数</p>
                                 <p class="col-md-2 col-sm-2 col-xs-2">6</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">现工程地址</p>
-                                <p class="col-md-3 col-sm-3 col-xs-3">山西省长治市市　区</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">施工状态</p>
-                                <p class="col-md-1 col-sm-1 col-xs-1">可预约</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">施工状态</p>
+                                <p class="col-md-1 col-sm-8 col-xs-8">可预约</p>
+                            </li>
+                            <li>
+                                <p class="col-md-1 col-sm-3 col-xs-4">籍贯</p>
+                                <p class="col-md-2 col-sm-9 col-xs-8">山西省长治市市区</p>
+                                <p class="col-md-1 col-sm-3 col-xs-4">擅长风格</p>
+                                <p class="col-md-3 col-sm-9 col-xs-8">田园，中式，欧式</p>
+                                <p class="col-md-2 col-sm-3 col-xs-4">现工程地址</p>
+                                <p class="col-md-3 col-sm-9 col-xs-8">山西省长治市市区</p>
                             </li>
                         </ul>
                         <span style="display: block;">团队描述:</span>
