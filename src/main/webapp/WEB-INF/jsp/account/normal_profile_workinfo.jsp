@@ -107,8 +107,8 @@
         <div class="row clearfix">
             <div class="col-md-12 col-sm-12 col-xs-12 column">
                 <ul class="nav nav-pills nav-justified" style="">
-                    <li><a href="${pageContext.request.contextPath}/my-account/center">账号</a></li>
-                    <li class="active"><a href="${pageContext.request.contextPath}/my-account/profile">你的信息</a></li>
+                    <li><a href="${pageContext.request.contextPath}/my-account/center">会员账号</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/my-account/profile">我的信息</a></li>
                     <li><a href="#">订单信息</a></li>
                     <li><a href="#">协议与合同</a></li>
                     <li><a href="#">服务</a></li>
@@ -118,9 +118,9 @@
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <div class="jumbotron" style="padding-left: 0;padding-right: 0px">
-                    <h2>你的信息</h2>
+                    <h2>我的信息</h2>
                     <ol class="nav nav-tabs">
-                        <li><a href="${pageContext.request.contextPath}/my-account/profile">个人资料</a></li>
+                        <li><a href="${pageContext.request.contextPath}/my-account/profile">会员资料</a></li>
                         <li><a href="#">联系人信息</a></li>
                         <li class="active"><a href="${pageContext.request.contextPath}/my-account/profile-workerinfo">工人信息</a>
                         </li>
@@ -139,36 +139,42 @@
             </div>
             <div class="col-md-10 col-sm-10  col-xs-12 column" style="padding:0;">
                 <div class="jumbotron" style="padding:0;">
+                    <div>
+                        <span>工作地址：${worker.location}</span>
+                        <button class='btn btn-link pull-right edit' type='button'
+                                onclick='editloc(this)' value="${worker.workerId}">编辑
+                        </button>
+                    </div>
                     <span style="margin-bottom: 5px;display: block;">工人信息:</span><br/>
                     <div class="row ul_work_info">
                         <ul>
                             <li>
                                 <p class="col-md-1 col-sm-3 col-xs-3">姓名</p>
-                                <p class="col-md-2 col-sm-3 col-xs-3">尚师傅</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">${worker.name}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-2">年龄</p>
-                                <p class="col-md-1 col-sm-3 col-xs-4">40</p>
+                                <p class="col-md-1 col-sm-3 col-xs-4">${workerProfile.age}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">工龄</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">15</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">${woeker.jobYear}</p>
                                 <p class="col-md-2 col-sm-2 col-xs-2">手机</p>
-                                <p class="col-md-2 col-sm-4 col-xs-4">15898988858</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">${worker.tel}</p>
                             </li>
                             <li>
                                 <p class="col-md-1 col-sm-3 col-xs-3">工种</p>
-                                <p class="col-md-2 col-sm-3 col-xs-3">工长</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">${worker.jobId}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">综合评分</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">0.0</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">${worker.overAllRating}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">浏览量</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">158</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">${workerProfile.homePV}</p>
                                 <p class="col-md-2 col-sm-3 col-xs-3">星级</p>
-                                <p class="col-md-2 col-sm-3 col-xs-3">2</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">${workerProfile.starEvaluated}</p>
                             </li>
                             <li>
                                 <p class="col-md-2 col-sm-4 col-xs-4">施工队人数</p>
-                                <p class="col-md-1 col-sm-2 col-xs-2">22</p>
+                                <p class="col-md-1 col-sm-2 col-xs-2">${worker.teamCount}</p>
                                 <p class="col-md-2 col-sm-4 col-xs-4">同时接单数</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">6</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">${worker.ordersCount}</p>
                                 <p class="col-md-2 col-sm-4 col-xs-4">施工状态</p>
-                                <p class="col-md-1 col-sm-8 col-xs-8">可预约</p>
+                                <p class="col-md-1 col-sm-8 col-xs-8">${worker.state}</p>
                             </li>
                             <li>
                                 <p class="col-md-2 col-sm-3 col-xs-4">籍贯</p>
@@ -180,8 +186,7 @@
                             </li>
                         </ul>
                         <span style="display: block;">团队描述:</span>
-                        <textarea class="team_intro" name="" id="" readonly>古典文学常见论文一词，谓交谈辞章或交流思想。当代，论文常用来指进行各个学术领域的研究和描述学术研究成果的文章，简称之为论文。它既是探讨问题进行学术研究的一种手段，又是描述学术研究成果进行学术交流的一种工具。它包括学年论文、毕业论文、学位论文、科技论文、成果论文等。
-                        </textarea>
+                        <textarea class="team_intro" name="" id="" readonly>${worker.teamDesc} </textarea>
                         <a href="${pageContext.request.contextPath}/account-support/modify"><span style="font-size: 20px" class="btn btn-info">修改</span></a>
                     </div>
                     <span style="margin-bottom: 5px;display: block;">工程描述:</span><br/>
