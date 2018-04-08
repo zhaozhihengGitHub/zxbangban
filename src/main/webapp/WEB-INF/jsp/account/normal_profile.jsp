@@ -27,8 +27,8 @@
         <div class="row clearfix">
             <div class="col-md-12 col-sm-12 col-xs-12 column">
                 <ul class="nav nav-pills nav-justified" style="">
-                    <li><a href="${pageContext.request.contextPath}/my-account/center">会员账号</a></li>
-                    <li  class="active"><a href="${pageContext.request.contextPath}/my-account/profile">我的信息</a></li>
+                    <li><a href="${pageContext.request.contextPath}/my-account/center">账号</a></li>
+                    <li  class="active"><a href="${pageContext.request.contextPath}/my-account/profile">你的信息</a></li>
                     <li><a href="#">订单信息</a></li>
                     <li><a href="#">协议与合同</a></li>
                     <li><a href="#">服务</a></li>
@@ -38,9 +38,9 @@
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <div class="jumbotron">
-                    <h2>我的信息</h2>
+                    <h2>你的信息</h2>
                     <ol class="nav nav-tabs">
-                        <li class="active"><a href="${pageContext.request.contextPath}/my-account/profile">会员资料</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/my-account/profile">个人资料</a></li>
                         <li><a href="#">联系人信息</a></li>
                         <li><a href="${pageContext.request.contextPath}/my-account/profile-workerinfo">工人信息</a></li>
                     </ol>
