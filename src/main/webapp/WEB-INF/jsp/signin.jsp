@@ -103,10 +103,10 @@
             href: ""
         });
 
-        var WxTab = $("#WxTab");
-        if(util.detil.isPC() !== true){
-            WxTab.hide();
-        }
+//        var WxTab = $("#WxTab");
+//        if(util.detil.isPC() !== true){
+//            WxTab.hide();
+//        }
     });
 </script>
 </html>
