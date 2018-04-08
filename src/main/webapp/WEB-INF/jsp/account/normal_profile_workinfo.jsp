@@ -72,12 +72,14 @@
         .ul_work_info ul li{
             overflow:hidden;
             border:1px solid #ccc;
+            /*border-right:1px solid #ccc;*/
             margin-top:-1px;
         }
         .ul_work_info ul li p {
             font-size:14px;
             padding:10px;
-            height:30px;
+            /*border-left: 1px solid #ccc;*/
+            /*border-bottom: 1px solid #ccc;*/
         }
         .jumbotron p{
             margin: 0;

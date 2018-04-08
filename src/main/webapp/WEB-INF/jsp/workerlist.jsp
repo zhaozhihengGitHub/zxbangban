@@ -212,7 +212,7 @@
 			</ul>
 		</div>
 		<div class="small_worker bbb ">
-			<ul class="bg-color1">
+			<ul>
 				<li value="2">
 					<p>施工队</p>
 				</li>
@@ -223,7 +223,7 @@
 					<p>监理</p>
 				</li>
 			</ul>
-			<ul class="bg-color2">
+			<ul>
 				<li value="3">
 					<p>水电工</p>
 				</li>
@@ -246,7 +246,7 @@
 					<p>学徒工</p>
 				</li>
 			</ul>
-			<ul class="bg-color3">
+			<ul>
 				<li value="10">
 					<p>石材安装</p>
 				</li>
@@ -296,7 +296,7 @@
 					<p>瓷砖美缝</p>
 				</li>
 			</ul>
-			<ul class="bg-color1">
+			<ul>
 				<li value="36">
 					<p>家具补漆</p>
 				</li>
@@ -343,7 +343,7 @@
 					<p>广告招牌</p>
 				</li>
 			</ul>
-			<ul class="bg-color2">
+			<ul>
 				<li value="26">
 					<p>包立管</p>
 				</li>
@@ -384,7 +384,7 @@
 					<p>铜艺门</p>
 				</li>
 			</ul>
-			<ul class="bg-color3">
+			<ul>
 				<li value="20">
 					<p>家政服务</p>
 				</li>
