@@ -179,12 +179,12 @@
                                 <p class="col-md-1 col-sm-8 col-xs-8">${worker.state}</p>
                             </li>
                             <li>
-                                <p class="col-md-1 col-sm-3 col-xs-4">籍贯</p>
-                                <p class="col-md-2 col-sm-9 col-xs-8"></p>
-                                <p class="col-md-1 col-sm-3 col-xs-4">擅长风格</p>
-                                <p class="col-md-3 col-sm-9 col-xs-8">${worker.style}</p>
+                                <p class="col-md-2 col-sm-3 col-xs-4">籍贯</p>
+                                <p class="col-md-4 col-sm-9 col-xs-8">${worker.address}</p>
+                                <p class="col-md-2 col-sm-3 col-xs-4">擅长风格</p>
+                                <p class="col-md-4 col-sm-9 col-xs-8">${worker.style}</p>
                                 <p class="col-md-2 col-sm-3 col-xs-4">现工程地址</p>
-                                <p class="col-md-3 col-sm-9 col-xs-8">${worker.location}</p>
+                                <p class="col-md-4 col-sm-9 col-xs-8">${worker.location}　区</p>
                             </li>
                         </ul>
                         <span style="display: block;">团队描述:</span>
