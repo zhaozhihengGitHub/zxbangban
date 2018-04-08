@@ -1410,21 +1410,14 @@ table{border-collapse:collapse;border-spacing:0}
 .worker ul li p {
   display: inline-block;
   text-indent: 0;
-  font-size: 20px;
+  font-size: 24px;
   padding:10px;
 }
 .worker ul li p:hover {
   background:#fcaf0a;
+}
+.worker ul li:hover p {
   color: #fff;
-}
-.small_worker ul.bg-color1 li p{
-    background:#FCF5D8;
-}
-.small_worker ul.bg-color2 li p{
-    background:#FAEDC1;
-}
-.small_worker ul.bg-color3 li p{
-    background:#FFF0D6;
 }
 @media screen and (min-width: 320px) and (max-width: 660px) {
     .page-wrapper{
