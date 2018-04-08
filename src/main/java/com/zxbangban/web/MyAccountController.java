@@ -2,10 +2,7 @@ package com.zxbangban.web;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zxbangban.entity.Customer;
-import com.zxbangban.entity.UserProfile;
-import com.zxbangban.entity.UserInfo;
-import com.zxbangban.entity.WorkerInfo;
+import com.zxbangban.entity.*;
 import com.zxbangban.enums.RolesAuth;
 import com.zxbangban.service.*;
 import com.zxbangban.util.MD5Util;
@@ -37,6 +34,8 @@ public class MyAccountController {
     private CustomerService customerService;
     @Autowired
     private WorkerInfoService workerInfoService;
+    @Autowired
+    private WorkerProfileService workerProfileService;
     @Autowired
     private AliyunOSService aliyunOSService;
 
@@ -134,11 +133,17 @@ public class MyAccountController {
         Object unionId =  httpServletRequest.getSession().getAttribute("unionid");
         if(unionId == null){
            try {
+               long workerId=1;
                UserInfo userInfo = userInfoService.queryByUsername(uid);
                String tel = userInfo.getTelphone();
                List<WorkerInfo> list = workerInfoService.queryByTelphone(tel);
+               for (WorkerInfo worker:list) {
+                    workerId=worker.getWorkerId();
+               }
+               WorkerProfile workerProfile=workerProfileService.queryByWorkerId(workerId);
                model.addAttribute("worker",list.get(0));
                model.addAttribute("userinfo", userInfo);
+               model.addAttribute("workerProfile",workerProfile);
                return "/account/normal_profile_workinfo";
            }catch (Exception e){
                return "signin";
@@ -204,11 +209,13 @@ public class MyAccountController {
     //获取预约信息
     @RequestMapping(value = "/getappoint",method = RequestMethod.GET,produces = "text/html;charset=utf8")
     @ResponseBody
-    public String getAppoint(@RequestParam("uid")String uid, @RequestParam("roleid")Integer roleid) {
+    public String getAppoint(@RequestParam("uid")String uid, @RequestParam("roleid")Integer roleid,Model model) {
         int i = roleid;
         if(0 < i && i < 4){
-            String t = userInfoService.queryTelByUsername(uid);
-            List<Customer> list = customerService.queryByTel(t);
+            String tel = userInfoService.queryTelByUsername(uid);
+            WorkerInfo workerInfo=workerInfoService.queryByTel(tel);
+            String notes="预约[工号:" + workerInfo.getWorkerId() + ";姓名:"+workerInfo.getName() + "]";
+            List<Customer> list=customerService.queryByNotes(notes);
             ObjectMapper objectMapper = new ObjectMapper();
             try {
                 return objectMapper.writeValueAsString(list);

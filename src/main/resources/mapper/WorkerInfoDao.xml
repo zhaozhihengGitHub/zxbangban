@@ -280,8 +280,26 @@
     </select>
 
     <select id="queryDetailByTelPhone" parameterType="String" resultType="WorkerInfo">
-        SELECT `workerId`,`name`,`job_id`,`head_img_url`,`project_des`,`project_img_url`,`location`,`state`,`authenticated`,`certificated`
-        FROM workerinfo
+        SELECT
+        w.workerId,
+        w.name,
+        w.head_img_url,
+        w.job_id,
+        w.pr,
+        w.tel,
+        w.state,
+        w.project_des,
+        w.authenticated,
+        w.certificated,
+        w.location,
+        w.address,
+        w.over_all_rating,
+        w.jobYear,
+        w.teamDesc,
+        w.ordersCount,
+        w.style,
+        w.teamCount
+        FROM workerinfo w
         WHERE `tel` = #{telphone}
     </select>
 
