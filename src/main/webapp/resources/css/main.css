@@ -1418,13 +1418,13 @@ table{border-collapse:collapse;border-spacing:0}
   color: #fff;
 }
 .small_worker ul.bg-color1 li p{
-    background:#FCF5D8;
+    background:#EDFFFF;
 }
 .small_worker ul.bg-color2 li p{
-    background:#FAEDC1;
+    background:#F2FFF0;
 }
 .small_worker ul.bg-color3 li p{
-    background:#FFF0D6;
+    background:#fcfcfc;
 }
 @media screen and (min-width: 320px) and (max-width: 660px) {
     .page-wrapper{
