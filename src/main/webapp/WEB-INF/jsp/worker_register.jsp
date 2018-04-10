@@ -31,10 +31,10 @@
             -moz-border-radius: 5px;
             border-radius: 5px;
             top:180px;
-            z-index: 5;
+            z-index: 999;
             display:none;
         }
-        .work-type p{
+        .work-type li{
             display:inline-block;
             font-size:16px;
             padding:10px;
@@ -46,7 +46,7 @@
                 margin-left:6%;
                 top:30%;
             }
-            .work-type p{
+            .work-type li{
                 font-size:14px;
                 padding:6px 6px 6px 0;
             }
@@ -56,9 +56,9 @@
                 padding:10px;
                 top:15%;
                 width:90%;
-                margin-left:-2.5%;
+                margin-left:-3%;
             }
-            .work-type p{
+            .work-type li{
                 font-size:14px;
                 padding:6px 6px 6px 0;
             }
@@ -70,69 +70,69 @@
 <div class="page-wrapper">
     <div class="container-fluid" style="background-image:url('https://zxbangban.oss-cn-beijing.aliyuncs.com/workerregisterbgi.png');background-repeat: no-repeat;height: 750px ">
         <div class="container">
-            <div class="work-type row">
+            <ul class="work-type row">
                 <button type="button" class="close">X</button>
-                <p>施工队</p>
-                <p>设计师</p>
-                <p>监理</p></br>
-                <p>水电工</p>
-                <p>瓦工</p>
-                <p>木工</p>
-                <p>腻子工</p>
-                <p>油漆工</p>
-                <p>防水工</p>
-                <p>学徒工</p></br>
-                <p>石材安装</p>
-                <p>拆墙开槽</p>
-                <p>集成吊顶</p>
-                <p>集成墙板</p>
-                <p>壁纸壁布</p>
-                <p>成品家具</p>
-                <p>定制家具</p>
-                <p>木门安装</p>
-                <p>橱柜安装</p>
-                <p>软包硬包</p>
-                <p>五金挂件</p>
-                <p>灯饰灯具</p>
-                <p>卫浴洁具</p>
-                <p>窗帘安装</p>
-                <p>地板安装</p>
-                <p>瓷砖美缝</p></br>
-                <p>家具补漆</p>
-                <p>开荒保洁</p>
-                <p>租车送货</p>
-                <p>厨卫电器</p>
-                <p>空调安装</p>
-                <p>新风系统</p>
-                <p>净水系统</p>
-                <p>安防系统</p>
-                <p>智能家居</p>
-                <p>玻璃安装</p>
-                <p>铁艺制作</p>
-                <p>更换窗纱</p>
-                <p>栏杆护栏</p>
-                <p>暖通设备</p>
-                <p>广告招牌</p></br>
-                <p>包立管</p>
-                <p>搬运工</p>
-                <p>晾衣架</p>
-                <p>背景墙</p>
-                <p>硅藻泥</p>
-                <p>淋浴房</p>
-                <p>防盗门</p>
-                <p>防盗网</p>
-                <p>铝门窗</p>
-                <p>遮阳棚</p>
-                <p>阳光房</p>
-                <p>卷闸门</p>
-                <p>铜艺门</p></br>
-                <p>家政服务</p>
-                <p>开锁解锁</p>
-                <p>水钻开孔</p>
-                <p>空调清洗</p>
-                <p>烟机清洗</p>
-                <p>甲醛治理</p>
-            </div>
+                <li value="2">施工队</li>
+                <li value="1">设计师</li>
+                <li value="14">监理</li></br>
+                <li value="3">水电工</li>
+                <li value="5">瓦工</li>
+                <li value="6">木工</li>
+                <li value="7">腻子工</li>
+                <li value="13">油漆工</li>
+                <li value="4">防水工</li>
+                <li value="18">学徒工</li></br>
+                <li value="10">石材安装</li>
+                <li value="27">拆墙开槽</li>
+                <li value="8">集成吊顶</li>
+                <li value="31">集成墙板</li>
+                <li value="11">壁纸壁布</li>
+                <li value="32">成品家具</li>
+                <li value="9">定制家具</li>
+                <li value="12">木门安装</li>
+                <li value="33">橱柜安装</li>
+                <li value="34">软包硬包</li>
+                <li value="35">五金挂件</li>
+                <li value="16">灯饰灯具</li>
+                <li value="15">卫浴洁具</li>
+                <li value="17">窗帘安装</li>
+                <li value="22">地板安装</li>
+                <li value="25">瓷砖美缝</li></br>
+                <li value="36">家具补漆</li>
+                <li value="37">开荒保洁</li>
+                <li value="21">租车送货</li>
+                <li value="38">厨卫电器</li>
+                <li value="39">空调安装</li>
+                <li value="40">新风系统</li>
+                <li value="41">净水系统</li>
+                <li value="42">安防系统</li>
+                <li value="43">智能家居</li>
+                <li value="44">玻璃安装</li>
+                <li value="45">铁艺制作</li>
+                <li value="46">更换窗纱</li>
+                <li value="47">栏杆护栏</li>
+                <li value="48">暖通设备</li>
+                <li value="49">广告招牌</li></br>
+                <li value="26">包立管</li>
+                <li value="19">搬运工</li>
+                <li value="50">晾衣架</li>
+                <li value="51">背景墙</li>
+                <li value="52">硅藻泥</li>
+                <li value="53">淋浴房</li>
+                <li value="54">防盗门</li>
+                <li value="55">防盗网</li>
+                <li value="56">铝门窗</li>
+                <li value="57">遮阳棚</li>
+                <li value="58">阳光房</li>
+                <li value="59">卷闸门</li>
+                <li value="60">铜艺门</li></br>
+                <li value="20">家政服务</li>
+                <li value="61">开锁解锁</li>
+                <li value="62">水钻开孔</li>
+                <li value="63">空调清洗</li>
+                <li value="64">烟机清洗</li>
+                <li value="65">甲醛治理</li>
+            </ul>
             <div class="row clearfix">
                 <div class="col-md-8 col-md-offset-2 column">
                     <div class="jumbotron">
@@ -199,8 +199,9 @@
         $(".close").click(function(){
             $(".work-type").hide();
         })
-        $(".work-type p").click(function(){
+        $(".work-type li").click(function(){
             $("input[name='jobId']").val($(this).text());
+            var valnumber=$(this).val();
             $(".work-type").hide();
         })
     })
