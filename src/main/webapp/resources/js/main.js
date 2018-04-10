@@ -24,7 +24,7 @@ var navbar = {
                 $navLogin.html(
                     "<li>" +
                     "<a href='/my-account/center' style='padding-top: 7px;padding-bottom: 7px;'>" +
-                    "<img src='" + $headImg + "' class='img-circle' /> " + $cookie + "</a>" +
+                    "<img src='" + $headImg + "' class='img-circle' /> " + $cookie+"会员中心" + "</a>" +
                     "</li>" +
                     "<li>" +
                     "<a href='/account/exit'>注销</a>" +
@@ -41,7 +41,7 @@ var navbar = {
                     "\t\t\t\t\t<a class=\"work_login\" href=\"/account/signin\">工人登录</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
-                    "\t\t\t\t\t<a target=\"\" href=\"\">施工队入驻</a>\n" +
+                    "\t\t\t\t\t<a target=\"\" href=\"/jobs/register\">施工队入驻</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
                     "\t\t\t\t\t<a target=\"\" href=\"/account/signin\">商家登录</a>\n" +
