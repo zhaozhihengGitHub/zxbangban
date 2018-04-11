@@ -754,9 +754,9 @@
     }
 
     function l() {
-        var procode=$('#province_code').find("option:selected").text();
-        var cityCode=$("#city_code").find("option:selected").text();
-        var areaCode=$('#area_code').find("option:selected").text();
+        var procode=$('#provincecode').find("option:selected").text();
+        var cityCode=$("#citycode").find("option:selected").text();
+        var areaCode=$('#areacode').find("option:selected").text();
         var loc=procode+cityCode+areaCode;
 
         $.ajax({
