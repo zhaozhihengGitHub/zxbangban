@@ -150,13 +150,8 @@
                             </div>
                             <div class="input-group input-group-lg" style="margin-bottom: 20px">
                                 <span class="input-group-addon">工种</span>
-                                <input type="text" class="form-control" placeholder="" name="jobId" readonly>
-                                <%--<select name="jobId" class="form-control">--%>
-                                    <%--<c:set var="jobs" value="${jobsList}"/>--%>
-                                    <%--<c:forEach var="job" items="${jobs}">--%>
-                                        <%--<option value="${job.id}">${job.des}</option>--%>
-                                    <%--</c:forEach>--%>
-                                <%--</select>--%>
+                                <input type="text" class="form-control" placeholder="" name="XjobId" readonly>
+                                <input type="hidden" class="form-control" name="jobId" readonly>
                             </div>
                             <div class="input-group input-group-lg" style="margin-bottom: 20px">
                                 <input type="text" class="form-control" placeholder="请输入手机验证码" name="telcode">
@@ -193,16 +188,17 @@
         $("input[name='location']").val(loc.toString());
     }
     $(function(){
-        $("input[name='jobId']").click(function(){
+        $("input[name='XjobId']").click(function(){
             $(".work-type").show();
         })
         $(".close").click(function(){
             $(".work-type").hide();
         })
         $(".work-type li").click(function(){
-            $("input[name='jobId']").val($(this).text());
+            $("input[name='XjobId']").val($(this).text());
             var valnumber=$(this).val();
             $(".work-type").hide();
+            $("input[name='jobId']").val(valnumber);
         })
     })
 </script>

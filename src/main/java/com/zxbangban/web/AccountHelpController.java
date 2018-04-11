@@ -1,5 +1,7 @@
 package com.zxbangban.web;
 
+import com.zxbangban.entity.WorkerInfo;
+import com.zxbangban.entity.WorkerProfile;
 import com.zxbangban.service.AliyunMNService;
 import com.zxbangban.util.MD5Util;
 import com.zxbangban.service.UserInfoService;
@@ -31,7 +33,11 @@ public class AccountHelpController {
     }
 
     @RequestMapping("/modify")
-    public String modify(){
+    public String modify(HttpServletRequest httpServletRequest, Model model){
+       WorkerInfo workerInfo= (WorkerInfo) httpServletRequest.getSession().getAttribute("worker");
+        WorkerProfile workerProfile= (WorkerProfile) httpServletRequest.getSession().getAttribute("workerProfile");
+        model.addAttribute("workerInfo",workerInfo);
+        model.addAttribute("workerProfile",workerProfile);
         return "account_support/modify";
     }
 

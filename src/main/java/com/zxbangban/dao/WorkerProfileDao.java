@@ -85,4 +85,6 @@ public interface WorkerProfileDao {
 
 
     int deleteWorkerProfile(@Param("workerid")long workerId);
+
+    int  updateAge(@Param("workerid")long workerid,@Param("age")Integer age);
 }

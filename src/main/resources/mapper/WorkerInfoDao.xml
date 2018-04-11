@@ -358,4 +358,18 @@
         WHERE cityCode = #{cityCode}
     </select>
 
+    <update id="updateWorkerInfo" parameterType="WorkerInfo">
+        UPDATE workerinfo
+        set `name`= #{name},
+            jobYear = #{jobYear},
+            tel = #{tel},
+            address=#{address},
+            style=#{style},
+            teamCount=#{teamCount},
+            ordersCount=#{ordersCount},
+            state=#{state},
+            location=#{location},
+            teamDesc=#{teamDesc}
+         where `workerId` = #{workerId}
+    </update>
 </mapper>

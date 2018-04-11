@@ -64,6 +64,22 @@
                 line-height: 15px;
             }
         }
+        .input-group{
+            width:100%;
+        }
+        .aas .input-group .select{
+            width:65%;
+        }
+        .aas .input-group #citys{
+            margin-left:35%;
+        }
+        .aas .input-group #areas{
+            margin-left:35%;
+        }
+        .floatr{
+            float:right;
+            margin-top:5px;
+        }
     </STYLE>
 </head>
 <body>
@@ -75,52 +91,63 @@
                 <div class="col-md-8 col-md-offset-2 column work-info-input">
                     <div class="jumbotron row" style="padding:0 10px;margin-bottom:30px;">
                         <h2 style="color: black">工人信息修改</h2><br/>
-                        <form  action="" method="post" style="text-align: left"  name="form" onSubmit="return beforeSubmit(this);">
+                        <form  action="${pageContext.request.contextPath}/my-account/update-workerinfo" method="post" style="text-align: left"  name="form" onSubmit="return beforeSubmit(this);">
+                            <input type="hidden" name="workerId" value="${workerInfo.workerId}">
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >姓名：</h4><input type="text" name="name" placeholder="尚师傅"/>
+                                <h4 class="inline" >姓名：</h4><input type="text" name="name" value="${workerInfo.name}" placeholder="尚师傅"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >年龄：</h4><input type="number" name="age"  placeholder="20"/>
+                                <h4 class="inline" >年龄：</h4><input type="number" name="age" value="${workerProfile.age}" placeholder="20"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >工龄：</h4><input type="number" name="workingyears" placeholder="20"/>
+                                <h4 class="inline" >工龄：</h4><input type="number" name="jobYear" value="${workerInfo.jobYear}" placeholder="20"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >手机号：</h4><input type="tel"  name="tel" placeholder="13586859987"/>
+                                <h4 class="inline" >手机号：</h4><input type="tel"  name="tel" value="${workerInfo.tel}" placeholder="13586859987"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >出身工种：</h4><input type="text" name="originwork" placeholder="工长"/>
+                                <c:forTokens items="设计师,施工队,水电工,防水工,瓦工,木工,腻子工,集成吊顶,定制家具,石材安装,壁纸壁布,木门安装,
+ 油漆工,监理,卫浴洁具,灯饰灯具,窗帘安装,学徒工,搬运工,家政服务,租车送货,地板安装,a,a,瓷砖美缝,包立管,拆墙开槽,成品家具,a,a,集成墙板,a,橱柜安装,软包硬包,五金挂件,家具补漆,
+ 开荒保洁,厨卫电器,空调安装,新风系统,净水系统,安防系统,智能家居,玻璃安装,铁艺制作,更换窗纱,栏杆护栏,暖通设备,广告招牌,晾衣架,背景墙,硅藻泥,淋浴房,防盗门,防盗网,铝门窗,
+ 遮阳棚,阳光房,卷闸门,铜艺门,开锁解锁,水钻开孔,空调清洗,烟机清洗,甲醛治理" delims="," var="item" varStatus="status" >
+                                    <c:if test="${workerInfo.jobId==status.count}">
+                                        <h4 class="inline" >出身工种：</h4><input type="text" name="originwork" value="${item}" placeholder="工长" disabled/>
+                                    </c:if>
+                                </c:forTokens>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >综合评分：</h4><input type="number"  placeholder="" value="1.0" readonly/>
+                                <h4 class="inline" >综合评分：</h4><input type="overAllRating"  value="${workerInfo.overAllRating}" disabled/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >浏览量：</h4><input type="number"  placeholder="" value="158" readonly/>
+                                <h4 class="inline" >浏览量：</h4><input type="homePV"  placeholder="" value="${workerProfile.homePV}" disabled/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >星级：</h4><input type="number"  placeholder="2" value="2" readonly/>
+                                <h4 class="inline" >星级：</h4><input type="starEvaluated"  placeholder="2" value="${workerProfile.starEvaluated}" disabled/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >籍贯：</h4><input type="text" name="jiguan" placeholder="山西长治"/>
+                                <h4 class="inline" >籍贯：</h4><input type="text" name="address" placeholder="山西长治" value="${workerInfo.address}"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >擅长风格：</h4><input type="text" name="rstyle"  placeholder="田园，中式，欧式"/>
+                                <h4 class="inline" >擅长风格：</h4><input type="text" name="style"  placeholder="田园，中式，欧式" value="${workerInfo.style}"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >施工队人数：</h4><input type="number" name="number"  placeholder="2"/>
+                                <h4 class="inline" >施工队人数：</h4><input type="number" name="teamCount"  placeholder="2" value="${workerInfo.teamCount}"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >同时接单数：</h4><input type="number" name="singularNumber" placeholder="6"/>
+                                <h4 class="inline" >同时接单数：</h4><input type="number" name="ordersCount" placeholder="6" value="${workerInfo.ordersCount}"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >现工程地址：</h4><input type="text" name="address" placeholder="山西长治"/>
+                                <h4 class="inline" >施工状态：</h4><select name="state">
+                                <c:if test="${workerInfo.state==true}"><option value="true" selected="selected">施工中</option><option value="false" >可预约</option></c:if>
+                                <c:if test="${workerInfo.state==false}"><option value="false" selected="selected">可预约</option><option value="true" >施工中</option></c:if>
+                                </select>
                             </div>
-                            <div class="col-md-6 aas">
-                            <h4 class="inline" >施工状态：</h4><select name="construction-state">
-                            <option value="已完成">已完成</option><option value="可预约">可预约</option></select>
+                            <div class="col-md-6 aas" id="location">
+                                <h4 class="inline" >现工程地址：</h4><input type="text" name="location" placeholder="山西长治" value="${workerInfo.location}"/>
                             </div>
+
                             <div class="col-md-12 aas">
-                                <h4 class="inline" >团队描述：</h4> <textarea name="teamDescription" id="" cols="" rows="" placeholder="例如：古典文学常见论文一词，谓交谈辞章或交流思想。当代，论文常用来指进行各个学术领域的研究和描述学术研究成果的文章，简称之为论文。"></textarea>
+                                <h4 class="inline" >团队描述：</h4> <textarea name="teamDesc" id="" cols="" rows=""  placeholder="例如：古典文学常见论文一词，谓交谈辞章或交流思想。当代，论文常用来指进行各个学术领域的研究和描述学术研究成果的文章，简称之为论文。">${workerInfo.teamDesc}</textarea>
                             </div>
 
                             <input type="submit" value="提交" class="btn btn-success btn-lg btn-submit">
@@ -204,5 +231,94 @@
             return false;
         }
     }
+    function editloc(param) {
+        var $i = $(param);
+        flag = $($i).val();
+        $($($i).parent()).html("<div><div class='input-group'>" +
+            "<h3 style='font-size:14px;display:inline-block;width:35%;'>"+"现工程地址："+"</h3>"+
+            "<select class='select' id='provinces' name='province_code' onchange='getCitys()'>"+
+
+            "</select>"+
+
+            "<select class='select' id='citys' name='city_code' onchange='getAreas()'>"+
+            "</select>"+
+
+            "<select class='select' id='areas' name='area_code'>"+
+
+            "</select>" +
+            "<span class='floatr'><button type='button' class='btn btn-default' onclick='l()'>保存</button>" +
+            "</span>" +
+            "</div></div>");
+        $.ajax({
+            type: 'get',
+            url: "/worker-console/queryProvinceAll",
+            datatype: 'jsonp',
+            success: function (data) {
+                var result = eval('(' + data + ')');
+                for (var i = 0; i < result.length; i++) {
+                    $('#provinces').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
+                }
+            },
+            error: function () {
+                alert("加载省失败");
+            }
+        });
+    }
+    /*加载市下拉选*/
+    function getCitys() {
+        var id = $("#provinces").val();
+        $("#citys").empty();
+        $("#areas").empty();
+        $.ajax({
+            type: "post",
+            url: "/worker-console/queryCityByCode",
+            datatype: 'jsonp',
+            data: {"id": id},
+            success: function (data) {
+                var result = eval('(' + data + ')');
+                $('#citys').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
+                $('#areas').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
+                for (var i = 0; i < result.length; i++) {
+                    $('#citys').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
+                }
+            },
+            error: function () {
+                alert("加载市失败");
+            }
+        });
+    } ;
+    /*加载地区下拉选*/
+    function getAreas() {
+        var id = $("#citys").val();
+        $("#areas").empty();
+        $.ajax({
+            type: "post",
+            url: "/worker-console/queryAreaByCode",
+            datatype: 'jsonp',
+            data: {"id": id},
+            success: function (data) {
+                var result = eval('(' + data + ')');
+                $('#areas').append("<option value='' selected='selected' >" + '请选择' + "</option>");
+                for (var i = 0; i < result.length; i++) {
+                    $('#areas').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
+                }
+            },
+            error: function () {
+                alert("加载区失败");
+            }
+        });
+    };
+    function l() {
+        var procode=$('#provinces').find("option:selected").text();
+        var cityCode=$("#citys").find("option:selected").text();
+        var areaCode=$('#areas').find("option:selected").text();
+        var loc=procode+cityCode+areaCode;
+        $('#location').html("<h4 class='inline'>现工程地址：</h4>"+"<input type='text' name='location' onfocus='editloc(this)' readonly value="+loc+" />")
+    };
+    $(function(){
+        $("input[name='location']").focus(function(){
+            editloc(this);
+        })
+    })
 </script>
 </html>

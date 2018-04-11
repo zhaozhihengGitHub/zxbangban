@@ -12,7 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
@@ -23,7 +25,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/my-account")
-@SessionAttributes({"uid","headimg","unionid"})
+@SessionAttributes({"uid","headimg","unionid","workerProfile","worker"})
 public class MyAccountController {
 
     @Autowired
@@ -130,7 +132,8 @@ public class MyAccountController {
 
     @RequestMapping(value = "/profile-workerinfo")
     public String profile_workerInfo(@SessionAttribute("uid")String uid,HttpServletRequest httpServletRequest,Model model){
-        Object unionId =  httpServletRequest.getSession().getAttribute("unionid");
+        HttpSession httpSession = httpServletRequest.getSession();
+        Object unionId = httpSession.getAttribute("unionid");
         if(unionId == null){
            try {
                long workerId=1;
@@ -152,12 +155,36 @@ public class MyAccountController {
         return "/account/normal_profile_workinfo";
     }
 
+    @RequestMapping(value = "update-workerinfo")
+   public String updateWorkerInfo(long workerId,String name,Integer age,Integer jobYear,String tel,String address,String style,Integer teamCount,Integer ordersCount,Boolean state,String location,String teamDesc){
+       try {
+           WorkerInfo workerInfo=new WorkerInfo();
+           workerInfo.setWorkerId(workerId);
+           workerInfo.setJobYear(jobYear);
+           workerInfo.setName(name);
+           workerInfo.setTel(tel);
+           workerInfo.setAddress(address);
+           workerInfo.setStyle(style);
+           workerInfo.setTeamCount(teamCount);
+           workerInfo.setOrdersCount(ordersCount);
+           workerInfo.setTeamDesc(teamDesc);
+           workerInfo.setState(state);
+           workerInfo.setLocation(location);
+           workerInfoService.updateWorkerInfo(workerInfo);
+           workerProfileService.updateAge(workerId,age);
+           return "redirect:/my-account/profile-workerinfo";
+       }catch (Exception e){
+           e.printStackTrace();
+           return "/common/errorpage";
+       }
+    }
+
     @RequestMapping(value = "/editpassword")
     public String editPassword(@SessionAttribute("uid")String uid,@SessionAttribute("headimg")String headimg, Model model){
         model.addAttribute("uid",uid);
         model.addAttribute("headimg",headimg);
 
-        return "account/changepassword";
+        return "/account/changepassword";
     }
     @RequestMapping(value = "/editUserHeadimg")
     public String editUserHeadImg(@SessionAttribute("uid")String uid,@RequestParam("oldFile")String oldFile,@RequestParam("file")MultipartFile file){
