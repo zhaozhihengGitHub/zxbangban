@@ -167,4 +167,6 @@ public class WorkerInfoServiceImpl implements WorkerInfoService{
     public List<City> queryCityByProvinceCode(String code){return workerInfoDao.queryCityByProvinceCode(code);}
 
     public List<Town>  queryTownByCityCode(String code){return workerInfoDao.queryTownByCityCode(code);}
+
+    public  int updateWorkerInfo(WorkerInfo workerInfo ){return workerInfoDao.updateWorkerInfo(workerInfo);}
 }

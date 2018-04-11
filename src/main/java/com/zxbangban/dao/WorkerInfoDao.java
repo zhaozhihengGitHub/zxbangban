@@ -183,4 +183,6 @@ public interface WorkerInfoDao {
     List<City> queryCityByProvinceCode(@Param("provinceCode")String code);
 
     List<Town> queryTownByCityCode(@Param("cityCode")String code);
+
+    int updateWorkerInfo(WorkerInfo workerInfo );
 }

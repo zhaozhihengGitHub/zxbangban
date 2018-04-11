@@ -37,6 +37,20 @@
             text-align: center;
             background: rgba(0,0,0,.5);
             cursor: pointer;
+            font-style:normal;
+        }
+        .imgLen .xiaoqu{
+            position: absolute;
+            bottom:0;
+            left:0;
+            font-size:14px;
+            display: inline-block;
+            width:100%;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0,0,0,.5);
+            font-style:normal;
         }
         .imgLen img{
             width:100%;
@@ -72,14 +86,12 @@
         .ul_work_info ul li{
             overflow:hidden;
             border:1px solid #ccc;
-            /*border-right:1px solid #ccc;*/
             margin-top:-1px;
         }
         .ul_work_info ul li p {
             font-size:14px;
             padding:10px;
-            /*border-left: 1px solid #ccc;*/
-            /*border-bottom: 1px solid #ccc;*/
+            height:30px;
         }
         .jumbotron p{
             margin: 0;
@@ -141,53 +153,63 @@
             </div>
             <div class="col-md-10 col-sm-10  col-xs-12 column" style="padding:0;">
                 <div class="jumbotron" style="padding:0;">
-                    <div>
-                        <span>工作地址：${worker.location}</span>
-                        <button class='btn btn-link pull-right edit' type='button'
-                                onclick='editloc(this)' value="${worker.workerId}">编辑
-                        </button>
-                    </div>
                     <span style="margin-bottom: 5px;display: block;">工人信息:</span><br/>
                     <div class="row ul_work_info">
                         <ul>
                             <li>
-                                <p class="col-md-1 col-sm-3 col-xs-3">姓名</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">姓名：</p>
                                 <p class="col-md-2 col-sm-3 col-xs-3">${worker.name}</p>
-                                <p class="col-md-1 col-sm-3 col-xs-2">年龄</p>
+                                <p class="col-md-2 col-sm-3 col-xs-2">年龄：</p>
                                 <p class="col-md-1 col-sm-3 col-xs-4">${workerProfile.age}</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">工龄</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">工龄：</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${woeker.jobYear}</p>
-                                <p class="col-md-2 col-sm-2 col-xs-2">手机</p>
+                                <p class="col-md-2 col-sm-2 col-xs-2">手机：</p>
                                 <p class="col-md-2 col-sm-4 col-xs-4">${worker.tel}</p>
                             </li>
                             <li>
-                                <p class="col-md-1 col-sm-3 col-xs-3">工种</p>
-                                <p class="col-md-2 col-sm-3 col-xs-3">${worker.jobId}</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">综合评分</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">工种：</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">
+                                    <c:forTokens items="设计师,施工队,水电工,防水工,瓦工,木工,腻子工,集成吊顶,定制家具,石材安装,壁纸壁布,木门安装,
+ 油漆工,监理,卫浴洁具,灯饰灯具,窗帘安装,学徒工,搬运工,家政服务,租车送货,地板安装,a,a,瓷砖美缝,包立管,拆墙开槽,成品家具,a,a,集成墙板,a,橱柜安装,软包硬包,五金挂件,家具补漆,
+ 开荒保洁,厨卫电器,空调安装,新风系统,净水系统,安防系统,智能家居,玻璃安装,铁艺制作,更换窗纱,栏杆护栏,暖通设备,广告招牌,晾衣架,背景墙,硅藻泥,淋浴房,防盗门,防盗网,铝门窗,
+ 遮阳棚,阳光房,卷闸门,铜艺门,开锁解锁,水钻开孔,空调清洗,烟机清洗,甲醛治理" delims="," var="item" varStatus="status" >
+                                        <c:if test="${worker.jobId==status.count}">${item}</c:if>
+                                    </c:forTokens>
+                                </p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">综合评分</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${worker.overAllRating}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">浏览量</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${workerProfile.homePV}</p>
-                                <p class="col-md-2 col-sm-3 col-xs-3">星级</p>
-                                <p class="col-md-2 col-sm-3 col-xs-3">${workerProfile.starEvaluated}</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">星级：</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">${workerProfile.starEvaluated}星</p>
                             </li>
                             <li>
-                                <p class="col-md-2 col-sm-4 col-xs-4">施工队人数</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">施工队人数：</p>
                                 <p class="col-md-1 col-sm-2 col-xs-2">${worker.teamCount}</p>
-                                <p class="col-md-2 col-sm-4 col-xs-4">同时接单数</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">同时接单数：</p>
                                 <p class="col-md-2 col-sm-2 col-xs-2">${worker.ordersCount}</p>
-                                <p class="col-md-2 col-sm-4 col-xs-4">施工状态</p>
-                                <p class="col-md-1 col-sm-8 col-xs-8">${worker.state}</p>
+                                <p class="col-md-2 col-sm-4 col-xs-4">施工状态：</p>
+                                <p class="col-md-1 col-sm-8 col-xs-8">
+                                    <c:choose>
+                                        <c:when test="${worker.state == true}">
+                                                  施工中
+                                        </c:when>
+                                        <c:otherwise>
+                                                     可预约
+                                        </c:otherwise>
+                                    </c:choose>
+                                </p>
                             </li>
                             <li>
-                                <p class="col-md-1 col-sm-3 col-xs-4">籍贯</p>
-                                <p class="col-md-2 col-sm-9 col-xs-8"></p>
-                                <p class="col-md-1 col-sm-3 col-xs-4">擅长风格</p>
-                                <p class="col-md-3 col-sm-9 col-xs-8">${worker.style}</p>
-                                <p class="col-md-2 col-sm-3 col-xs-4">现工程地址</p>
-                                <p class="col-md-3 col-sm-9 col-xs-8">${worker.location}</p>
+                                <p class="col-md-2 col-sm-3 col-xs-4">籍贯：</p>
+                                <p class="col-md-4 col-sm-9 col-xs-8">${worker.address}</p>
+                                <p class="col-md-2 col-sm-3 col-xs-4">擅长风格：</p>
+                                <p class="col-md-4 col-sm-9 col-xs-8">${worker.style}</p>
+                                <p class="col-md-2 col-sm-3 col-xs-4">现工程地址：</p>
+                                <p class="col-md-4 col-sm-9 col-xs-8">${worker.location}</p>
                             </li>
                         </ul>
-                        <span style="display: block;">团队描述:</span>
+                        <span style="display: block;">团队描述：</span>
                         <textarea class="team_intro" name="" id="" readonly>${worker.teamDesc} </textarea>
                         <a href="${pageContext.request.contextPath}/account-support/modify"><span style="font-size: 20px" class="btn btn-info">修改</span></a>
                     </div>
@@ -216,11 +238,11 @@
                         </dl>
                         <a href="${pageContext.request.contextPath}/worker-console/addDec?wid=${worker.workerId}"   ><span style="font-size: 20px" class="btn btn-info">添加</span></a>
                     </div>
-                    <h2 style="margin-bottom: 0">工程图片:</h2>
+                    <h2 style="margin-bottom:10px;font-size:14px;">工程图片:</h2>
                     <c:choose>
                         <c:when test="${empty worker.projectImgUrl}">
-                            <span style="font-size: 40px;border: 1px;height: auto;width: auto">暂无</span> <br>
-                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"><span style="font-size: 20px">上传图片</span></a>
+                            <p style="font-size: 14px;border: 1px;height: auto;width: auto;margin:10px 0;">暂无</p>
+                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"><span style="font-size: 14px">上传图片</span></a>
                         </c:when>
                         <c:otherwise>
                             <div class="row"  id="imgLen">
@@ -229,13 +251,14 @@
                                         <div class="col-md-4 column imgLen"  >
                                             <span>
                                                 <em class='remove'>删除图片</em>
+                                                 <em class='xiaoqu'>小区</em>
                                                 <img src="${workerImg}" class='img-responsive' id="${count.index}"/>
                                             </span>
                                         </div>
                                     </c:if>
                                 </c:forEach>
                             </div>
-                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"   ><span  class="btn maxLen btn-primary" style="font-size: 20px">上传图片</span></a>
+                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"><span  class="btn maxLen btn-primary" style="font-size: 20px">上传图片</span></a>
                         </c:otherwise>
                     </c:choose>
                 </div>
@@ -294,110 +317,7 @@
                 }
             }
         })
-    });
-    function editloc(param) {
-        var $i = $(param);
-        flag = $($i).val();
-        $($($i).parent()).html("<div><div class='input-group'>" +
-            "<font size='6'>"+"工作地址："+"</font>"+
-            "<select class='select' id='provinces' name='province_code' onchange='getCitys()'>"+
-
-            "</select>"+
-
-            "<select class='select' id='citys' name='city_code' onchange='getAreas()'>"+
-            "</select>"+
-
-            "<select class='select' id='areas' name='area_code'>"+
-
-            "</select>" +
-            "<span><button type='button' class='btn btn-default' onclick='l()'>保存</button>" +
-            "</span>" +
-            "</div></div>");
-        $.ajax({
-            type: 'get',
-            url: "/worker-console/queryProvinceAll",
-            datatype: 'jsonp',
-            success: function (data) {
-                var result = eval('(' + data + ')');
-                for (var i = 0; i < result.length; i++) {
-                    $('#provinces').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
-                }
-            },
-            error: function () {
-                alert("加载省失败");
-            }
-        });
-    }
-    /*加载市下拉选*/
-    function getCitys() {
-        var id = $("#provinces").val();
-        $("#citys").empty();
-        $("#areas").empty();
-        $.ajax({
-            type: "post",
-            url: "/worker-console/queryCityByCode",
-            datatype: 'jsonp',
-            data: {"id": id},
-            success: function (data) {
-                var result = eval('(' + data + ')');
-                $('#citys').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
-                $('#areas').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
-                for (var i = 0; i < result.length; i++) {
-                    $('#citys').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
-                }
-            },
-            error: function () {
-                alert("加载市失败");
-            }
-        });
-    } ;
-    /*加载地区下拉选*/
-    function getAreas() {
-        var id = $("#citys").val();
-        $("#areas").empty();
-        $.ajax({
-            type: "post",
-            url: "/worker-console/queryAreaByCode",
-            datatype: 'jsonp',
-            data: {"id": id},
-            success: function (data) {
-                var result = eval('(' + data + ')');
-                $('#areas').append("<option value='' selected='selected' >" + '请选择' + "</option>");
-                for (var i = 0; i < result.length; i++) {
-                    $('#areas').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
-                }
-            },
-            error: function () {
-                alert("加载区失败");
-            }
-        });
-    };
-    function l() {
-        var procode=$('#provinces').find("option:selected").text();
-        var cityCode=$("#citys").find("option:selected").text();
-        var areaCode=$('#areas').find("option:selected").text();
-        var loc=procode+cityCode+areaCode;
-        $.ajax({
-            url: "/worker-console/edit-location",
-            data: {
-                "wid": flag,
-                "location":loc
-            },
-            type: "post",
-            success: function (result) {
-                if (result !== null && result === "1") {
-                    alert("修改成功");
-                } else {
-                    alert("修改失败");
-                }
-                location.reload();
-            },
-            error: function (xhr) {
-                alert(xhr.state() + " " + xhr.statusText);
-            }
-        });
-
-    };
+    })
 </script>
 </html>
 

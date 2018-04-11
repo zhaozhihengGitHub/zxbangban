@@ -88,4 +88,6 @@ public interface WorkerInfoService {
     List<City> queryCityByProvinceCode(String code);
 
     List<Town> queryTownByCityCode(String code);
+
+    int updateWorkerInfo(WorkerInfo workerInfo );
 }

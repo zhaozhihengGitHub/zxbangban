@@ -75,4 +75,10 @@
     <delete id="deleteWorkerProfile" parameterType="long">
         DELETE FROM worker_profile WHERE workerid = #{workerid}
     </delete>
+
+    <update id="updateAge">
+        UPDATE worker_profile
+        SET `age` = #{age}
+         WHERE `workerid` = #{workerid}
+    </update>
 </mapper>

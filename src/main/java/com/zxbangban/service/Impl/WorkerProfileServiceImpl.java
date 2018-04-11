@@ -60,4 +60,6 @@ public class WorkerProfileServiceImpl implements WorkerProfileService{
     public int deleteWorkerProfile(long workerId) {
         return workerProfileDao.deleteWorkerProfile(workerId);
     }
+
+    public  int  updateAge(long workerid,Integer age){return workerProfileDao.updateAge(workerid,age);};
 }
