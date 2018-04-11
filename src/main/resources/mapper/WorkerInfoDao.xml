@@ -61,6 +61,7 @@
         w.tel,
         w.state,
         w.project_des,
+        w.`project_img_url`,
         w.authenticated,
         w.certificated,
         w.location,
@@ -289,6 +290,7 @@
         w.tel,
         w.state,
         w.project_des,
+        w.`project_img_url`,
         w.authenticated,
         w.certificated,
         w.location,
@@ -358,7 +360,7 @@
         WHERE cityCode = #{cityCode}
     </select>
 
-    <update id="updateWorkerInfo" parameterType="WorkerInfo">
+    <update id="updateWorkerInfo    " parameterType="WorkerInfo">
         UPDATE workerinfo
         set `name`= #{name},
             jobYear = #{jobYear},
