@@ -33,4 +33,6 @@ public interface WorkerProfileService {
 
     int deleteWorkerProfile(long workerId);
 
+    int updateAge(long workerid, Integer age);
+
 }
