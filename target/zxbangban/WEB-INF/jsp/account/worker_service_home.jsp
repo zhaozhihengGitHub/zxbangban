@@ -538,14 +538,14 @@
         var $y = $x.html();
         flag = $($i).val();
         $($($i).parent()).html("<div class=''><div class='input-group'>" +
-            "<select class='select' id='province_code' name='province_code' onchange='getCity()'>"+
+            "<select class='select' id='provincecode' name='province_code' onchange='getCity()'>"+
 
             "</select>"+
 
-            "<select class='select' id='city_code' name='city_code' onchange='getArea()'>"+
+            "<select class='select' id='citycode' name='city_code' onchange='getArea()'>"+
             "</select>"+
 
-            "<select class='select' id='area_code' name='area_code'>"+
+            "<select class='select' id='areacode' name='area_code'>"+
 
             "</select>" +
             "<span class='input-group-btn'><button type='button' class='btn btn-default' onclick='l()'>保存</button>" +
@@ -558,7 +558,7 @@
             success: function (data) {
                 var result = eval('(' + data + ')');
                 for (var i = 0; i < result.length; i++) {
-                    $('#province_code').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
+                    $('#provincecode').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
                 }
             },
             error: function () {
@@ -568,9 +568,9 @@
     }
     /*加载市下拉选*/
     function getCity() {
-        var id = $("#province_code").val();
-        $("#city_code").empty();
-        $("#area_code").empty();
+        var id = $("#provincecode").val();
+        $("#citycode").empty();
+        $("#areacode").empty();
         $.ajax({
             type: "post",
             url: "/worker-console/queryCityByCode",
@@ -578,10 +578,10 @@
             data: {"id": id},
             success: function (data) {
                 var result = eval('(' + data + ')');
-                $('#city_code').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
-                $('#area_code').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
+                $('#citycode').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
+                $('#areacode').append("<option value='' selected='selected' >" + '--请选择--' + "</option>");
                 for (var i = 0; i < result.length; i++) {
-                    $('#city_code').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
+                    $('#citycode').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
                 }
             },
             error: function () {
@@ -591,8 +591,8 @@
     } ;
     /*加载地区下拉选*/
     function getArea() {
-        var id = $("#city_code").val();
-        $("#area_code").empty();
+        var id = $("#citycode").val();
+        $("#areacode").empty();
         $.ajax({
             type: "post",
             url: "/worker-console/queryAreaByCode",
@@ -600,9 +600,9 @@
             data: {"id": id},
             success: function (data) {
                 var result = eval('(' + data + ')');
-                $('#area_code').append("<option value='' selected='selected' >" + '请选择' + "</option>");
+                $('#areacode').append("<option value='' selected='selected' >" + '请选择' + "</option>");
                 for (var i = 0; i < result.length; i++) {
-                    $('#area_code').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
+                    $('#areacode').append("<option value='" + result[i].code + "' >" + result[i].name + "</option>");
                 }
             },
             error: function () {
