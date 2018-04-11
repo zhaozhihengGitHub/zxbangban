@@ -360,7 +360,7 @@
         WHERE cityCode = #{cityCode}
     </select>
 
-    <update id="updateWorkerInfo    " parameterType="WorkerInfo">
+    <update id="updateWorkerInfo" parameterType="WorkerInfo">
         UPDATE workerinfo
         set `name`= #{name},
             jobYear = #{jobYear},
