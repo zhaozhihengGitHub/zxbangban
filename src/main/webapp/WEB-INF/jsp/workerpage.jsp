@@ -64,6 +64,20 @@
         .panel>.panel-body{
             text-align: inherit;
         }
+        .xiaoqu{
+            position: absolute;
+            top:0;
+            left:0;
+            font-size:20px;
+            color:#fff;
+            width:95%;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0,0,0,.5);
+            font-style:normal;
+            margin-left:2%;
+        }
         .aaaa{
             width: 100%;
             height: 42px;

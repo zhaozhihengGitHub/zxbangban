@@ -87,7 +87,20 @@
             text-align: center;
             background: rgba(0,0,0,.5);
             cursor: pointer;
-
+            font-style:normal;
+        }
+        .ddd span .xiaoqu{
+            position: absolute;
+            bottom:0;
+            left:0;
+            font-size:14px;
+            display: inline-block;
+            width:100%;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0,0,0,.5);
+            font-style:normal;
         }
         @media screen and (max-width: 768px) {
             .jumbotron{
@@ -147,7 +160,7 @@
         reader.readAsDataURL(fil);
         reader.onload = function()
         {
-            document.getElementById("dd").innerHTML += "<span><em class='remove'>删除图片</em><img src='"+reader.result+"'></span>";
+            document.getElementById("dd").innerHTML += "<span><em class='remove'>删除图片</em><em class='xiaoqu'>小区</em><img src='"+reader.result+"'></span>";
             $('.remove').click(function(){
                 $(this).parent().remove();
             })

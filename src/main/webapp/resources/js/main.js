@@ -149,7 +149,7 @@ var homepagestate = {
                                 if (result[i].length ===0) {
                                     continue;
                                 }
-                                $temp += "<div class='col-md-4 column'><img src='" + result[i] + "' class='img-responsive'/> </div>";
+                                $temp += "<div class='col-md-4 column' style='position:relative;'><p class='xiaoqu'>小区</p><img src='" + result[i] + "' class='img-responsive'/> </div>";
                             }
                             var $text = "<div class='row clearfix'>" + $temp + "</div>";
                            // $orders.html("<h1>data.projectDes</h1>");

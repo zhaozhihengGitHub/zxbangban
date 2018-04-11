@@ -37,6 +37,20 @@
             text-align: center;
             background: rgba(0,0,0,.5);
             cursor: pointer;
+            font-style:normal;
+        }
+        .imgLen .xiaoqu{
+            position: absolute;
+            bottom:0;
+            left:0;
+            font-size:14px;
+            display: inline-block;
+            width:100%;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0,0,0,.5);
+            font-style:normal;
         }
         .imgLen img{
             width:100%;
@@ -145,7 +159,7 @@
                             <li>
                                 <p class="col-md-1 col-sm-3 col-xs-3">姓名：</p>
                                 <p class="col-md-2 col-sm-3 col-xs-3">${worker.name}</p>
-                                <p class="col-md-1 col-sm-3 col-xs-2">年龄：</p>
+                                <p class="col-md-2 col-sm-3 col-xs-2">年龄：</p>
                                 <p class="col-md-1 col-sm-3 col-xs-4">${workerProfile.age}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">工龄：</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${woeker.jobYear}</p>
@@ -162,9 +176,9 @@
                                         <c:if test="${worker.jobId==status.count}">${item}</c:if>
                                     </c:forTokens>
                                 </p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">综合评分：</p>
+                                <p class="col-md-2 col-sm-3 col-xs-3">综合评分</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${worker.overAllRating}</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">浏览量：</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">浏览量</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${workerProfile.homePV}</p>
                                 <p class="col-md-2 col-sm-3 col-xs-3">星级：</p>
                                 <p class="col-md-2 col-sm-3 col-xs-3">${workerProfile.starEvaluated}星</p>
@@ -224,11 +238,11 @@
                         </dl>
                         <a href="${pageContext.request.contextPath}/worker-console/addDec?wid=${worker.workerId}"   ><span style="font-size: 20px" class="btn btn-info">添加</span></a>
                     </div>
-                    <h2 style="margin-bottom: 0">工程图片:</h2>
+                    <h2 style="margin-bottom:10px;font-size:14px;">工程图片:</h2>
                     <c:choose>
                         <c:when test="${empty worker.projectImgUrl}">
-                            <span style="font-size: 40px;border: 1px;height: auto;width: auto">暂无</span> <br>
-                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"><span style="font-size: 20px">上传图片</span></a>
+                            <p style="font-size: 14px;border: 1px;height: auto;width: auto;margin:10px 0;">暂无</p>
+                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"><span style="font-size: 14px">上传图片</span></a>
                         </c:when>
                         <c:otherwise>
                             <div class="row"  id="imgLen">
@@ -237,13 +251,14 @@
                                         <div class="col-md-4 column imgLen"  >
                                             <span>
                                                 <em class='remove'>删除图片</em>
+                                                 <em class='xiaoqu'>小区</em>
                                                 <img src="${workerImg}" class='img-responsive' id="${count.index}"/>
                                             </span>
                                         </div>
                                     </c:if>
                                 </c:forEach>
                             </div>
-                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"   ><span  class="btn maxLen btn-primary" style="font-size: 20px">上传图片</span></a>
+                            <a href="${pageContext.request.contextPath}/worker-console/uploadpic?wid=${worker.workerId}"><span  class="btn maxLen btn-primary" style="font-size: 20px">上传图片</span></a>
                         </c:otherwise>
                     </c:choose>
                 </div>
