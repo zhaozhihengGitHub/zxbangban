@@ -162,7 +162,7 @@
                                 <p class="col-md-2 col-sm-3 col-xs-2">年龄：</p>
                                 <p class="col-md-1 col-sm-3 col-xs-4">${workerProfile.age}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">工龄：</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">${woeker.jobYear}</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">${worker.jobYear}</p>
                                 <p class="col-md-2 col-sm-2 col-xs-2">手机：</p>
                                 <p class="col-md-2 col-sm-4 col-xs-4">${worker.tel}</p>
                             </li>
@@ -176,6 +176,7 @@
                                         <c:if test="${worker.jobId==status.count}">${item}</c:if>
                                     </c:forTokens>
                                 </p>
+
                                 <p class="col-md-2 col-sm-3 col-xs-3">综合评分</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${worker.overAllRating}</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">浏览量</p>
