@@ -162,9 +162,9 @@
                                         <c:if test="${worker.jobId==status.count}">${item}</c:if>
                                     </c:forTokens>
                                 </p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">综合评分：</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">综合评分</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${worker.overAllRating}</p>
-                                <p class="col-md-1 col-sm-3 col-xs-3">浏览量：</p>
+                                <p class="col-md-1 col-sm-3 col-xs-3">浏览量</p>
                                 <p class="col-md-1 col-sm-3 col-xs-3">${workerProfile.homePV}</p>
                                 <p class="col-md-2 col-sm-3 col-xs-3">星级：</p>
                                 <p class="col-md-2 col-sm-3 col-xs-3">${workerProfile.starEvaluated}星</p>
