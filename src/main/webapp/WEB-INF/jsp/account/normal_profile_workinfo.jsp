@@ -43,7 +43,7 @@
             position: absolute;
             bottom:0;
             left:0;
-            font-size:14px;
+            font-size:18px;
             display: inline-block;
             width:100%;
             height:30px;
@@ -51,6 +51,7 @@
             text-align: center;
             background: rgba(0,0,0,.5);
             font-style:normal;
+            color:#fff;
         }
         .imgLen img{
             width:100%;
@@ -252,8 +253,8 @@
                                         <div class="col-md-4 column imgLen"  >
                                             <span>
                                                 <em class='remove'>删除图片</em>
-                                                 <em class='xiaoqu'>小区</em>
                                                 <img src="${workerImg}" class='img-responsive' id="${count.index}"/>
+                                                <p class='xiaoqu'>小区</p>
                                             </span>
                                         </div>
                                     </c:if>
