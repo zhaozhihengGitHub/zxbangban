@@ -66,7 +66,7 @@
         }
         .xiaoqu{
             position: absolute;
-            top:0;
+            bottom:0;
             left:0;
             font-size:20px;
             color:#fff;
@@ -92,6 +92,9 @@
             color:#fff ;
         }
         @media screen and (max-width:660px){
+            .sm_ov .sm_dt{
+                width:190%;
+            }
             .sm_dt dt{
                 font-size:14px;
             }
@@ -327,19 +330,19 @@
                             业主预约信息:
                         </h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body sm_ov">
                         <dl class="row sm_dt" >
-                            <dt class="col-md-3 col-xs-2  col-sm-2" >业主</dt>
-                            <dt class="col-md-3 col-xs-2 col-sm-2">小区</dt>
+                            <dt class="col-md-2 col-xs-2  col-sm-2" >业主</dt>
+                            <dt class="col-md-4 col-xs-4 col-sm-4">小区</dt>
                             <dt class="col-md-3 col-xs-3 col-sm-3">手机号</dt>
-                            <dt class="col-md-3 col-xs-5 col-sm-5">时间</dt>
+                            <dt class="col-md-3 col-xs-3 col-sm-3">时间</dt>
 
                             <c:forEach var="customer" items="${customers}">
                                 <c:set var="cust" scope="page" value="${customers}"></c:set>
-                                <dd class="col-md-3 col-xs-2  col-sm-2">${customer.name}</dd>
-                                <dd class="col-md-3 col-xs-2  col-sm-2">${customer.programAddress}</dd>
+                                <dd class="col-md-2 col-xs-2  col-sm-2">${customer.name}</dd>
+                                <dd class="col-md-4 col-xs-4  col-sm-4">${customer.programAddress}</dd>
                                 <dd class="col-md-3 col-xs-3  col-sm-3" class="telphone">${customer.telphone.substring(0,3)}****${customer.telphone.substring(7,11)}</dd>
-                                <dd class="col-md-3 col-xs-5  col-sm-5">${customer.createTime.toLocaleString()}</dd>
+                                <dd class="col-md-3 col-xs-3  col-sm-3">${customer.createTime.toLocaleString()}</dd>
                             </c:forEach>
                         </dl>
                     </div>
@@ -359,10 +362,10 @@
                         <dl class="row sm_sc" >
                             <dt class="col-md-2 col-sm-2 col-xs-2">小区</dt>
                             <dt class="col-md-2 col-sm-2 col-xs-2">面积</dt>
-                            <dt class="col-md-2 col-sm-2 col-xs-1">报价</dt>
+                            <dt class="col-md-2 col-sm-2 col-xs-2">报价</dt>
                             <dt class="col-md-2 col-sm-2 col-xs-2">施工方式</dt>
                             <dt class="col-md-2 col-sm-2 col-xs-2">当前状态</dt>
-                            <dt class="col-md-2 col-sm-2 col-xs-3">时间</dt>
+                            <dt class="col-md-2 col-sm-2 col-xs-2">时间</dt>
                             <c:set var="workerDes" value="${workerinfo.projectDes.split(';')}"></c:set>
                             <c:forEach var="info"  items="${workerDes}">
                                 <dd class="col-md-2 col-sm-2 col-xs-2">${info}</dd>
@@ -403,9 +406,9 @@
             homepagestate.detail.c($wid);
         },3000);
         $("[data-toggle='tooltip']").tooltip();
-        $(".sm_sc dd:nth-child(2n)").attr("class","col-xs-2");
+        /*$(".sm_sc dd:nth-child(2n)").attr("class","col-xs-2");
         $(".sm_sc dd:nth-child(3n)").attr("class","col-xs-1");
-        $(".sm_sc dd:nth-child(6n)").attr("class","col-xs-3");
+        $(".sm_sc dd:nth-child(6n)").attr("class","col-xs-3");*/
     });
     $("#tellNum").click(function(){
         $("#mess").toggleClass("show");
