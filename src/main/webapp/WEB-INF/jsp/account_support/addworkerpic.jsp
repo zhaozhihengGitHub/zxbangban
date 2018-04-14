@@ -167,7 +167,7 @@
         reader.readAsDataURL(fil);
         reader.onload = function()
         {
-            document.getElementById("dd").innerHTML += "<span><em class='remove'>删除图片</em><img src='"+reader.result+"'><p class='xiaoqu'>小区<input type='text'/></p></span>";
+            document.getElementById("dd").innerHTML += "<span><em class='remove'>删除图片</em><img src='"+reader.result+"'><p class='xiaoqu'>小区<input type='text' name='imgName'/></p></span>";
             $('.remove').click(function(){
                 $(this).parent().remove();
             })

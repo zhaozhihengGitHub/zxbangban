@@ -57,7 +57,7 @@
             width:100%;
         }
         dd,dt{
-           font-weight: normal;
+            font-weight: normal;
         }
         dl{
             border: 1px solid #ccc;
@@ -147,7 +147,7 @@
             <div class="col-md-2 col-sm-2 col-xs-12 column">
                 <div class="jumbotron" style="padding-left: 0;padding-right: 0px">
                     <h2><img src="${worker.headImgUrl}" class="img-circle img-responsive headimg"/></h2>
-                        <span class="text-center">
+                    <span class="text-center">
                                 <button type="button" class="btn btn-link" onclick="ei(this)" value="${worker.workerId}">修改头像</button>
                             </span>
                 </div>
@@ -194,10 +194,10 @@
                                 <p class="col-md-1 col-sm-8 col-xs-8">
                                     <c:choose>
                                         <c:when test="${worker.state == true}">
-                                                  施工中
+                                            施工中
                                         </c:when>
                                         <c:otherwise>
-                                                     可预约
+                                            可预约
                                         </c:otherwise>
                                     </c:choose>
                                 </p>
@@ -250,11 +250,31 @@
                             <div class="row"  id="imgLen">
                                 <c:forEach items="${worker.projectImgUrl.split(';')}" var="workerImg" varStatus="count">
                                     <c:if test="${not empty workerImg}">
+
                                         <div class="col-md-4 column imgLen"  >
                                             <span>
+                                                <c:choose>
+                                                    <c:when test="${workerImg.contains('https://zxbangban.oss-cn-beijing.aliyuncs.com/')}" >
+                                                        <em class='remove'>删除图片</em>
+                                                        <img src="${workerImg}" class='img-responsive' id="${workerImg}"/>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:set var="imgUrl" value="${fn:substringBefore(workerImg,'-' )}"/>
+                                                        <c:set var="imgNames" value="${fn:substringAfter(workerImg,'-' )}"/>
+                                                        <em class='remove'>删除图片</em>
+                                                        <img src='https://zxbangban.oss-cn-beijing.aliyuncs.com/${imgUrl}?x-oss-process=style/Cut_picture' class='img-responsive' id="${workerImg}"/>
+                                                        <p class='xiaoqu'>${imgNames}</p>
+
+                                                    </c:otherwise>
+                                                </c:choose>
+                                               <%-- <c:if test="${workerImg.contains('https://zxbangban.oss-cn-beijing.aliyuncs.com/')}" >
                                                 <em class='remove'>删除图片</em>
                                                 <img src="${workerImg}" class='img-responsive' id="${count.index}"/>
-                                                <p class='xiaoqu'>小区</p>
+                                                </c:if>
+                                                <c:if test="${workerImg}"
+                                                <em class='remove'>删除图片</em>
+                                                <img src="${workerImg}" class='img-responsive' id="${count.index}"/>
+                                                <p class='xiaoqu'>小区</p>--%>
                                             </span>
                                         </div>
                                     </c:if>
@@ -277,9 +297,9 @@
 <script type="text/javascript">
 
     function  editProject(param) {
-       var id= param.parentNode.id;
-       var eles=document.getElementsByName(id);
-       var  str = "";
+        var id= param.parentNode.id;
+        var eles=document.getElementsByName(id);
+        var  str = "";
         for(i=0;i<eles.length;i++){
             str += eles[i].innerHTML + ";";
         }
@@ -303,13 +323,14 @@
     }
     $('.remove').css("color","#fff");
     $('.remove').click(function(){
-        var index = $(this).siblings().attr("id");
+        var fileName = $(this).siblings().attr("id");
+        /*alert(index);
         var fileName = document.getElementById(index).src;
-        console.log(fileName);
+        console.log(fileName);*/
         $.ajax({
             url:"${pageContext.request.contextPath}/worker-console/deletepic",
-            type:"GET",
-            data:{wid:${worker.workerId},fileName:fileName},
+            type:"POST",
+            data:{wid:${worker.workerId},fileName:';'+fileName},
             dataType:"json",
             success:function (receive) {
                 if(receive == 1){
