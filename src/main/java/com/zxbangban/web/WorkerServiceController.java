@@ -347,7 +347,7 @@ public class WorkerServiceController {
        * 工人上传图片
        * */
     @RequestMapping(value = "/wid={wid}/upload-programimg",method = RequestMethod.POST,produces = "text/html;charset=utf8")
-    public String uploadProgramImg(@PathVariable("wid") long wid, @RequestParam MultipartFile[] files){
+    public String uploadProgramImg(@PathVariable("wid") long wid, @RequestParam MultipartFile[] files,@RequestParam("imgName") String imgName){
         try{
         WorkerInfo workerInfo = workerInfoService.queryDetailByWorkerId(wid);
         String imgUrl = workerInfo.getProjectImgUrl();
@@ -358,7 +358,7 @@ public class WorkerServiceController {
         stringBuilder = new StringBuilder(imgUrl);
         for(MultipartFile item : files){
             String name = aliyunOSService.updateProjectImages(wid,item);
-            String url = "https://zxbangban.oss-cn-beijing.aliyuncs.com/" + name + "?x-oss-process=style/Cut_picture";
+            String url =name+"-"+imgName;
             stringBuilder.append(";").append(url);
         }
         int result = workerInfoService.editPorjectImg(wid,stringBuilder.toString());
@@ -371,15 +371,18 @@ public class WorkerServiceController {
     /*
        * 跳转至工人删除图片页面
        * */
-    @RequestMapping(value = "deletepic",method = RequestMethod.GET)
+    @RequestMapping(value = "deletepic",method = RequestMethod.POST)
     @ResponseBody
     public String deletePic(@RequestParam String fileName,@RequestParam long wid){
         try{
+            System.out.println(fileName);
             WorkerInfo workerInfo=workerInfoService.queryDetailByWorkerId(wid);
             String projectImg=workerInfo.getProjectImgUrl().replace(fileName,"");
             workerInfoService.updateProjectImg(wid,projectImg);
-            String fName=fileName.replace(";https://zxbangban.oss-cn-beijing.aliyuncs.com/","").replace("?x-oss-process=style/Cut_picture","");
-            aliyunOSService.deleteProjectImage(fName);
+            if (fileName.contains("https://zxbangban.oss-cn-beijing.aliyuncs.com/")) {
+                fileName = fileName.replace(";https://zxbangban.oss-cn-beijing.aliyuncs.com/", "").replace("?x-oss-process=style/Cut_picture", "");
+            }
+            aliyunOSService.deleteProjectImage(fileName);
             return "1";
         }catch (Exception e){
             return "0";
