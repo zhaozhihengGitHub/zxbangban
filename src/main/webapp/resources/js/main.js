@@ -132,7 +132,6 @@ var homepagestate = {
             }
         },
         c: function (param) {
-            //var $orders = $("#project");
             var $orderImg = $("#projectimg");
             if (param.length > 0) {
                 $.ajax({
@@ -148,14 +147,18 @@ var homepagestate = {
                             for (var i = 0; i < result.length; i++) {
                                 if (result[i].length ===0) {
                                     continue;
+                                }else {
+                                    if (result[i].indexOf("https://zxbangban.oss-cn-beijing.aliyuncs.com/") ==-1) {
+                                        var arr = result[i].split("-");
+                                        $temp += "<div class='col-md-4 column' style='position:relative;'><img src='https://zxbangban.oss-cn-beijing.aliyuncs.com/" + arr[0] + "?x-oss-process=style/Cut_picture' class='img-responsive'/><p class='xiaoqu'>" + arr[1] + "</p></div>";
+                                       } else {
+                                        $temp += "<div class='col-md-4 column' style='position:relative;'><img src='" +result[i]+ "' class='img-responsive'/><p class='xiaoqu'></p></div>";
+                                    }
                                 }
-                                $temp += "<div class='col-md-4 column' style='position:relative;'><p class='xiaoqu'>小区</p><img src='" + result[i] + "' class='img-responsive'/> </div>";
-                            }
+                          }
                             var $text = "<div class='row clearfix'>" + $temp + "</div>";
-                           // $orders.html("<h1>data.projectDes</h1>");
                             $orderImg.html($text);
                         } else {
-                            //$orders.html("<h1>暂无数据。</h1>");
                             $orderImg.html("<h1>暂无数据</h1>");
                         }
                     },
