@@ -148,8 +148,8 @@
                 <div class="jumbotron" style="padding-left: 0;padding-right: 0px">
                     <h2><img src="${worker.headImgUrl}" class="img-circle img-responsive headimg"/></h2>
                     <span class="text-center">
-                                <button type="button" class="btn btn-link" onclick="ei(this)" value="${worker.workerId}">修改头像</button>
-                            </span>
+                         <button type="button" class="btn btn-link" onclick="ei(this)" value="${worker.workerId}">修改头像</button>
+                    </span>
                 </div>
             </div>
             <div class="col-md-10 col-sm-10  col-xs-12 column" style="padding:0;">
@@ -295,6 +295,19 @@
 </body>
 <%@include file="../common/script.jsp" %>
 <script type="text/javascript">
+
+    function ei(param) {
+        var $i = $(param);
+        var $flag = $($i).val();
+        $($($i).parent()).html("<div class=''>" +
+            "<form class='form' enctype='multipart/form-data' action='/my-account/editheadimg' method='post'>" +
+            "<input type='hidden' class='form-control' name='oldFile' value='${worker.headImgUrl}'>" +
+            "<div class='input-group'>" +
+            "<input type='file' class='form-control' name='file'>" +
+            "<span class='input-group-btn'><button type='submit' class='btn btn-default'>保存</button>" +
+            "</span>" +
+            "</div></form></div>");
+    }
 
     function  editProject(param) {
         var id= param.parentNode.id;

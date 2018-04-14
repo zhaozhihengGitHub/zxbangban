@@ -215,7 +215,6 @@ public class MyAccountController {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-
         return "redirect:/my-account/profile-workerinfo";
     }
     @RequestMapping(value = "/updatepassword",method = RequestMethod.POST)
