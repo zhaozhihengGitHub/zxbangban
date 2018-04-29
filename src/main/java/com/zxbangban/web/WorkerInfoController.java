@@ -2,6 +2,7 @@ package com.zxbangban.web;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mysql.cj.api.Session;
 import com.zxbangban.entity.*;
 import com.zxbangban.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +36,9 @@ public class WorkerInfoController {
 
     @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    private CommentService commentService;
 
     @RequestMapping(value = "/category")
     public String category(){
@@ -99,15 +104,17 @@ public class WorkerInfoController {
                 return "signin";
             }
         }
+        request.getSession().setAttribute("workerId",workerid);
         WorkerInfo workerInfo = workerInfoService.queryWorkerByWorkerId(workerid);
         WorkerProfile workerProfile = workerProfileService.queryByWorkerId(workerid);
-
+        List<Comment> comments=commentService.queryCommentByWid(workerid);
         if(workerInfo != null){
             String notes="预约[工号:" + workerid + ";姓名:"+workerInfo.getName() + "]";
             List<Customer> customers=customerService.queryByNotes(notes);
             model.addAttribute("customers",customers);
             model.addAttribute("workerinfo",workerInfo);
             model.addAttribute("workerProfile",workerProfile);
+            model.addAttribute("comments",comments);
             if(workerInfo.getJobId()==2){
                 return "workerpage";
             }else {

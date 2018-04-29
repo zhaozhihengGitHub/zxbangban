@@ -1,0 +1,25 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxbangban.dao.CommentDao">
+    <insert id="newComment" parameterType="Comment">
+        INSERT INTO comment(workerId,username,headImg,contents,time,commentType,commentId)
+        VALUES (#{comment.workerId},#{comment.username},#{comment.headImg},#{comment.contents},#{comment.time},#{comment.commentType},
+        #{comment.commentId})
+    </insert>
+
+    <select id="queryAllComment" resultType="Comment">
+        SELECT workerId,username,headImg,contents,time,commentType,commentId
+        FROM comment   ORDER BY  commentId
+    </select>
+
+    <select id="queryCommentByWid" resultType="Comment" parameterType="long">
+        SELECT id,workerId,username,headImg,contents,time,commentType,commentId
+        FROM comment where  workerId = #{workerId} ORDER BY  commentId ,time ;
+    </select>
+
+<!--    <select id="queryReplyByWid" resultType="Comment" parameterType="long">
+        SELECT workerId,username,contents,time,commentType,commentId
+        FROM comment where  workerId = #{workerId} AND  commentType=FALSE ORDER BY  commentId
+    </select>-->
+</mapper>

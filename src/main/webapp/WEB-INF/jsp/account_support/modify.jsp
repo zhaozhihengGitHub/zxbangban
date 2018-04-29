@@ -103,7 +103,7 @@
                                 <h4 class="inline" >工龄：</h4><input type="number" name="jobYear" value="${workerInfo.jobYear}" placeholder="20"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >手机号：</h4><input type="tel"  name="tel" value="${workerInfo.tel}" placeholder="13586859987"/>
+                                <h4 class="inline" >手机号：</h4><input type="tel"  name="tel" value="${workerInfo.tel}" placeholder="13333333333" disabled/>
                             </div>
                             <div class="col-md-6 aas">
                                 <c:forTokens items="设计师,施工队,水电工,防水工,瓦工,木工,腻子工,集成吊顶,定制家具,石材安装,壁纸壁布,木门安装,

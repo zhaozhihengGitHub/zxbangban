@@ -371,6 +371,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="row clearfix">
+            <div class="col-md-12 column worker_desc" style="padding-left:0;padding-right: 0;">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-titile">
+                            评论:
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <%@include file="common/comment.jsp" %>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <%@include file="common/footer.jsp" %>
@@ -384,9 +399,6 @@
             homepagestate.detail.c($wid);
         },3000);
         $("[data-toggle='tooltip']").tooltip();
-//        $(".sm_sc dd:nth-child(2n)").attr("class","col-xs-2");
-//        $(".sm_sc dd:nth-child(3n)").attr("class","col-xs-1");
-//        $(".sm_sc dd:nth-child(6n)").attr("class","col-xs-3");
     });
     $("#tellNum").click(function(){
         $("#mess").toggleClass("show");
