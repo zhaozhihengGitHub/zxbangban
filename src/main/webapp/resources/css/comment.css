@@ -33,6 +33,9 @@ body{font-family: "Microsoft Yahei";}
     overflow: hidden;
     margin-top: 5px;
 }
+.comment-show-con-img img{
+    width: 100%;
+}
 .comment-show-con-list {
     width: 85%;
     margin-left: 3%;

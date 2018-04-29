@@ -420,10 +420,9 @@
             homepagestate.detail.a($wid);
             homepagestate.detail.c($wid);
         },3000);
+
         $("[data-toggle='tooltip']").tooltip();
-        /*$(".sm_sc dd:nth-child(2n)").attr("class","col-xs-2");
-        $(".sm_sc dd:nth-child(3n)").attr("class","col-xs-1");
-        $(".sm_sc dd:nth-child(6n)").attr("class","col-xs-3");*/
+
     });
     $("#tellNum").click(function(){
         $("#mess").toggleClass("show");
