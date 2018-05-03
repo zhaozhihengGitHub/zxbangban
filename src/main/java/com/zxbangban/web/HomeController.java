@@ -269,8 +269,6 @@ public class HomeController {
         return "shop/home";
     }
 
-
-
     /**
      *
      * @return 施工队详情跳转

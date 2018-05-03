@@ -614,7 +614,6 @@
         var $i= $(param);
         var $x= $($i).siblings();
         flag = $($i).val();
-        alert(flag);
         $($($i)).parent().html("<div class=''><div class='input-group'>" +
             "<select name='cert' class='form-control'>" +
             "<option value='0'>未实名</option>" +
