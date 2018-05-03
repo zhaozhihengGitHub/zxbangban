@@ -83,6 +83,7 @@
 					<li><a href="${pageContext.request.contextPath}/jobs/register">工人入驻</a></li>
 					<li><a href="${pageContext.request.contextPath}">城市加盟</a></li>
 					<li><a href="${pageContext.request.contextPath}/shop">商城</a></li>
+					<li><a href="${pageContext.request.contextPath}/queryAllComments">评论</a></li>
 				</ul>
 			</div>
 		</div>
@@ -107,6 +108,7 @@
 		<li><a href="${pageContext.request.contextPath}/jobs/register">工人入驻</a></li>
 		<li><a href="${pageContext.request.contextPath}">城市加盟</a></li>
 		<li><a href="${pageContext.request.contextPath}/shop">商城</a></li>
+		<li><a href="${pageContext.request.contextPath}/queryAllComments">评论</a></li>
 	</ul>
 </div>
 <script>

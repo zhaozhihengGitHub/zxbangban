@@ -336,6 +336,12 @@
         WHERE `workerId` = #{workerId}
     </update>
 
+    <update id="updateTel">
+        UPDATE workerinfo
+        SET `tel` = #{tel}
+        WHERE `workerId` = #{workerId}
+    </update>
+
 
     <update id="updateProjectImg">
         UPDATE workerinfo

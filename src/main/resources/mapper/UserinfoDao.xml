@@ -27,6 +27,13 @@
         SET password = #{password}
         WHERE username = #{username}
     </update>
+
+    <update id="updateTelphone" parameterType="String">
+        UPDATE userinfo
+        SET telphone = #{telphone}
+        WHERE username = #{username}
+    </update>
+
     <update id="updateUnionId" parameterType="String">
         UPDATE userinfo
         SET unionId = #{unionid}

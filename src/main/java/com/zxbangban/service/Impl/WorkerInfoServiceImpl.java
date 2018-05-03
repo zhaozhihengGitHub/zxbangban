@@ -156,7 +156,7 @@ public class WorkerInfoServiceImpl implements WorkerInfoService{
         return workerInfoDao.queryOARatingByWorkerId(workerId);
     }
 
-    public  WorkerInfo queryByTel(String tel){ return  workerInfoDao.queryByTel(tel);};
+    public  List<WorkerInfo> queryByTel(String tel){ return  workerInfoDao.queryByTel(tel);};
 
     public int updateWorkerState(boolean state,long workerId){ return workerInfoDao.updateWorkerState(state, workerId);};
 
@@ -169,4 +169,6 @@ public class WorkerInfoServiceImpl implements WorkerInfoService{
     public List<Town>  queryTownByCityCode(String code){return workerInfoDao.queryTownByCityCode(code);}
 
     public  int updateWorkerInfo(WorkerInfo workerInfo ){return workerInfoDao.updateWorkerInfo(workerInfo);}
+
+    public int updateTel(long workerId,String tel){return  workerInfoDao.updateTel(workerId,tel);};
 }

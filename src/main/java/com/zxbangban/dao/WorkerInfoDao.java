@@ -172,7 +172,7 @@ public interface WorkerInfoDao {
 
     double queryOARatingByWorkerId(@Param("workerid") long workerId);
 
-    WorkerInfo queryByTel(@Param("tel") String tel);
+    List<WorkerInfo> queryByTel(@Param("tel") String tel);
 
     int updateWorkerState(@Param("state")boolean state,@Param("workerId")long workerId);
 
@@ -185,4 +185,6 @@ public interface WorkerInfoDao {
     List<Town> queryTownByCityCode(@Param("cityCode")String code);
 
     int updateWorkerInfo(WorkerInfo workerInfo );
+
+    int updateTel(@Param("workerId")long workerId,@Param("tel")String tel);
 }

@@ -77,7 +77,7 @@ public interface WorkerInfoService {
 
     double queryOARatingByWorkerId(long workerId);
 
-    WorkerInfo queryByTel(String tel);
+   List<WorkerInfo> queryByTel(String tel);
 
     int updateWorkerState(boolean state,long workerId);
 
@@ -90,4 +90,6 @@ public interface WorkerInfoService {
     List<Town> queryTownByCityCode(String code);
 
     int updateWorkerInfo(WorkerInfo workerInfo );
+
+    int updateTel(long workerId,String tel);
 }

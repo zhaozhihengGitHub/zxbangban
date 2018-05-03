@@ -37,7 +37,7 @@
 //            var a = bannerOff.style.height= "200";
         var banner = new FragmentBanner({
             container : "#banner1",//选择容器 必选
-            imgs : ['https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner1.png','https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner2.png'],//图片集合 必选
+            imgs : ['https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner1.png','https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner2.png','https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner3.png'],//图片集合 必选
             size : {
                 width : w,
                 height : 150
@@ -55,7 +55,7 @@
     } else {
         var banner = new FragmentBanner({
             container : "#banner1",//选择容器 必选
-            imgs : ['https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner1.png','https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner2.png'],//图片集合 必选
+            imgs : ['https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner1.png','https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner2.png','https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner3.png'],//图片集合 必选
             size : {
                 width : w,
                 height : 450
@@ -230,7 +230,7 @@
                                 <h3>${paving.name}</h3>
                                 <h3>${paving.location}</h3>
                                 <span>
-                                            成功案列：5套楼房
+                                            成功案列：29套楼房
                                  </span>
                             </div>
                             </a>
@@ -245,7 +245,7 @@
                             <div class="col-xs-8">
                                 <span>${paving.name}</span>
                                 <span>${paving.location}</span>
-                                <p>成功案列：5套楼房</p>
+                                <p>成功案列：25套楼房</p>
                             </div>
                             </a>
                         </li>
@@ -273,7 +273,7 @@
                                 <h3>${putty.name}</h3>
                                 <h3>${putty.location}</h3>
                                 <span>
-                                            成功案列：5套楼房
+                                            成功案列：10套楼房
                                  </span>
                             </div>
                             </a>
@@ -288,7 +288,7 @@
                             <div class="col-xs-8">
                                 <span>${putty.name}</span>
                                 <span>${putty.location}</span>
-                                <p>成功案列：5套楼房</p>
+                                <p>成功案列：7套楼房</p>
                             </div>
                             </a>
                         </li>
@@ -303,7 +303,7 @@
 
                 <div style="clear:both"></div>
                 <div class="sss">
-                    <img src="resources/images/activity/bedroom_03.png"/>
+                    <img src="https://zxbangban.oss-cn-beijing.aliyuncs.com/home/bedroom.png"/>
                 </div>
                 <div>
                     <ul style="margin-left: 30px">
@@ -322,7 +322,7 @@
 
                 <div style="clear:both"></div>
                 <div class="sss">
-                    <img src="resources/images/activity/bedroom_03.png"/>
+                    <img src="https://zxbangban.oss-cn-beijing.aliyuncs.com/home/bedroom.png"/>
                 </div>
 
                 <ul style="margin-left: 30px">
@@ -339,7 +339,7 @@
 
                 <div style="clear:both"></div>
                 <div class="sss">
-                    <img src="resources/images/activity/bedroom_03.png"/>
+                    <img src="https://zxbangban.oss-cn-beijing.aliyuncs.com/home/bedroom.png"/>
                 </div>
                 <ul style="margin-left: 30px">
                     <c:forEach var="project" items="${projects}" varStatus="vs">
@@ -355,7 +355,7 @@
 
                 <div style="clear:both"></div>
                 <div class="sss">
-                    <img src="resources/images/activity/bedroom_03.png"/>
+                    <img src="https://zxbangban.oss-cn-beijing.aliyuncs.com/home/bedroom.png"/>
                 </div>
                 <ul style="margin-left: 30px">
                     <c:forEach var="decorate" items="${decorates}" varStatus="vs">

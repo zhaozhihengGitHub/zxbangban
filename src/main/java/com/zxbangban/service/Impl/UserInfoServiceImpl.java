@@ -52,4 +52,6 @@ public class UserInfoServiceImpl implements UserInfoService {
     public int updateUnionId(String unionid,String telphone){return  userInfoDao.updateUnionId(unionid,telphone);}
 
     public int  updateHeadImg(String username,String headImgUrl){return userInfoDao.updateHeadImg(username,headImgUrl);};
+
+    public int updateTelphone(String telphone,String username){return userInfoDao.updateTelphone(telphone,username);};
 }
