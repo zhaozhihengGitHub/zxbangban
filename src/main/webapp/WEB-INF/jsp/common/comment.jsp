@@ -62,8 +62,7 @@
         </div>
     <!--回复区域 end-->
 </div>
-
-
+</div>
 <!--textarea限制字数-->
 <script type="text/javascript">
     function keyUP(t){

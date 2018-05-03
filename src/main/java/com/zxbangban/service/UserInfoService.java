@@ -20,4 +20,5 @@ public interface UserInfoService {
     int saveUnameAndPassword(UserInfo userInfo);
     int updateUnionId(String unionId, String telphone);
     int updateHeadImg(String username,String headImgUrl);
+    int updateTelphone(String telphone,String username);
 }

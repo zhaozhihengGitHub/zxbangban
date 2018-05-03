@@ -15,8 +15,17 @@
         .headimg{
             background-color: #cccccc;
         }
-        .user{
+        .jumbotron div{
+            margin-top:10px;
             font-size: 20px;
+        }
+        .user input{
+            width:150px;
+            height:34px;
+            background:#fff;
+            padding:0 10px;
+            border: none;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -59,19 +68,21 @@
                     <div>
                         <h3 style="margin-bottom: 0">姓名：${userProfile.name}</h3>
                     </div>
-                    <div style="margin-top: 20px">
-                        <span class="user">手机号：${userinfo.telphone}</span>
+                    <div>
+                        <span class="user" id="${userinfo.telphone}">手机号：<input type="text" readonly value="${userinfo.telphone}"> </span>
+                        <button class="btn btn-primary updateTel" style="  position:relative;top:-4px;">修改</button>
+                        <button class="btn btn-primary saveTel" style="  position:relative;top:-4px;">保存</button>
                     </div>
-                    <div style="margin-top: 20px">
+                    <div>
                         <span class="user" >会员生日：${sydate}</span>
                     </div>
-                    <div style="margin-top: 20px">
+                    <div>
                         <span class="user">会员等级：${userinfo.memberLevel} 级</span>
                     </div>
-                    <div style="margin-top: 20px">
+                    <div>
                         <span>${userProfile.memberShip}</span>
                     </div>
-                    <div style="margin-top: 20px">
+                    <div >
                         <span>${userProfile.projectAddresses}</span>
                     </div>
                 </div>
@@ -83,4 +94,37 @@
 
 </body>
 <%@include file="../common/script.jsp"%>
+<script>
+    $(function(){
+        $('.updateTel').click(function () {
+            $(this).parent().find('input').removeAttr('readonly').css({"border":"1px solid #ccc"});
+        })
+        $('.saveTel').click(function () {
+            var oTel= $(this).parent().find('span').attr('id');
+            var $tel=$(this).parent().find('input');
+            var nTel= $tel.val();
+            var $telRegular = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
+            if (nTel.length === 0) {
+                $tel.val("");
+                $tel.attr("placeholder","请输入手机号");
+            } else if (!($telRegular.test(nTel))) {
+                $tel.val("");
+                $tel.attr("placeholder", "手机号输入有误！");
+            } else {
+                $.ajax({
+                    url:"${pageContext.request.contextPath}/my-account/updateTel",
+                    data:{"oldTel":oTel,"newTel":nTel},
+                    type:"post",
+                    success:function (data) {
+                        if(data=="0"){alert("修改失败！");}
+                        if(data=="1"){alert("修改成功！");}
+                        if(data=="2"){ $tel.val(oTel); alert("手机号已存在");}
+                    }
+                });
+                $tel.attr('readonly','true').css({"border":"0"});
+            }
+        })
+    })
+
+</script>
 </html>

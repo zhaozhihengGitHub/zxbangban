@@ -10,7 +10,7 @@
 
     <select id="queryAllComment" resultType="Comment">
         SELECT workerId,username,headImg,contents,time,commentType,commentId
-        FROM comment   ORDER BY  commentId
+        FROM comment  ORDER BY  commentId ,time ;
     </select>
 
     <select id="queryCommentByWid" resultType="Comment" parameterType="long">

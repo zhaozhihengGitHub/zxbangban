@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/my-account")
-@SessionAttributes({"uid","headimg","unionid","worker"})
+@SessionAttributes({"uid", "headimg", "unionid", "worker"})
 public class MyAccountController {
 
     @Autowired
@@ -42,8 +43,8 @@ public class MyAccountController {
     private AliyunOSService aliyunOSService;
 
     @RequestMapping(value = "/center")
-    public String center(@SessionAttribute("uid")String uid,HttpServletRequest httpServletRequest,Model model){
-        Object unionId =  httpServletRequest.getSession().getAttribute("unionid");
+    public String center(@SessionAttribute("uid") String uid, HttpServletRequest httpServletRequest, Model model) {
+        Object unionId = httpServletRequest.getSession().getAttribute("unionid");
         if (unionId == null) {
             try {
                 UserInfo userInfo = userInfoService.queryByUsername(uid);
@@ -78,10 +79,10 @@ public class MyAccountController {
             }
         } else {
             UserInfo userInfo = new UserInfo();
-            String headImg =  (String )httpServletRequest.getSession().getAttribute("headimg");
+            String headImg = (String) httpServletRequest.getSession().getAttribute("headimg");
             try {
-                userInfo.setUsername(URLDecoder.decode(uid,"UTF-8"));
-                userInfo.setHeadImgUrl(URLDecoder.decode(headImg,"UTF-8"));
+                userInfo.setUsername(URLDecoder.decode(uid, "UTF-8"));
+                userInfo.setHeadImgUrl(URLDecoder.decode(headImg, "UTF-8"));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -92,34 +93,34 @@ public class MyAccountController {
     }
 
     @RequestMapping(value = "/profile")
-    public String profile(@SessionAttribute("uid")String uid,HttpServletRequest httpServletRequest,Model model){
-        Object unionId =  httpServletRequest.getSession().getAttribute("unionid");
-        if(unionId == null){
+    public String profile(@SessionAttribute("uid") String uid, HttpServletRequest httpServletRequest, Model model) {
+        Object unionId = httpServletRequest.getSession().getAttribute("unionid");
+        if (unionId == null) {
             //非微信登录用户
             try {
                 UserInfo userInfo = userInfoService.queryByUsername(uid);
                 UserProfile userProfile = userProfileService.queryUserProfileByUID(userInfo.getUserId());
-                if(userProfile == null){
+                if (userProfile == null) {
                     System.out.println("userprofile  is null");
                     userProfile = new UserProfile();
                     userProfile.setName(userInfo.getUsername());
                 }
-               String sydate= new SimpleDateFormat("yyyy-MM--dd").format(userInfo.getCreateTime());
-                model.addAttribute("userProfile",userProfile);
+                String sydate = new SimpleDateFormat("yyyy-MM-dd").format(userInfo.getCreateTime());
+                model.addAttribute("userProfile", userProfile);
                 model.addAttribute("userinfo", userInfo);
                 model.addAttribute("headimg", userInfo.getHeadImgUrl());
-                model.addAttribute("sydate",sydate);
+                model.addAttribute("sydate", sydate);
                 return "account/normal_profile";
             } catch (NullPointerException e) {
                 return "signin";
             }
 
-        }else {
+        } else {
             UserInfo userInfo = new UserInfo();
-            String headImg =  (String )httpServletRequest.getSession().getAttribute("headimg");
+            String headImg = (String) httpServletRequest.getSession().getAttribute("headimg");
             try {
-                userInfo.setUsername(URLDecoder.decode(uid,"UTF-8"));
-                userInfo.setHeadImgUrl(URLDecoder.decode(headImg,"UTF-8"));
+                userInfo.setUsername(URLDecoder.decode(uid, "UTF-8"));
+                userInfo.setHeadImgUrl(URLDecoder.decode(headImg, "UTF-8"));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -131,134 +132,192 @@ public class MyAccountController {
     }
 
     @RequestMapping(value = "/profile-workerinfo")
-    public String profile_workerInfo(@SessionAttribute("uid")String uid,HttpServletRequest httpServletRequest,Model model){
+    public String profile_workerInfo(@SessionAttribute("uid") String uid, HttpServletRequest httpServletRequest, Model model) {
         HttpSession httpSession = httpServletRequest.getSession();
         Object unionId = httpSession.getAttribute("unionid");
-        if(unionId == null){
-           try {
-               long workerId=1;
-               UserInfo userInfo = userInfoService.queryByUsername(uid);
-               String tel = userInfo.getTelphone();
-               List<WorkerInfo> list = workerInfoService.queryByTelphone(tel);
-               for (WorkerInfo worker:list) {
-                    workerId=worker.getWorkerId();
-               }
-               WorkerProfile workerProfile=workerProfileService.queryByWorkerId(workerId);
-               model.addAttribute("worker",list.get(0));
-               model.addAttribute("userinfo", userInfo);
-               model.addAttribute("workerProfile",workerProfile);
-               return "/account/normal_profile_workinfo";
-           }catch (Exception e){
-               return "signin";
-           }
+        if (unionId == null) {
+            try {
+                long workerId = 1;
+                UserInfo userInfo = userInfoService.queryByUsername(uid);
+                String tel = userInfo.getTelphone();
+                List<WorkerInfo> list = workerInfoService.queryByTelphone(tel);
+                List<Integer> jobs = new ArrayList<Integer>();
+                for (WorkerInfo worker : list) {
+                    workerId = worker.getWorkerId();
+                    jobs.add(worker.getJobId());
+                }
+                WorkerProfile workerProfile = workerProfileService.queryByWorkerId(workerId);
+                model.addAttribute("jobs", jobs);
+                model.addAttribute("worker", list.get(0));
+                model.addAttribute("userinfo", userInfo);
+                model.addAttribute("workerProfile", workerProfile);
+                return "/account/normal_profile_workinfo";
+            } catch (Exception e) {
+                return "signin";
+            }
         }
         return "/account/normal_profile_workinfo";
     }
 
+    @RequestMapping(value = "/workerinfoByJobId", method = RequestMethod.POST)
+    public String workerinfoByJobId(@SessionAttribute("uid") String uid, HttpServletRequest httpServletRequest, @RequestParam("jobId") Integer jobId, Model model) {
+        HttpSession httpSession = httpServletRequest.getSession();
+        Object unionId = httpSession.getAttribute("unionid");
+        if (unionId == null) {
+            try {
+                long workerId = 1;
+                UserInfo userInfo = userInfoService.queryByUsername(uid);
+                String tel = userInfo.getTelphone();
+                List<WorkerInfo> list = workerInfoService.queryByTelphone(tel);
+                List<Integer> jobs = new ArrayList<Integer>();
+                for (WorkerInfo worker : list) {
+                    jobs.add(worker.getJobId());
+                    if (worker.getJobId() == jobId) {
+                        workerId = worker.getWorkerId();
+                        model.addAttribute("worker", worker);
+                    }
+                }
+                WorkerProfile workerProfile = workerProfileService.queryByWorkerId(workerId);
+                model.addAttribute("jobs", jobs);
+                model.addAttribute("userinfo", userInfo);
+                model.addAttribute("workerProfile", workerProfile);
+                return "/account/normal_profile_workinfo";
+            } catch (Exception e) {
+                return "signin";
+            }
+        }
+        return "/account/normal_profile_workinfo";
+    }
+
+
     @RequestMapping(value = "update-workerinfo")
-   public String updateWorkerInfo(long workerId,String name,Integer age,Integer jobYear,String tel,String address,String style,Integer teamCount,Integer ordersCount,Boolean state,String location,String teamDesc){
-       try {
-           WorkerInfo workerInfo=new WorkerInfo();
-           workerInfo.setWorkerId(workerId);
-           workerInfo.setJobYear(jobYear);
-           workerInfo.setName(name);
-           workerInfo.setTel(tel);
-           workerInfo.setAddress(address);
-           workerInfo.setStyle(style);
-           workerInfo.setTeamCount(teamCount);
-           workerInfo.setOrdersCount(ordersCount);
-           workerInfo.setTeamDesc(teamDesc);
-           workerInfo.setState(state);
-           workerInfo.setLocation(location);
-           workerInfoService.updateWorkerInfo(workerInfo);
-           workerProfileService.updateAge(workerId,age);
-           return "redirect:/my-account/profile-workerinfo";
-       }catch (Exception e){
-           e.printStackTrace();
-           return "/common/errorpage";
-       }
+    public String updateWorkerInfo(long workerId, String name, Integer age, Integer jobYear, String tel, String address, String style, Integer teamCount, Integer ordersCount, Boolean state, String location, String teamDesc) {
+        try {
+            WorkerInfo workerInfo = new WorkerInfo();
+            workerInfo.setWorkerId(workerId);
+            workerInfo.setJobYear(jobYear);
+            workerInfo.setName(name);
+            workerInfo.setTel(tel);
+            workerInfo.setAddress(address);
+            workerInfo.setStyle(style);
+            workerInfo.setTeamCount(teamCount);
+            workerInfo.setOrdersCount(ordersCount);
+            workerInfo.setTeamDesc(teamDesc);
+            workerInfo.setState(state);
+            workerInfo.setLocation(location);
+            workerInfoService.updateWorkerInfo(workerInfo);
+            workerProfileService.updateAge(workerId, age);
+            return "redirect:/my-account/profile-workerinfo";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "/common/errorpage";
+        }
     }
 
     @RequestMapping(value = "/editpassword")
-    public String editPassword(@SessionAttribute("uid")String uid,@SessionAttribute("headimg")String headimg, Model model){
-        model.addAttribute("uid",uid);
-        model.addAttribute("headimg",headimg);
+    public String editPassword(@SessionAttribute("uid") String uid, @SessionAttribute("headimg") String headimg, Model model) {
+        model.addAttribute("uid", uid);
+        model.addAttribute("headimg", headimg);
 
         return "/account/changepassword";
     }
+
+    @RequestMapping(value = "/updateTel", method = RequestMethod.POST)
+    @ResponseBody
+    public String updateTel(@RequestParam("oldTel") String oldTel, @RequestParam("newTel") String newTel) {
+        try {
+            UserInfo userInfo1 = userInfoService.queryByTelphone(newTel);
+            if (userInfo1 == null) {
+                UserInfo userInfo = userInfoService.queryByTelphone(oldTel);
+                List<WorkerInfo> workerInfos = workerInfoService.queryByTel(oldTel);
+                userInfoService.updateTelphone(newTel, userInfo.getUsername());
+                for (WorkerInfo workerInfo : workerInfos) {
+                    workerInfoService.updateTel(workerInfo.getWorkerId(), newTel);
+                }
+                return "1";
+            } else {
+                return "2";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "0";
+        }
+    }
+
     @RequestMapping(value = "/editUserHeadimg")
-    public String editUserHeadImg(@SessionAttribute("uid")String uid,@RequestParam("oldFile")String oldFile,@RequestParam("file")MultipartFile file){
+    public String editUserHeadImg(@SessionAttribute("uid") String uid, @RequestParam("oldFile") String oldFile, @RequestParam("file") MultipartFile file) {
         try {
             //将阿里云中图片删除，保存新图片
-            UserInfo userInfo=userInfoService.queryByUsername(uid);
-            String  headImgName=aliyunOSService.updateHeadImages(userInfo.getUserId(),file,oldFile);
+            UserInfo userInfo = userInfoService.queryByUsername(uid);
+            String headImgName = aliyunOSService.updateHeadImages(userInfo.getUserId(), file, oldFile);
             //更新数据库图片的地址
-            String headImgUrl="https://zxbangban.oss-cn-beijing.aliyuncs.com/" + headImgName + "?x-oss-process=style/headimg";
-                userInfoService.updateHeadImg(uid,headImgUrl);
-        }catch (Exception e){
+            String headImgUrl = "https://zxbangban.oss-cn-beijing.aliyuncs.com/" + headImgName + "?x-oss-process=style/headimg";
+            userInfoService.updateHeadImg(uid, headImgUrl);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "redirect:/my-account/center";
     }
 
     @RequestMapping(value = "/editheadimg")
-    public String editHeadImg(@SessionAttribute("uid")String uid,@RequestParam("oldFile")String oldFile,@RequestParam(value = "file")MultipartFile file){
+    public String editHeadImg(@SessionAttribute("uid") String uid, @RequestParam("oldFile") String oldFile, @RequestParam(value = "file") MultipartFile file) {
         try {
             UserInfo userInfo = userInfoService.queryByUsername(uid);
             String tel = userInfo.getTelphone();
             List<WorkerInfo> list = workerInfoService.queryByTelphone(tel);
-            String imgName = aliyunOSService.updateHeadImages(userInfo.getUserId(),file,oldFile);
+            String imgName = aliyunOSService.updateHeadImages(userInfo.getUserId(), file, oldFile);
             String url = "https://zxbangban.oss-cn-beijing.aliyuncs.com/" + imgName + "?x-oss-process=style/headimg";
-            for(WorkerInfo workerInfo : list){
-                workerInfoService.editheadimg(workerInfo.getWorkerId(),url);
+            for (WorkerInfo workerInfo : list) {
+                workerInfoService.editheadimg(workerInfo.getWorkerId(), url);
             }
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
         return "redirect:/my-account/profile-workerinfo";
     }
-    @RequestMapping(value = "/updatepassword",method = RequestMethod.POST)
-    public String updatePassword(@SessionAttribute("uid")String uid,@RequestParam("oldpassword")String oldpassword,@RequestParam("repassword")String repassword,Model model){
+
+    @RequestMapping(value = "/updatepassword", method = RequestMethod.POST)
+    public String updatePassword(@SessionAttribute("uid") String uid, @RequestParam("oldpassword") String oldpassword, @RequestParam("repassword") String repassword, Model model) {
         UserInfo userInfo = userInfoService.queryByUsername(uid);
         String password = userInfo.getPassword();
-        if(MD5Util.EncryptedByMD5(oldpassword).equals(password)){
+        if (MD5Util.EncryptedByMD5(oldpassword).equals(password)) {
             int r = userInfoService.updatePassword(uid, MD5Util.EncryptedByMD5(repassword));
-        }else {
-            model.addAttribute("msg","旧密码不正确");
+        } else {
+            model.addAttribute("msg", "旧密码不正确");
             return "account/changepassword";
         }
 
-        System.out.println("旧密码"+oldpassword + ";新密码" + repassword);
+        System.out.println("旧密码" + oldpassword + ";新密码" + repassword);
         return "redirect:/my-account/center";
     }
 
     //获取预约信息
-    @RequestMapping(value = "/getappoint",method = RequestMethod.GET,produces = "text/html;charset=utf8")
+    @RequestMapping(value = "/getappoint", method = RequestMethod.GET, produces = "text/html;charset=utf8")
     @ResponseBody
-    public String getAppoint(@RequestParam("uid")String uid, @RequestParam("roleid")Integer roleid,Model model) {
+    public String getAppoint(@RequestParam("uid") String uid, @RequestParam("roleid") Integer roleid, Model model) {
         int i = roleid;
-        if(0 < i && i < 4){
+        if (0 < i && i < 4) {
             String tel = userInfoService.queryTelByUsername(uid);
-            WorkerInfo workerInfo=workerInfoService.queryByTel(tel);
-            String notes="预约[工号:" + workerInfo.getWorkerId() + ";姓名:"+workerInfo.getName() + "]";
-            List<Customer> list=customerService.queryByNotes(notes);
+            List<WorkerInfo> workerInfo = workerInfoService.queryByTel(tel);
+            String notes = "预约[工号:" + workerInfo.get(0).getWorkerId() + ";姓名:" + workerInfo.get(0).getName() + "]";
+            List<Customer> list = customerService.queryByNotes(notes);
             ObjectMapper objectMapper = new ObjectMapper();
             try {
                 return objectMapper.writeValueAsString(list);
             } catch (JsonProcessingException e) {
                 return "";
             }
-        }else {
+        } else {
             return "";
         }
     }
 
 
-    @RequestMapping(value = "/appoint",method = RequestMethod.GET,produces = "text/html;charset=utf8")
+    @RequestMapping(value = "/appoint", method = RequestMethod.GET, produces = "text/html;charset=utf8")
     @ResponseBody
-    public String managerAppoint(@RequestParam("roleid")Integer roleid,@RequestParam("uid") String uid){
+    public String managerAppoint(@RequestParam("roleid") Integer roleid, @RequestParam("uid") String uid) {
         int i = roleid;
-        if(3 < i && i < 10){
+        if (3 < i && i < 10) {
             List<Customer> list = customerService.queryAll();
             ObjectMapper objectMapper = new ObjectMapper();
             try {
@@ -266,23 +325,23 @@ public class MyAccountController {
             } catch (JsonProcessingException e) {
                 return "";
             }
-        }else {
+        } else {
             return "";
         }
     }
 
-    @RequestMapping(value = "/program",method = RequestMethod.GET,produces = "text/html;charset=utf8")
+    @RequestMapping(value = "/program", method = RequestMethod.GET, produces = "text/html;charset=utf8")
     @ResponseBody
-    public String managerProgram(@RequestParam("roleid")Integer roleid, @RequestParam("uid") String uid){
+    public String managerProgram(@RequestParam("roleid") Integer roleid, @RequestParam("uid") String uid) {
 
         return "";
     }
 
-    @RequestMapping(value = "/worker",method = RequestMethod.GET,produces = "text/html;charset=utf8")
+    @RequestMapping(value = "/worker", method = RequestMethod.GET, produces = "text/html;charset=utf8")
     @ResponseBody
-    public String managerWorker(@RequestParam("roleid")Integer roleId, @RequestParam("uid") String uid){
+    public String managerWorker(@RequestParam("roleid") Integer roleId, @RequestParam("uid") String uid) {
         int i = roleId;
-        if(3 < i && i < 10){
+        if (3 < i && i < 10) {
             List<WorkerInfo> list = workerInfoService.queryNew();
             ObjectMapper objectMapper = new ObjectMapper();
             try {
@@ -290,7 +349,7 @@ public class MyAccountController {
             } catch (JsonProcessingException e) {
                 return "";
             }
-        }else {
+        } else {
             return "";
         }
     }
