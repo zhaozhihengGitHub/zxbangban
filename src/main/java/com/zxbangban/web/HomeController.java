@@ -268,7 +268,18 @@ public class HomeController {
     public String invest(){
         return "shop/home";
     }
-
+    /**
+     *
+     * @return 家博会
+     */
+    @RequestMapping("/teleport")
+    public String teleport(){return "jiabohui/teleport";}
+    /**
+     *
+     * @return 家博会
+     */
+    @RequestMapping("/coupons")
+    public String coupons(){return "jiabohui/coupons";}
     /**
      *
      * @return 施工队详情跳转
@@ -283,7 +294,6 @@ public class HomeController {
      */
     @RequestMapping("/newslist")
     public String newslist(){return "newsList/newsList";}
-
     /**
      *
      * @return 公司新闻详情页面跳转
