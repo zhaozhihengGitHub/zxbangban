@@ -155,6 +155,7 @@
                 <div>
                     <form action="${pageContext.request.contextPath}/my-account/workerinfoByJobId" method="post">
                         <select name="jobId">
+                            <c:if test="${jobs !=null }">
                             <c:forTokens items="设计师,施工队,水电工,防水工,瓦工,木工,腻子工,集成吊顶,定制家具,石材安装,壁纸壁布,木门安装,
  油漆工,监理,卫浴洁具,灯饰灯具,窗帘安装,学徒工,搬运工,家政服务,租车送货,地板安装,a,a,瓷砖美缝,包立管,拆墙开槽,成品家具,a,a,集成墙板,a,橱柜安装,软包硬包,五金挂件,家具补漆,
  开荒保洁,厨卫电器,空调安装,新风系统,净水系统,安防系统,智能家居,玻璃安装,铁艺制作,更换窗纱,栏杆护栏,暖通设备,广告招牌,晾衣架,背景墙,硅藻泥,淋浴房,防盗门,防盗网,铝门窗,
@@ -163,6 +164,7 @@
                                     <c:if test="${jobId==status.count}"><option value="${jobId}">${item}</option></c:if>
                                 </c:forEach>
                             </c:forTokens>
+                            </c:if>
                         </select>
                         <button type="submit" >查询</button>
                     </form>

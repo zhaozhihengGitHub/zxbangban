@@ -103,7 +103,7 @@
                                 <h4 class="inline" >工龄：</h4><input type="number" name="jobYear" value="${workerInfo.jobYear}" placeholder="20"/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >手机号：</h4><input type="tel"  name="tel" value="${workerInfo.tel}" placeholder="13333333333" disabled/>
+                                <h4 class="inline" >手机号：</h4><input type="tel"  name="tel" value="${workerInfo.tel}" placeholder="13333333333" readonly/>
                             </div>
                             <div class="col-md-6 aas">
                                 <c:forTokens items="设计师,施工队,水电工,防水工,瓦工,木工,腻子工,集成吊顶,定制家具,石材安装,壁纸壁布,木门安装,
@@ -111,18 +111,18 @@
  开荒保洁,厨卫电器,空调安装,新风系统,净水系统,安防系统,智能家居,玻璃安装,铁艺制作,更换窗纱,栏杆护栏,暖通设备,广告招牌,晾衣架,背景墙,硅藻泥,淋浴房,防盗门,防盗网,铝门窗,
  遮阳棚,阳光房,卷闸门,铜艺门,开锁解锁,水钻开孔,空调清洗,烟机清洗,甲醛治理" delims="," var="item" varStatus="status" >
                                     <c:if test="${workerInfo.jobId==status.count}">
-                                        <h4 class="inline" >出身工种：</h4><input type="text" name="originwork" value="${item}" placeholder="工长" disabled/>
+                                        <h4 class="inline" >出身工种：</h4><input type="text" name="originwork" value="${item}" placeholder="工长" readonly/>
                                     </c:if>
                                 </c:forTokens>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >综合评分：</h4><input type="overAllRating"  value="${workerInfo.overAllRating}" disabled/>
+                                <h4 class="inline" >综合评分：</h4><input type="overAllRating"  value="${workerInfo.overAllRating}" readonly/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >浏览量：</h4><input type="homePV"  placeholder="" value="${workerProfile.homePV}" disabled/>
+                                <h4 class="inline" >浏览量：</h4><input type="homePV"  placeholder="" value="${workerProfile.homePV}" readonly/>
                             </div>
                             <div class="col-md-6 aas">
-                                <h4 class="inline" >星级：</h4><input type="starEvaluated"  placeholder="2" value="${workerProfile.starEvaluated}" disabled/>
+                                <h4 class="inline" >星级：</h4><input type="starEvaluated"  placeholder="2" value="${workerProfile.starEvaluated}" readonly/>
                             </div>
                             <div class="col-md-6 aas">
                                 <h4 class="inline" >籍贯：</h4><input type="text" name="address" placeholder="山西长治" value="${workerInfo.address}"/>
