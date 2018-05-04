@@ -26,7 +26,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/my-account")
-@SessionAttributes({"uid", "headimg", "unionid", "worker"})
+@SessionAttributes({"uid", "headimg", "unionid"})
 public class MyAccountController {
 
     @Autowired
@@ -141,7 +141,7 @@ public class MyAccountController {
                 UserInfo userInfo = userInfoService.queryByUsername(uid);
                 String tel = userInfo.getTelphone();
                 List<WorkerInfo> list = workerInfoService.queryByTelphone(tel);
-                List<Integer> jobs = new ArrayList<Integer>();
+                List<Integer> jobs = new ArrayList<>();
                 for (WorkerInfo worker : list) {
                     workerId = worker.getWorkerId();
                     jobs.add(worker.getJobId());
@@ -169,10 +169,10 @@ public class MyAccountController {
                 UserInfo userInfo = userInfoService.queryByUsername(uid);
                 String tel = userInfo.getTelphone();
                 List<WorkerInfo> list = workerInfoService.queryByTelphone(tel);
-                List<Integer> jobs = new ArrayList<Integer>();
+                List<Integer> jobs = new ArrayList<>();
                 for (WorkerInfo worker : list) {
                     jobs.add(worker.getJobId());
-                    if (worker.getJobId() == jobId) {
+                    if (worker.getJobId().equals(jobId)) {
                         workerId = worker.getWorkerId();
                         model.addAttribute("worker", worker);
                     }
@@ -296,10 +296,13 @@ public class MyAccountController {
     @ResponseBody
     public String getAppoint(@RequestParam("uid") String uid, @RequestParam("roleid") Integer roleid, Model model) {
         int i = roleid;
+        String notes="";
         if (0 < i && i < 4) {
             String tel = userInfoService.queryTelByUsername(uid);
             List<WorkerInfo> workerInfo = workerInfoService.queryByTel(tel);
-            String notes = "预约[工号:" + workerInfo.get(0).getWorkerId() + ";姓名:" + workerInfo.get(0).getName() + "]";
+            if(workerInfo!=null&&workerInfo.size()>0) {
+                notes = "预约[工号:" + workerInfo.get(0).getWorkerId() + ";姓名:" + workerInfo.get(0).getName() + "]";
+            }
             List<Customer> list = customerService.queryByNotes(notes);
             ObjectMapper objectMapper = new ObjectMapper();
             try {
