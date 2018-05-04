@@ -1,0 +1,155 @@
+.content-in{
+    width:1200px;
+    margin:30px auto;
+}
+.explosive li{
+    float:left;
+    width:385px;
+    margin-left:19px;
+    background:#fff;
+    border:#ddd solid 1px;
+    margin-top:20px;
+    cursor:pointer;
+}
+.explosive li a{
+    display:block;
+}
+.explosive .li-box{
+    margin-left:-19px;
+}
+.explosive li .explosive-img{
+    width:382px;
+    height:240px;
+    float:left;
+    display:block;
+}
+.explosive li .under{
+    padding:20px 20px 7px 20px;
+    box-sizing: border-box;
+}
+.under-top .explosive-logo{
+    float:left;
+    width:115px;
+    height:55px;
+    border:#ddd solid 1px;
+}
+.under-top .explosive-logo img{
+    width:112px;
+    height:52px;
+}
+.under-top .explosive-name{
+    float:left;
+    width:215px;
+    color:#333;
+    font-size:18px;
+    margin-left:10px;
+}
+.under-middle{
+    margin-top: 14px;
+    color: #666;
+    line-height: 22px;
+    height: 67px;
+    overflow: hidden;
+}
+.under-bottom{
+    margin-top:15px;
+}
+.under-bottom .stand{
+    float:left;
+    width:130px;
+    font-size:18px;
+    color:#d70c18;
+}
+.under-bottom .subscribe{
+    width:120px;
+    float:right;
+}
+.under-bottom .subscribe .subscribe-btn{
+    display:block;
+    border:0;
+    width:120px;
+    height:32px;
+    background:#d70c18;
+    color:#fff;
+    font-size:18px;
+}
+.under-bottom .subscribe span{
+    color:#999;
+    font-size:12px;
+    display:block;
+    text-align:center;
+    line-height:20px;
+}
+/* 立即预约弹框 */
+.black{
+    width:100%;
+    height:100%;
+    background:#000;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:200;
+    display:none;
+}
+.dialog-box{
+    width:510px;
+    background:#fff;
+    position:fixed;
+    top:20%;
+    left:50%;
+    margin-left:-255px;
+    z-index:300;
+    padding:18px 22px 22px 22px;
+    box-sizing: border-box;
+    display:none;
+}
+.close,.close-2{
+    width:17px;
+    height:18px;
+    position:absolute;
+    background:url(../images/close.png) no-repeat;
+    top:15px;
+    right:15px;
+    cursor:pointer;
+}
+.dialog-box .dialog-hd{
+    font-size:26px;
+    color:#333;
+    text-align:center;
+    margin-top:22px;
+}
+.dialog-box-in{
+    margin-top:25px;
+}
+.dialog-left{
+    border:#ddd solid 1px;
+    width:150px;
+    height:70px;
+    float:left;
+}
+.dialog-right{
+    float:left;
+    width:310px;
+    padding-left:20px;
+    box-sizing: border-box;
+    color:#999;
+    margin-top:11px;
+}
+.dialog-right span{
+    display:block;
+    line-height:22px;
+}
+.activity-tips{
+    height: 100px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.activity-tips-title{
+    margin-top: 25px;
+    display:block;
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+
