@@ -1,0 +1,130 @@
+/* 立即预约弹框 */
+
+.supplier-box{
+    width:510px;
+    margin:0 auto;
+}
+.close,.close-2{
+    width: 20px;
+    height: 23px;
+    background:url(../../../resources/images/jbhimg/bclose.png) no-repeat;
+    position: absolute;
+    top:14px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.supplier-box .dialog-hd{
+    font-size:26px;
+    color:#333;
+    text-align:center;
+    margin-top:22px;
+}
+.dialog-box-in{
+    margin-top:25px;
+}
+.dialog-left{
+    border:#ddd solid 1px;
+    width:150px;
+    height:70px;
+    float:left;
+}
+.dialog-right{
+    float:left;
+    width:310px;
+    padding-left:20px;
+    box-sizing: border-box;
+    color:#999;
+    margin-top:11px;
+}
+.dialog-right span{
+    display:block;
+    line-height:22px;
+}
+.activity-tips{
+    height: 100px;
+    overflow: hidden;
+    overflow-y: auto;
+    line-height: 20px;
+}
+
+.activity-tips-title{
+    margin-top: 25px;
+    display:block;
+    font-size:16px;
+    margin-bottom:10px;
+}
+.dialog-box-in .ipt-box{
+    margin-top:30px;
+}
+.dialog-box-in .ipt-box .ipt-txt{
+    width:450px;
+    height:50px;
+    padding-left:18px;
+    border:#ddd solid 1px;
+    font-size:16px;
+}
+.dialog-box-in .ipt-box .ipt-btn{
+    width:230px;
+    height:50px;
+    border:none;
+    display:block;
+    background:#d70c18;
+    color:#fff;
+    font-size:24px;
+    border-radius:3px;
+    margin:22px auto;
+}
+.dialog-box-in .ipt-box .ipt-bottom{
+    text-align:center;
+}
+.dialog-box-in .ipt-box .ipt-bottom .check-box{
+    width:18px;
+    height:18px;
+    background:#fff;
+    border:#ddd solid 1px;
+    display:inline;
+    vertical-align: middle;
+}
+.ipt-box .ipt-bottom span{
+    color:#666;
+}
+.ipt-box .ipt-bottom em{
+    font-style:normal;
+    color:#999;
+    display:block;
+    margin-top:10px;
+}
+/* 立即预约弹框 */
+
+/* 预约成功弹框 */
+.success-box-in{
+    padding:15px 22px 20px 22px;
+    box-sizing: border-box;
+}
+.success-box-in .success-box-hd{
+    color:#d70c18;
+    font-size:34px;
+    text-align:center;
+    margin-top:30px;
+    position:relative;
+}
+.success-box-in .success-box-hd:before{
+    position:absolute;
+    content:"";
+    width:63px;
+    height:63px;
+    background:url(../../img/ok.png) no-repeat;
+    top:-7px;
+    left:70px;
+}
+.success-box-top{
+    margin-top:40px;
+}
+.success-box-in .last-under{
+    display:block;
+    color:#999;
+    margin-top:113px;
+    text-align:center;
+}
+/* 预约成功弹框 */

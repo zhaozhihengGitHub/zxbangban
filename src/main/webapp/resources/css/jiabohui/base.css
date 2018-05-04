@@ -1,0 +1,729 @@
+@charset "utf-8";
+/* 基础样式 */
+html, body {
+    padding: 0;
+    margin: 0;
+    min-width: 1200px;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li,
+pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body, button, input, select, textarea {
+    font-family: "微软雅黑", "Microsoft YaHei", SimHei, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 14px;
+    /*color: #666;*/
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+ul, ol, dl {
+    list-style: none;
+}
+a {
+    text-decoration: none !important;
+    outline: none;
+    cursor: pointer;
+    color: #666;
+}
+img {
+    border: 0;
+}
+button, input, select, textarea {
+    font-size: 100%;
+    outline: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.disabled {
+    cursor: default;
+    background: #DDD !important;
+}
+
+
+/* 通用样式 */
+.wordwrap {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.jb-c {
+    color: #d70c19;
+}
+
+.jb-bg {
+    background: #d70c19;
+}
+
+.jb-w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.w-1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.w-1200 {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.w-1440 {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.container {
+    /*width: 100%;*/
+    /*background-color: #f3f3f3;*/
+    /*overflow: hidden;*/
+    position: relative;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.hide {
+    display: none !important;
+}
+
+.jb-ph {
+    position: absolute;
+    text-indent: 4px;
+    color: #CCC;
+    font-size: 12px;
+    font-family: "宋体";
+}
+
+/* 表单错误消息 */
+.msg-box {
+    display: inline-block;
+    *display: inline;
+    vertical-align: top;
+}
+
+.msg-box .msg {
+    vertical-align: middle;
+    padding: 6px 7px 7px 24px;
+    font-size: 12px;
+    border: 1px solid #CE012E;
+    overflow: hidden;
+    zoom: 1;
+    display: inline-block;
+    *display: inline;
+}
+
+.msg-box .msg-error {
+    background-color: #FFF3F5;
+    border-color: #DF6681;
+}
+
+.msg-box .msg i {
+    display: inline;
+    float: left;
+    margin-left: -20px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/inputErr.png) no-repeat;
+}
+
+.msg-box .msg .msg-cnt {
+    font-size: 14px;
+}
+
+.input-err {
+    border-color: #DF6681 !important;
+}
+
+/* uploadify修改样式 */
+.uploadify-queue {
+    display: none;
+}
+
+/* form input */
+.ipt-box {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    margin-right: 5px;
+}
+
+.ipt {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #DFDFDF;
+    width: 300px;
+    padding-left: 10px;
+}
+
+.itx {
+    height: 100px;
+    border: 1px solid #DFDFDF;
+    width: 300px;
+    padding: 5px 10px;
+    resize: none;
+}
+
+.placeholder {
+    position: absolute;
+    color: #CCC;
+    font-size: 12px;
+    font-family: "宋体";
+    left: 11px;
+    top: 10px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    cursor: text;
+}
+
+.rc-tips {
+    font-size: 12px;
+    color: #CE012E;
+    font-family: "宋体";
+    margin: 0 3px;
+}
+
+/* 想家modal样式 */
+.jb-modal-blind {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: #000;
+    z-index: 999;
+    filter: alpha(opacity = 50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.jb-modal-primary {
+    position: fixed;
+    width: 100px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    background: #FFF;
+
+    /**-moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;**/
+}
+
+.jb-modal-primary .jb-modal-header {
+    position: relative;
+    height: 63px;
+    line-height: 63px;
+    background: #fff;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.jb-modal-primary .jb-modal-header .jb-modal-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #d70c18;
+    display: block;
+    text-align: center;
+}
+
+.jb-modal-primary .jb-modal-header .jb-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: url(../images/modal-close.png) no-repeat;
+    display: block;
+    width: 15px;
+    height: 15px;
+}
+
+.jb-modal-content {
+    padding: 40px;
+}
+
+.jb-modal-loading {
+    background: url(../images/42x42.gif) no-repeat;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    margin-top: -21px;
+    margin-left: -21px;
+    top: 50%;
+    left: 50%;
+}
+
+/* 想家alert样式 */
+.jb-alert-blind {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: #000;
+    z-index: 9999999999;
+    filter: alpha(opacity = 70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.jb-alert-primary {
+    position: fixed;
+    width: 350px;
+    min-height: 228px;
+    margin-top: -114px;
+    margin-left: -175px;
+    top: 50%;
+    left: 50%;
+    z-index: 1000000000000;
+    background: #FFF;
+}
+
+.jb-alert-primary .jb-alert-header {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+}
+
+.jb-alert-primary .jb-alert-title {
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    color: #333;
+    margin-left: 70px;
+    background: url(../images/alert-ok.png) no-repeat 3px center;
+    padding-left: 40px;
+}
+
+.jb-alert-primary .jb-alert-title.error {
+    background: url(../images/alert-err.png) no-repeat 3px center;
+}
+
+.jb-alert-primary .jb-alert-header .jb-alert-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: url(../images/modal-close.png) no-repeat;
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+.jb-alert-content {
+    width: 250px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.jb-alert-button {
+    width: 242px;
+    height: 40px;
+    background: #CE012E;
+    border: medium none;
+    font-size: 20px;
+    color: #FFF;
+    margin: 20px 0px 20px 50px;
+}
+
+/* select */
+.jb-select {
+    position: relative;
+    height: 30px;
+    width: 280px !important;
+    float: left;
+    display: inline-block;
+    *display: inline;
+    margin-right: 5px;
+    border: 1px solid #DFDFDF;
+    padding-left: 10px;
+}
+
+.jb-select.selecthover {
+    z-index: 700;
+}
+
+.jb-select .jb-select-currentItem {
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    line-height: 30px;
+}
+
+.jb-select .jb-select-currentItem.unselected {
+    font-size: 12px;
+    font-family: "宋体";
+    color: #CCC;
+}
+
+.jb-select .jb-select-list {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    background: #fff;
+    width: 290px !important;
+    max-height: 200px;
+    padding-top: 4px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1000;
+    border: 1px solid #DFDFDF;
+}
+
+.jb-select .jb-select-moreButton {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 290px;
+    height: 30px;
+    cursor: pointer;
+    background: url(../images/dropdown_icon.png) 95% center no-repeat;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.jb-select .jb-select-item.listelementhover {
+    background: #EAEAEA;
+    color: #CE012E;
+}
+
+.jb-select .jb-select-item {
+    display: block;
+    cursor: pointer;
+    padding-left: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* 侧边 */
+.righ-nav {
+    position: fixed;
+    top: 25%;
+    right: -65px;
+    display: none;
+    z-index: 101;
+}
+
+.righ-nav-hd {
+    width: 112px;
+    height: 110px;
+    background: url(../../../resources/images/jbhimg/right-nav-cus.png) no-repeat;
+    position: absolute;
+    top: -102px;
+    left: -82px;
+    margin-bottom: 2px;
+}
+
+.right-nav-box {
+    position: relative;
+}
+
+.right-nav-menu {
+    width: 60px;
+}
+
+.right-nav-menu a {
+    display: block;
+    width: 100%;
+}
+
+.right-nav-menu a .qq {
+    width: 35px;
+    height: 72px;
+    background: url(../../../resources/images/jbhimg/right-nav-qq.png) no-repeat;
+    margin-left: -40px;
+    /*border-bottom: 1px solid #eee;*/
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .qq:hover {
+    background: url(../../../resources/images/jbhimg/right-nav-red-qq.png) no-repeat;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .ticket {
+    width: 35px;
+    height: 35px;
+    background: url(../../../resources/images/jbhimg/right-nav-ticket.png) no-repeat;
+    margin-left: -40px;
+    /*border: #eee solid 1px;*/
+    border-top: none;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .ticket:hover {
+    background: url(../../../resources/images/jbhimg/right-nav-red-ticket.png) no-repeat;
+    width: 35px;
+    border: 0px;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .rnav-design {
+    width: 33px;
+    height: 35px;
+    background: url(../../../resources/images/jbhimg/right-nav-design.png) no-repeat;
+    margin-left: -40px;
+    /*border: #eee solid 1px;*/
+    border-top: none;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .rnav-design:hover {
+    background: url(../../../resources/images/jbhimg/right-nav-red-design.png) no-repeat;
+    width: 35px;
+    height: 35px;
+    border: 0px;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .coupon {
+    width: 35px;
+    height: 35px;
+    background: url(../../../resources/images/jbhimg/right-nav-coupon.png) no-repeat;
+    margin-left: -40px;
+    /*border: #eee solid 1px;*/
+    border-top: none;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .coupon:hover {
+    background: url(../../../resources/images/jbhimg/right-nav-red-coupon.png) no-repeat;
+    width: 35px;
+    border: 0px;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .goods {
+    width: 35px;
+    height: 35px;
+    background: url(../../../resources/images/jbhimg/right-nav-goods.png) no-repeat;
+    margin-left: -40px;
+    /*border: #eee solid 1px;*/
+    border-top: none;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu a .goods:hover {
+    background: url(../../../resources/images/jbhimg/right-nav-red-goods.png) no-repeat;
+    width: 35px;
+    height: 35px;
+    border: 0px;
+    margin-bottom: 2px;
+}
+
+.right-nav-menu .go-top {
+    width: 60px;
+    height: 59px;
+    background: url(../../../resources/images/jbhimg/right-nav-go-top.png) no-repeat;
+    margin-left: -40px;
+    /*border: #eee solid 1px;*/
+    border-top: none;
+    cursor: pointer;
+}
+
+.right-nav-menu .go-top:hover {
+    background: url(../../../resources/images/jbhimg/right-nav-red-go-top.png) no-repeat;
+    width: 35px;
+    border: 0px;
+}
+
+.hot-ticket {
+    position: absolute;
+    top: -12px;
+    right: 0;
+}
+
+
+.jb-reserve .jb-reserve-logo{
+    height: 67px;
+    width: 120px;
+    margin-left: 49px;
+    float: left;
+}
+.jb-reserve .jb-reserve-adv{
+    float: left;
+    width: 262px;
+    height: 67px;
+    margin-left: 18px;
+}
+.jb-reserve .jb-reserve-adv p{
+    font-size: 20px !important;
+    color: #333 !important;
+    text-align:left;
+}
+.jb-reserve .jb-reserve-logo img{
+    height: 67px;
+    width: 120px;
+    border:1px solid #EAEAEA;
+}
+.jb-reserve .jb-reserve-head p {
+    font-size: 24px;
+}
+.bread_nav span{
+    display: inline-block;
+    font-size: 12px;
+    color: #333;
+}
+.bread_nav span a{
+    color: #999;
+}
+
+/*侧边导航2*/
+
+.right-nav {
+    position: fixed;
+    bottom: 65%;
+    right: 10px;
+    display: none;
+    z-index: 300;
+}
+.right-nav-hd{
+    width: 105px;
+    height: 105px;
+    background: url(../images/right-1.png) no-repeat;
+}
+.right-nav-in{
+    width: 60px;
+    position: absolute;
+    left:21px;
+    top:104px;
+    /*display: none;*/
+}
+.right-nav-in li{
+    width: 60px;
+    height:60px;
+    border:#eee solid 1px;
+    background: #fff;
+    text-align: center;
+    text-align: center;
+}
+.right-nav-in a{
+    display: block;
+    height: 60px;
+    font-size:12px;
+    color: #333;
+    padding:9px 0 0 0;
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+.right-nav-in li a .suo{
+    width: 28px;
+    height: 24px;
+    margin:0 auto;
+    background: url(../images/right-2.png) no-repeat;
+}
+.right-nav-in li a .gong{
+    width: 28px;
+    height: 24px;
+    margin:0 auto;
+    background: url(../images/right-3.png) no-repeat;
+}
+.right-nav-in li a .quan{
+    width: 28px;
+    height: 24px;
+    margin:0 auto;
+    background: url(../images/right-4.png) no-repeat;
+}
+.right-nav-in li a .zai{
+    width: 28px;
+    height: 24px;
+    margin:0 auto;
+    background: url(../images/right-5.png) no-repeat;
+}
+.right-nav-in li a .go{
+    width: 28px;
+    height: 24px;
+    margin:0 auto;
+    background: url(../images/right-6.png) no-repeat;
+}
+.right-nav-in li a .dian{
+    width: 28px;
+    height: 24px;
+    margin:0 auto;
+    background: url(../images/right-7.png) no-repeat;
+}
+
+/*侧边导航2*/
+
+.small_img span{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.show_info{
+    position: relative; line-height: 20px; max-height: 40px;overflow: hidden;
+}
+.show_info::after{
+    content: "..."; position: absolute; bottom: 0; right: 0; padding-left: 40px;
+    background: -webkit-linear-gradient(left, transparent, #fff 55%);
+    background: -o-linear-gradient(right, transparent, #fff 55%);
+    background: -moz-linear-gradient(right, transparent, #fff 55%);
+    background: linear-gradient(to right, transparent, #fff 55%);
+}
+/*弹框 验证码btn*/
+button.btn-yzm{
+    height:37px;
+    width:90px;
+    position:absolute;
+    right:0;
+    margin-top:0;
+    font-size: 14px;
+    line-height: 24px;
+    background:#d80c18;
+    outline: none;
+}
+.btn-primary {
+    background-color: #d80c18;
+    border-color: #d80c18;
+    outline: none;
+}
+.btn-primary.active,.btn-primary:active,.btn-primary:focus,.btn-primary:hover,.open>.dropdown-toggle.btn-primary {
+    background-color: #d80c18;
+    border-color: #d80c18;
+    opacity: .85;
+    filter: alpha(opacity=85);
+    outline: none;
+}

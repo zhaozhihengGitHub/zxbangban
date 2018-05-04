@@ -1,0 +1,98 @@
+*{
+	box-sizing: border-box;
+	list-style: none;
+}
+body{
+	background:#f3f3f3;
+}
+	.explosive_box .goods_image{
+		width: 380px;
+		height: 200px;
+	}
+	.explosive_box{
+		width: 1200px;
+		margin: 0 auto;
+	}
+	.explosive_box .odds_under{
+		height: 134px;
+		padding-left: 20px;
+		padding-right: 20px;
+		
+	}
+	.explosive_box .small_img{
+		height: 56px;
+		padding-top: 12px;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 50px;
+	}
+	.explosive_box .small_img img{
+		height: 30px;
+		width: 87px;
+		float: left;
+		display: block;
+	}
+	.explosive_box .small_img span{
+		display: block;
+		float: left;
+		margin-left: 14px;
+		position: relative;
+		line-height: 20px; 
+		max-height: 40px;
+		overflow: hidden;
+	}
+
+	.explosive_box .price{
+		padding-top: 12px;
+	}
+	.explosive_box .odds_under .price p i{
+		font-style: normal;
+		font-size: 20px;
+	}
+	.explosive_box .odds_under .price p{
+		color: #ce012e;
+		font-size: 28px;
+		width: 200px;
+		float: left;
+	}
+	.explosive_box .odds_under .price .price_box{
+		width: 100px;
+		float: right;
+	}
+	.explosive_box .odds_under .price .price_box .price_button {
+		width: 100px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		border:none;
+		background: #ccc;
+		color: #fff;
+	}
+	.explosive_box .red_button{
+		width: 100px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		border:none;
+		background: #d80c18;
+		color: #fff;
+	}
+	.explosive_box .odds_under .price .price_box span{
+		text-align: center;
+		color: #999;
+		display: block;
+	}
+	.explosive_box ul{
+		margin-left: -15px;
+		width: 100%;
+		display: block;
+	}
+	.explosive_box li{
+		float: left;
+		margin-left: 20px;
+		display: block;
+		background:#fff;
+		margin-top: 35px;
+	}
+	.show_goods_name:hover{
+		color: red;
+	}
