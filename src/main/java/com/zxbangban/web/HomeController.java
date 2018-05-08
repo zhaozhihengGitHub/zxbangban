@@ -272,8 +272,8 @@ public class HomeController {
      *
      * @return 家博会
      */
-    @RequestMapping("/teleport")
-    public String teleport(){return "jiabohui/teleport";}
+    @RequestMapping("/homeFair")
+    public String homeFair(){return "jiabohui/homeFair";}
     /**
      *
      * @return 家博会

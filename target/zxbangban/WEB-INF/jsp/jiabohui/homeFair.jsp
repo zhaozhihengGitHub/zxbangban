@@ -149,7 +149,7 @@
                             <em>支付满5000可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p>方太电器</p>
+                            <p>王者陶瓷</p>
                             <button class="J_GetCoupon">立即领取</button>
                         </div>
                         <div class="ling fr">已领<e>184</e>张</div>
@@ -613,16 +613,16 @@
                             </li>
                         </ul>
                         <ul class="work_con clearfix">
-                            <li>
-                                <a href="javascript:;">
-                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" width="150" alt="方太"/></a>
-                            </li>
+                            <%--<li>--%>
+                                <%--<a href="javascript:;">--%>
+                                    <%--<img src="../../../resources/images/jbhimg/ftdq_logo.jpg" width="150" alt="方太"/></a>--%>
+                            <%--</li>--%>
                         </ul>
                         <ul class="work_con clearfix">
-                            <li>
-                                <a href="javascript:;">
-                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" width="150" alt="方太"/></a>
-                            </li>
+                            <%--<li>--%>
+                                <%--<a href="javascript:;">--%>
+                                    <%--<img src="../../../resources/images/jbhimg/ftdq_logo.jpg" width="150" alt="方太"/></a>--%>
+                            <%--</li>--%>
                         </ul>
                         <ul class="work_con clearfix">
                             <li>
@@ -885,9 +885,9 @@
     }
     $(function () {
         var yhq='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 400px; margin-top: -200px; margin-left: -285px;"><div class="jb-modal-body"><div class="boom2"><div class="boom-hd clearfix"><div class="brand-img fl"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="brand-name"><p style="height:32px;overflow:hidden"> 方太电器200元优惠券</p><span>支付满5000.00减200.00</span><em>使用时间:04.29-05.01 使用地址:CBD国际会展中心</em> </div></div><div class="inpt-box"><div class="txt"><label class="lab fl">手机：</label><input type="tel" class="int-txt fl" name="coupon_mobile" id="coupon_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="txt"><label class="lab fl">验证码：</label><input type="text" class="int-txt2 fl code" name="coupon_code" id="coupon_code" maxlength="4" placeholder="请输入验证码"></div></div><div class="msg-box" style="margin:10px 0px 0px 110px;"><div class="msg msg-error hide" id="J_MsgCouponSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="bomm-btn2">立即领取</button><i class="i">同时免费索票价值20元的华夏家博会门票</i><div class="right-down"><div class="draw_tips"><a href="javascript:;" ">已有账号？<br>登录领取更方便！</a></div></div><div class="special-zero-close" onclick="closetk(this);"></div></div>';
-//        $('.J_GetCoupon').click(function(){
-//            $('body').append(yhq);
-//        })
+        $('.J_GetCoupon').click(function(){
+            $('body').append(yhq);
+        })
         var yhq1='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 900px; min-height: 460px; margin-top: -230px; margin-left: -450px;"><div class="jb-modal-body"><div class="boom3"><div class="boom3-l fl"><div class="boom3-img"><img src="../../../resources/images/jbhimg/ftdq.jpg"></div><h5></h5><div class="clear"></div><div class="prize clearfix"><p style="width: 83%;font-size:18px;color: black;">方太厨电 油烟机EM23TS+灶具FD2B</p><p style="width: 83%;color: #999;margin: 10px 0;">油烟机EM23TS+灶具FD2B</p><p class="fl">抢购价: <b>4480.00</b></p><span class="fr"> 剩余3个</span></div><div class="boom3-l-down" style="margin-top: 1rem;">线上预约锁定，凭短信至展会现场下单</div></div><div class="boom3-r fl" id="reserve_modal"><div class="boom3-r-hd">爆品预约</div><div class="boom3-input"><div class="boom3-input-in clearfix"><label class="lab2 fl">姓名：</label><input type="text" class="boom3-txt" name="reserve_name" id="reserve_name" maxlength="12" placeholder="请输入收件人姓名" value=""></div><div class="boom3-input-in clearfix"><label class="lab2 fl">手机：</label><input type="text" class="boom3-txt" name="reserve_mobile" id="reserve_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="boom3-input-in clearfix"><label class="lab2 fl">验证码：</label><input type="text" class="boom3-txt2 fl code" name="reserve_code" id="reserve_code" maxlength="4" placeholder="请输入验证码"></div><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><input type="hidden" value="178726" name="source_id" id="source_id"><input type="hidden" name="reserve_ticket" id="reserve_ticket" value="1"><button class="boom3-btn">立即预约</button><span style="position: relative;top: .7rem;left: 1rem; font-size: .6rem;color: #999;"><p style="margin-top:10px;">√&nbsp;&nbsp;同时免费索票价值20元的华夏家博会门票</p><p style="margin-left: 1rem;">时间地点：04.29-05.01CBD国际会展中心</p></span></div></div><div class="special-zero-close" onclick="closetk(this)"></div></div>';
 //        $('.B_GetCoupon').click(function(){
 //            $('body').append(yhq1);
