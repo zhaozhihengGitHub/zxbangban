@@ -509,6 +509,50 @@
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_jsym.jpg" width="150" alt="金丝玉玛瓷砖"/></a>
                             </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_jpyzcz.jpg" width="150" alt="金牌亚洲瓷砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_knecz.jpg" width="150" alt="卡诺尔瓷砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_jymjcz.jpg" width="150" alt="金玉名家瓷砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_lbtc.jpg" width="150" alt="朗博陶瓷"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_mgltc.jpg" width="150" alt="米格兰时尚陶瓷"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_nbecz.jpg" width="150" alt="诺贝尔瓷砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_pmcz.jpg" width="150" alt="平米瓷砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_wjjgz.jpg" width="150" alt="威俊精工砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_yncz.jpg" width="150" alt="依诺瓷砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_lmdkcz.jpg" width="150" alt="罗曼缔克瓷砖"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_lmcz.jpg" width="150" alt="新罗马瓷砖"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
                             <li>
