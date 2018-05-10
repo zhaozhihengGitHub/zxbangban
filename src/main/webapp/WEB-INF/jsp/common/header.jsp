@@ -82,7 +82,7 @@
 					<%--<li><a href="${pageContext.request.contextPath}">用户保障</a></li>--%>
 					<li><a href="${pageContext.request.contextPath}/jobs/register">工人入驻</a></li>
 					<li><a href="${pageContext.request.contextPath}">城市加盟</a></li>
-					<li><a href="${pageContext.request.contextPath}/shop">商城</a></li>
+					<li><a href="${pageContext.request.contextPath}/homeFair">团购活动</a></li>
 					<li><a href="${pageContext.request.contextPath}/homeFair">家博会</a></li>
 					<li><a href="${pageContext.request.contextPath}/queryAllComments">评论</a></li>
 				</ul>
@@ -108,7 +108,8 @@
 		<%--<li><a href="${pageContext.request.contextPath}">用户保障</a></li>--%>
 		<li><a href="${pageContext.request.contextPath}/jobs/register">工人入驻</a></li>
 		<li><a href="${pageContext.request.contextPath}">城市加盟</a></li>
-		<li><a href="${pageContext.request.contextPath}/shop">商城</a></li>
+		<li><a href="${pageContext.request.contextPath}/homeFair">团购活动</a></li>
+		<li><a href="${pageContext.request.contextPath}/homeFair">家博会</a></li>
 		<li><a href="${pageContext.request.contextPath}/queryAllComments">评论</a></li>
 	</ul>
 </div>

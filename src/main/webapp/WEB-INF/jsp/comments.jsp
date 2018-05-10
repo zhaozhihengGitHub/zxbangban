@@ -54,22 +54,6 @@
             </c:if>
         </div>
     </c:forEach>
-        <div class="comment-show-con clearfix">
-            <div class="comment-show-con-img pull-left"><img src="${pageContext.request.contextPath}/resources/images/header-img-comment_03.png" alt=""></div>
-            <div class="comment-show-con-list pull-left clearfix">
-                <div class="pl-text clearfix">
-                    <a href="#" class="comment-size-name">张三 : </a>
-                    <span class="my-pl-con">&nbsp;45645645!</span>
-                </div>
-                <div class="date-dz">
-                    <span class="date-dz-left pull-left comment-time">2010-5-2 11:11:39</span>
-                    <div class="date-dz-right pull-right comment-pl-block">
-                        <a href="javascript:;" class="date-dz-pl pl-hf hf-con-block pull-left" id="-1">回复</a>
-                    </div>
-                </div>
-                <div class="hf-list-con"></div>
-            </div>
-        </div>
     <!--回复区域 end-->
 </div>
 </div>

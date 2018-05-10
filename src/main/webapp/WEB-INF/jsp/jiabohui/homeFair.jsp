@@ -28,19 +28,19 @@
             <p class="tic_time"></p>
             <p class="tic_org"></p>
             <div class="tic_login end" id="expo_home">
-                <form action="">
+                <form role="form"  action="${pageContext.request.contextPath}/c/homeFair" method="post">
                 <div class="tic_title">免费索票</div>
-                <div class="tic_num">已有<em>47608</em>人索票</div>
+                <div class="tic_num">已有<em>408</em>人索票</div>
                 <div class="tic_input">
                     <label class="ipt-label">姓名：</label>
                     <div class="ipt-box">
-                        <input type="text" class="ipt_txt" placeholder="请输入收件人姓名" id="reserve_name"/>
+                        <input type="text" name="name" class="ipt_txt" placeholder="请输入收件人姓名" id="reserve_name"/>
                     </div>
                 </div>
                 <div class="tic_input">
                     <label class="ipt-label">手机：</label>
                     <div class="ipt-box">
-                        <input type="text" class="ipt_txt short" placeholder="请输入手机号码" maxlength="11"/>
+                        <input type="text" name="tel" class="ipt_txt short" placeholder="请输入手机号码" maxlength="11"/>
                     </div>
                     <div class="test">
                         <button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button>
@@ -49,11 +49,8 @@
                 <div class="tic_input">
                     <label class="ipt-label">验证码：</label>
                     <div class="ipt-box">
-                        <input type="text" class="ipt_txt" placeholder="请输入验证码"/>
+                        <input type="text" name="telcode"  class="ipt_txt" placeholder="请输入验证码"/>
                     </div>
-                    <%--<div class="test">--%>
-                        <!--<img class="verify-image" src="http://www.51jiabo.com/code/image?srcId=Ticket&amp;yyt=1524271632" height="37" width="90" onclick="this.src= 'http://www.51jiabo.com/code/image?srcId=Ticket&amp;yys='+new Date().getTime()">-->
-                    <%--</div>--%>
                 </div>
                 <div class="msg-box">
                     <div class="msg msg-error hide">
@@ -62,7 +59,7 @@
                     </div>
                 </div>
                 <div class="tic_btn">
-                    <button type="submit">免费索票</button>
+                    <button type="submit" id="jiabohui" name="${jiabohui}" >免费索票</button>
                 </div>
                 <div class="tic_under"><p>温馨提示：索票成功后，我们的客服将通过021开头的上海电话与您联系，确认门票及展会资料快递地址。</p></div>
                 </form>
@@ -173,7 +170,7 @@
                             <em>支付满4000可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p>爱舒床垫</p>
+                            <p>宏陶陶瓷</p>
                             <button class="J_GetCoupon">立即领取</button>
                         </div>
                         <div class="ling fr">已领<e>75</e>张</div>
@@ -185,7 +182,7 @@
                             <em>支付满3000可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p>西门子家电</p>
+                            <p>平米瓷砖</p>
                             <button class="J_GetCoupon">立即领取</button>
                         </div>
                         <div class="ling fr">已领<e>63</e>张</div>
@@ -197,7 +194,7 @@
                             <em>支付满5000可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p>TOTO</p>
+                            <p>罗马瓷砖</p>
                             <button class="J_GetCoupon">立即领取</button>
                         </div>
                         <div class="ling fr">已领<e>86</e>张</div>
@@ -209,7 +206,7 @@
                             <em>支付满3000可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p> 老板电器</p>
+                            <p> 东鹏瓷砖</p>
                             <button class="J_GetCoupon">立即领取</button>
                         </div>
                         <div class="ling fr">已领<e>40</e>张</div>
@@ -221,7 +218,7 @@
                             <em>支付满3000可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p>摩恩卫浴</p>
+                            <p>郎宝陶瓷</p>
                             <button class="J_GetCoupon">立即领取</button>
                         </div>
                         <div class="ling fr">已领<e>78</e>张</div>
@@ -233,7 +230,7 @@
                             <em>支付满10000可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p>美的中央空调...</p>
+                            <p>新罗马瓷砖</p>
                             <button class="J_GetCoupon">立即领取</button>
                         </div>
                         <div class="ling fr">已领<e>49</e>张</div>
@@ -259,7 +256,7 @@
                                 <img style="width: 100%;height: 200px;" src="../../../resources/images/jbhimg/ftdq.jpg" class="lazy goods_image"/></a>
                             <div class="odds_under">
                                 <div class="small_img">
-                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" style="height: 2.5rem;"/>
+                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg"/>
                                     <span class="show_goods_name">方太厨电 油烟机EM23TS+灶具FD2B</span>
                                 </div>
                                 <div class="price">
@@ -269,87 +266,7 @@
                             </div>
                         </div>
                         <div class="price_box" style="float: right;margin-top: -60px;">
-                            <button class="red_button" style="margin-right: 2rem;">立即预约</button>
-                            <p style="margin:5px 0 0 0;">剩余 8 个 </p>
-                        </div>
-                    </li>
-                    <li class="B_GetCoupon" style="width: 31.6%;cursor: pointer;">
-                        <div>
-                            <a href="javascript:;;">
-                                <img style="width: 100%;height: 200px;" src="../../../resources/images/jbhimg/ftdq.jpg" class="lazy goods_image"/></a>
-                            <div class="odds_under">
-                                <div class="small_img">
-                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" style="height: 2.5rem;"/>
-                                    <span class="show_goods_name">方太厨电 油烟机EM23TS+灶具FD2B</span>
-                                </div>
-                                <div class="price">
-                                    <p><i>¥</i> 4480.00<e style="font-size:14px;"></e></p>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="price_box" style="float: right;margin-top: -60px;">
-                            <button class="red_button" style="margin-right: 2rem;">立即预约</button>
-                            <p style="margin:5px 0 0 0;">剩余 8 个 </p>
-                        </div>
-                    </li>
-                    <li class="B_GetCoupon" style="width: 31.6%;cursor: pointer;">
-                        <div>
-                            <a href="javascript:;;">
-                                <img style="width: 100%;height: 200px;" src="../../../resources/images/jbhimg/ftdq.jpg" class="lazy goods_image"/></a>
-                            <div class="odds_under">
-                                <div class="small_img">
-                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" style="height: 2.5rem;"/>
-                                    <span class="show_goods_name">方太厨电 油烟机EM23TS+灶具FD2B</span>
-                                </div>
-                                <div class="price">
-                                    <p><i>¥</i> 4480.00<e style="font-size:14px;"></e></p>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="price_box" style="float: right;margin-top: -60px;">
-                            <button class="red_button" style="margin-right: 2rem;">立即预约</button>
-                            <p style="margin:5px 0 0 0;">剩余 8 个 </p>
-                        </div>
-                    </li>
-                    <li class="B_GetCoupon" style="width: 31.6%;cursor: pointer;">
-                        <div>
-                            <a href="javascript:;;">
-                                <img style="width: 100%;height: 200px;" src="../../../resources/images/jbhimg/ftdq.jpg" class="lazy goods_image"/></a>
-                            <div class="odds_under">
-                                <div class="small_img">
-                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" style="height: 2.5rem;"/>
-                                    <span class="show_goods_name">方太厨电 油烟机EM23TS+灶具FD2B</span>
-                                </div>
-                                <div class="price">
-                                    <p><i>¥</i> 4480.00<e style="font-size:14px;"></e></p>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="price_box" style="float: right;margin-top: -60px;">
-                            <button class="red_button" style="margin-right: 2rem;">立即预约</button>
-                            <p style="margin:5px 0 0 0;">剩余 8 个 </p>
-                        </div>
-                    </li>
-                    <li class="B_GetCoupon" style="width: 31.6%;cursor: pointer;">
-                        <div>
-                            <a href="javascript:;;">
-                                <img style="width: 100%;height: 200px;" src="../../../resources/images/jbhimg/ftdq.jpg" class="lazy goods_image"/></a>
-                            <div class="odds_under">
-                                <div class="small_img">
-                                    <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" style="height: 2.5rem;"/>
-                                    <span class="show_goods_name">方太厨电 油烟机EM23TS+灶具FD2B</span>
-                                </div>
-                                <div class="price">
-                                    <p><i>¥</i> 4480.00<e style="font-size:14px;"></e></p>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="price_box" style="float: right;margin-top: -60px;">
-                            <button class="red_button" style="margin-right: 2rem;">立即预约</button>
+                            <button class="red_button" style="margin-right:20px;">立即预约</button>
                             <p style="margin:5px 0 0 0;">剩余 8 个 </p>
                         </div>
                     </li>
@@ -364,75 +281,6 @@
                 </div>
                 <ul class="explosive clearfix">
                     <div class="li-box">
-                        <li class="S_GetCoupon">
-                            <img class="lazy explosive-img" src="../../../resources/images/jbhimg/ftdq.jpg" alt=""/>
-                            <div class="clearfix"></div>
-                            <div class="under clearfix">
-                                <div class="under-top clearfix">
-                                    <div class="explosive-logo">
-                                        <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" alt=""/>
-                                    </div>
-                                    <div class="explosive-name">方太电器</div>
-                                </div>
-                                <div class="under-middle">
-                                    <p>1.买就送:下单即送价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p>
-                                    <p>2.不满意就退:热水器享受180天舒适后悔权，180天内不舒服就退款</p>
-                                </div>
-                                <div class="under-bottom clearfix">
-                                    <div class="stand">展位号:TA29</div>
-                                    <div class="subscribe">
-                                        <button class="subscribe-btn" style="height: 30px;">抢先预约</button>
-                                        <span>2人已预约</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="S_GetCoupon">
-                            <img class="lazy explosive-img" src="../../../resources/images/jbhimg/ftdq.jpg" alt=""/>
-                            <div class="clearfix"></div>
-                            <div class="under clearfix">
-                                <div class="under-top clearfix">
-                                    <div class="explosive-logo">
-                                        <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" alt=""/>
-                                    </div>
-                                    <div class="explosive-name">方太电器</div>
-                                </div>
-                                <div class="under-middle">
-                                    <p>1.买就送:下单即送价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p>
-                                    <p>2.不满意就退:热水器享受180天舒适后悔权，180天内不舒服就退款</p>
-                                </div>
-                                <div class="under-bottom clearfix">
-                                    <div class="stand">展位号:TA29</div>
-                                    <div class="subscribe">
-                                        <button class="subscribe-btn" style="height: 30px;">抢先预约</button>
-                                        <span>2人已预约</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="S_GetCoupon">
-                            <img class="lazy explosive-img" src="../../../resources/images/jbhimg/ftdq.jpg" alt=""/>
-                            <div class="clearfix"></div>
-                            <div class="under clearfix">
-                                <div class="under-top clearfix">
-                                    <div class="explosive-logo">
-                                        <img src="../../../resources/images/jbhimg/ftdq_logo.jpg" alt=""/>
-                                    </div>
-                                    <div class="explosive-name">方太电器</div>
-                                </div>
-                                <div class="under-middle">
-                                    <p>1.买就送:下单即送价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p>
-                                    <p>2.不满意就退:热水器享受180天舒适后悔权，180天内不舒服就退款</p>
-                                </div>
-                                <div class="under-bottom clearfix">
-                                    <div class="stand">展位号:TA29</div>
-                                    <div class="subscribe">
-                                        <button class="subscribe-btn" style="height: 30px;">抢先预约</button>
-                                        <span>2人已预约</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
                         <li class="S_GetCoupon">
                             <img class="lazy explosive-img" src="../../../resources/images/jbhimg/ftdq.jpg" alt=""/>
                             <div class="clearfix"></div>
@@ -670,7 +518,7 @@
                             </div>
                             <div class="title">前往展馆</div>
                             <div class="num">2</div>
-                            <div class="content">地铁1号线会展中心站A口出。</div>
+                            <div class="content">长治市西环路北段123号(佰合园北侧，乘25、26路到佰合园下车十字路口往北200米)</div>
                         </li>
                         <li>
                             <div class="img">
@@ -795,40 +643,49 @@
             <!-- 家博介绍 -->
 
             <div class="gain" id="J_BotSmBar" style="background: url(../../../resources/images/jbhimg/hide.png) no-repeat; width: 100px; height: 160px; display: none;"></div>
-            <div class="get_tic2" id="J_BotBar" style="width: 100%;">
+            <%--<div class="get_tic2" id="J_BotBar" style="width: 100%;">
                 <div class="get_in clearfix" style="background: url(http://www.51jiabo.com/assets/img/expo/show_bg.png?v20180205) no-repeat center;position: fixed;">
                     <div class="get_in_l_2 fl"></div>
                     <div class="get_in_r_qr_2 fr"></div>
                     <div style="width: 1200px; height: 130px; margin:0 auto;background: url(../../../resources/images/jbhimg/show_info.png) no-repeat center;position: relative;">
                         <div class="get_in_r_2 fl" id="expo_botbar">
+                            <form  action="${pageContext.request.contextPath}/c/homeFair" method="post">
                             <div class="" style="width: 250px;margin-left: 0;position: fixed;">
+                                <div  class="ipt_line" style="margin-bottom: 7px;">
+                                    <div class="ipt-box">
+                                        <input type="text" name="name" class="ipt_txt" placeholder="请输入您的姓名" />
+                                    </div>
+                                </div>
                                 <div class="ipt_line" style="margin-bottom: 7px;">
                                     <div class="ipt-box">
-                                        <input type="text" placeholder="请输入您的手机" class="ipnt_txt" maxlength="11" id="reserve_mobile" style="height: 38px;font-size: 17px;">
+                                        <input type="text" name="tel" placeholder="请输入您的手机" class="ipnt_txt" maxlength="11" id="reserve_mobile" style="height: 38px;font-size: 17px;">
                                     </div>
                                     <div class="test">
                                         <button class="btn btn-primary btn-yzm" type="button" id="">验证码</button>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div class="msg-box quick-msg-box" style="position: absolute;">
                                 <div class="ipt_line">
                                     <div class="ipt-box">
-                                        <input type="text" class="ipnt_txt2" placeholder="请输入验证码" id="reserve_code" style="height: 38px;font-size: 17px;">
+                                        <input type="text" name="telcode" class="ipnt_txt2" placeholder="请输入验证码" id="reserve_code" style="height: 38px;font-size: 17px;">
+                                    </div>
+                                </div>
+                                <div class="msg msg-error hide" id="J_MsgReserveSubmit">
+                                    <div class="tic_btn">
+                                        <button type="submit">免费索票</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="msg-box quick-msg-box" style="position: absolute;">
-                                <div class="msg msg-error hide" id="J_MsgReserveSubmit">
-                                    <i></i>
-                                    <div class="msg-cnt" style="color: #fff;margin-top: -7px;"></div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                         <span style="position: absolute;height: 70px;width: 190px;right: 80px;top: 41px;display: block;cursor: pointer;" >
                             <img src="../../../resources/images/jbhimg/ticket_btn.png"></span>
                     </div>
                     <div class="close fr" id="J_BotBarClose" style="background: url(../../../resources/images/jbhimg/close.png) no-repeat;height: 48px;width: 48px;top: -54px;right: 5px;"></div>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </div>
     <div class="righ-nav">
@@ -850,28 +707,34 @@
     <div class="right-line" style="width:3px; height: 100%;position: fixed; top:0; right:0;background:#bbbbbb; display:none;"></div>
     <!--弹框-->
     <!--领取优惠券成功-->
-    <div style="display:none;"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 500px; min-height: 582px; margin-top: -291px; margin-left: -250px;"><div class="jb-modal-body"><link rel="stylesheet" type="text/css" href="http://www.51jiabo.com/assets/css/coupon/success.css">
-
-        <div class="draw_box">
-            <div class="draw_hd">
-                <p>领取成功</p>
-                <p class="draw_brand">海尔厨房电器品牌200元优惠券</p>
-            </div>
-            <div class="draw_in">
-                <div class="draw_rule">
-                    <b>活动规则：</b>
-                    <span>仅限华夏家博会现场下单使用，单笔订单最多使用一张优惠券；</span>
-                    <span>满减金额以展会现场实际支付金额为准；</span>
-                    <span>凭优惠券短信至商家展位处下单，满足条件即可使用优惠券；</span>
+    <div class="sptk" style="display: none">
+        <div class="jb-modal-blind"></div>
+        <div class="jb-modal-primary" style="width: 500px; min-height:420px; margin-top: -291px; margin-left: -250px;">
+            <div class="jb-modal-body">
+                <div class="draw_box">
+                    <div class="draw_hd">
+                        <p>领取成功</p>
+                    </div>
+                    <div class="draw_in">
+                        <%--<div class="draw_rule">--%>
+                            <%--<b>活动规则：</b>--%>
+                            <%--<span>仅限装修帮办家博会现场下单使用，单笔订单最多使用一张优惠券；</span>--%>
+                            <%--<span>满减金额以展会现场实际支付金额为准；</span>--%>
+                            <%--<span>凭优惠券短信至商家展位处下单，满足条件即可使用优惠券；</span>--%>
+                        <%--</div>--%>
+                        <div class="draw_date clearfix">
+                            <div class="draw_date_l fl">使用日期：2018.05.12-2018.05.20</div>
+                            <%--<div class="draw_date_r fr"><a href="http://www.51jiabo.com/zz/member/myCoupon">去用户中心查看已领的优惠券</a></div>--%>
+                        </div>
+                        <div class="draw_btn"><button onclick="hidetk(this);">确&nbsp;&nbsp;定</button></div>
+                        <div class="remind">注：本券只能在展会现场使用，请及时关注！</div>
+                    </div>
                 </div>
-                <div class="draw_date clearfix">
-                    <div class="draw_date_l fl">使用日期：2018.04.29-2018.05.01</div>
-                    <div class="draw_date_r fr"><a href="http://www.51jiabo.com/zz/member/myCoupon">去用户中心查看已领的优惠券</a></div>
-                </div>
-                <div class="draw_btn"><button onclick="base.closeModal()">确&nbsp;&nbsp;定</button></div>
-                <div class="remind">注：本券只能在展会现场CBD国际会展中心（中央公园1号）使用，请及时关注！</div>
             </div>
-        </div></div><div class="jb-modal-footer"></div></div></div> <!--领取优惠券成功-->
+            <div class="jb-modal-footer"></div>
+        </div>
+    </div>
+    <!--领取优惠券成功-->
 </div>
 <%@include file="../common/footer.jsp" %>
 </body>
@@ -880,25 +743,49 @@
 <script src="../../../resources/js/jiabohui/coupon.js" type="text/javascript" ></script>
 <script>
     // 优惠券弹框 开始
+    /*function submitInfo() {
+        appointment.detail.validata();
+        $(this).attr("disabled");
+        var name=$("input[name=name]").val();
+        var tel=$("input[name=tel]").val();
+        $.ajax({
+            url:"",
+            data:{name:name,tel:tel},
+            type:"POST",
+            success:function () {
+                $('.sptk').show();
+                $("input[name=name]").val("");
+                $("input[name=tel]").val("");
+                $("input[name=telcode]").val("");
+                $(this).removeAttr("disabled");
+            }
+        })
+    }*/
+    
     function closetk(o){
         $(o).parents('.tankuang').remove();
     }
+    function hidetk(o){
+        $(o).parents('.sptk').hide();
+    }
     $(function () {
+        appointment.detail.validata();
+        if($("#jiabohui").attr("name")=="jiabohiu"){
+            $('.sptk').show();
+        }
         var yhq='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 400px; margin-top: -200px; margin-left: -285px;"><div class="jb-modal-body"><div class="boom2"><div class="boom-hd clearfix"><div class="brand-img fl"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="brand-name"><p style="height:32px;overflow:hidden"> 方太电器200元优惠券</p><span>支付满5000.00减200.00</span><em>使用时间:04.29-05.01 使用地址:CBD国际会展中心</em> </div></div><div class="inpt-box"><div class="txt"><label class="lab fl">手机：</label><input type="tel" class="int-txt fl" name="coupon_mobile" id="coupon_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="txt"><label class="lab fl">验证码：</label><input type="text" class="int-txt2 fl code" name="coupon_code" id="coupon_code" maxlength="4" placeholder="请输入验证码"></div></div><div class="msg-box" style="margin:10px 0px 0px 110px;"><div class="msg msg-error hide" id="J_MsgCouponSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="bomm-btn2">立即领取</button><i class="i">同时免费索票价值20元的华夏家博会门票</i><div class="right-down"><div class="draw_tips"><a href="javascript:;" ">已有账号？<br>登录领取更方便！</a></div></div><div class="special-zero-close" onclick="closetk(this);"></div></div>';
         $('.J_GetCoupon').click(function(){
             $('body').append(yhq);
         })
-        var yhq1='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 900px; min-height: 460px; margin-top: -230px; margin-left: -450px;"><div class="jb-modal-body"><div class="boom3"><div class="boom3-l fl"><div class="boom3-img"><img src="../../../resources/images/jbhimg/ftdq.jpg"></div><h5></h5><div class="clear"></div><div class="prize clearfix"><p style="width: 83%;font-size:18px;color: black;">方太厨电 油烟机EM23TS+灶具FD2B</p><p style="width: 83%;color: #999;margin: 10px 0;">油烟机EM23TS+灶具FD2B</p><p class="fl">抢购价: <b>4480.00</b></p><span class="fr"> 剩余3个</span></div><div class="boom3-l-down" style="margin-top: 1rem;">线上预约锁定，凭短信至展会现场下单</div></div><div class="boom3-r fl" id="reserve_modal"><div class="boom3-r-hd">爆品预约</div><div class="boom3-input"><div class="boom3-input-in clearfix"><label class="lab2 fl">姓名：</label><input type="text" class="boom3-txt" name="reserve_name" id="reserve_name" maxlength="12" placeholder="请输入收件人姓名" value=""></div><div class="boom3-input-in clearfix"><label class="lab2 fl">手机：</label><input type="text" class="boom3-txt" name="reserve_mobile" id="reserve_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="boom3-input-in clearfix"><label class="lab2 fl">验证码：</label><input type="text" class="boom3-txt2 fl code" name="reserve_code" id="reserve_code" maxlength="4" placeholder="请输入验证码"></div><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><input type="hidden" value="178726" name="source_id" id="source_id"><input type="hidden" name="reserve_ticket" id="reserve_ticket" value="1"><button class="boom3-btn">立即预约</button><span style="position: relative;top: .7rem;left: 1rem; font-size: .6rem;color: #999;"><p style="margin-top:10px;">√&nbsp;&nbsp;同时免费索票价值20元的华夏家博会门票</p><p style="margin-left: 1rem;">时间地点：04.29-05.01CBD国际会展中心</p></span></div></div><div class="special-zero-close" onclick="closetk(this)"></div></div>';
-//        $('.B_GetCoupon').click(function(){
-//            $('body').append(yhq1);
-//        })
+        var yhq1='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 900px; min-height: 460px; margin-top: -230px; margin-left: -450px;"><div class="jb-modal-body"><div class="boom3"><div class="boom3-l fl"><div class="boom3-img"><img src="../../../resources/images/jbhimg/ftdq.jpg"></div><h5></h5><div class="clear"></div><div class="prize clearfix"><p style="width: 83%;font-size:18px;color: black;">方太厨电 油烟机EM23TS+灶具FD2B</p><p style="width: 83%;color: #999;margin: 10px 0;">油烟机EM23TS+灶具FD2B</p><p class="fl">抢购价: <b>4480.00</b></p><span class="fr"> 剩余3个</span></div><div class="boom3-l-down" style="margin-top: 1rem;">线上预约锁定，凭短信至展会现场下单</div></div><div class="boom3-r fl" id="reserve_modal"><div class="boom3-r-hd">爆品预约</div><div class="boom3-input"><div class="boom3-input-in clearfix"><label class="lab2 fl">姓名：</label><input type="text" class="boom3-txt" name="reserve_name" id="reserve_name" maxlength="12" placeholder="请输入收件人姓名" value=""></div><div class="boom3-input-in clearfix"><label class="lab2 fl">手机：</label><input type="text" class="boom3-txt" name="reserve_mobile" id="reserve_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="boom3-input-in clearfix"><label class="lab2 fl">验证码：</label><input type="text" class="boom3-txt2 fl code" name="reserve_code" id="reserve_code" maxlength="4" placeholder="请输入验证码"></div><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><input type="hidden" value="178726" name="source_id" id="source_id"><input type="hidden" name="reserve_ticket" id="reserve_ticket" value="1"><button class="boom3-btn">立即预约</button><span style="position: relative;top: 10px;left:10px; font-size: 14px;color: #999;"><p style="margin-top:10px;">√&nbsp;&nbsp;同时免费索票价值20元的华夏家博会门票</p><p style="margin-left: 1rem;">时间地点：04.29-05.01CBD国际会展中心</p></span></div></div><div class="special-zero-close" onclick="closetk(this)"></div></div>';
+        $('.B_GetCoupon').click(function(){
+            $('body').append(yhq1);
+        })
     var yhq2='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 564px; margin-top: -282px; margin-left: -285px;"><div class="jb-modal-body"><div class="supplier-box" id="reserve_modal_8_0"><div class="close" onclick="closetk(this);"></div><div class="dialog-hd">商户活动预约</div><div class="dialog-box-in clearfix"><div class="dialog-left"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="dialog-right"><span class="zhan-num">展位号TA29</span><span class="hx-time">4.29-5.1  CBD国际会展中心</span></div><div class="clearfix"></div><em class="activity-tips-title">活动详情：</em><div class="activity-tips"><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>2<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">不满意就退</span><span style="color: rgb(71,85,119);">:</span>热水器享受180天舒适后悔权，<span style="color: rgb(226,80,65);">180天内不舒服就退款</span></p></div><div class="ipt-box"><input type="hidden" value="8" name="source_id" id="source_id"><input type="text" name="reserve_mobile" id="reserve_mobile" maxlength="11" class="ipt-txt" placeholder="请输入您的手机号码"><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="ipt-btn" >立即预约</button><div class="ipt-bottom clearfix"><input name="reserve_checked" type="hidden" value="1" class="check-box" checked="checked"><span>√同时免费索取价值20元的华夏家博会门票</span><em>线上预约，凭短信至现场商户展位参与活动享优惠</em></div></div></div></div></div></div></div>';
-//    $('.S_GetCoupon').click(function(){
-//        $('body').append(yhq2);
-//    })
+    $('.S_GetCoupon').click(function(){
+        $('body').append(yhq2);
+    })
     // 优惠券弹框 结束
-        //验证码
-        workerstate.detail.validata();
 })
 
 </script>
