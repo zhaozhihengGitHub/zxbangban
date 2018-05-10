@@ -231,7 +231,7 @@
                         </ul>
                         <span style="display: block;">团队描述：</span>
                         <textarea class="team_intro" name="" id="" readonly>${worker.teamDesc} </textarea>
-                        <a href="${pageContext.request.contextPath}/account-support/modify"><span style="font-size: 20px" class="btn btn-info">修改</span></a>
+                        <a href="${pageContext.request.contextPath}/account-support/modify"><span class="btn btn-info">修改</span></a>
                     </div>
                     <span style="margin-bottom: 5px;display: block;">工程描述:</span><br/>
                     <div class="sm_over">
@@ -256,7 +256,7 @@
                                 </c:if>
                             </c:forEach>
                         </dl>
-                        <a href="${pageContext.request.contextPath}/worker-console/addDec?wid=${worker.workerId}"   ><span style="font-size: 20px" class="btn btn-info">添加</span></a>
+                        <a href="${pageContext.request.contextPath}/worker-console/addDec?wid=${worker.workerId}"   ><span class="btn btn-info">添加</span></a>
                     </div>
                     <h2 style="margin-bottom:10px;font-size:14px;">工程图片:</h2>
                     <c:choose>

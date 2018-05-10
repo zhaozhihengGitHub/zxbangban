@@ -36,6 +36,7 @@ public class CustomerController {
     @Autowired
     private UserInfoService userInfoService;
 
+
     /**
      * 顾客预约托管
      * @param name   顾客姓名
@@ -48,7 +49,7 @@ public class CustomerController {
     public String freeAppointment(HttpServletRequest httpServletRequest, @RequestParam("name") String name, @RequestParam("tel") String tel,
                                   @RequestParam("location") String location,Model model, SessionStatus sessionStatus){
         String workerId = (String) httpServletRequest.getSession().getAttribute("workerid");
-        Customer customer = new Customer(name,tel,location,new Date(),"");
+        Customer customer = new Customer(name,tel,location,0,new Date(),"");
         if(workerId != null){
             WorkerInfo workerInfo = workerInfoService.queryWorkerByWorkerId(Long.parseLong(workerId));
             customer.setNotes("预约[工号:" + workerId + ";姓名:"+workerInfo.getName() +
@@ -84,7 +85,7 @@ public class CustomerController {
     public String customerQuoted(@RequestParam("adds") String name, @RequestParam("tel") String tel,
                                  @RequestParam("type") String type, @RequestParam("area") int area,Model model){
         try{
-            Customer customer = new Customer(name,tel,"", new Date(),"");
+            Customer customer = new Customer(name,tel,"",0,new Date(),"");
             customer.setNotes("房屋面积：" + area + ";"+"户型:" + type+";");
             customerService.newCustomer(customer);
             model.addAttribute("area",area);
@@ -103,7 +104,7 @@ public class CustomerController {
     public String customerSave( @RequestParam("name") String name, @RequestParam("tel") String tel,
                                 @RequestParam("location") String location,Model model){
         try{
-            Customer customer = new Customer(name,tel,location,new Date(),"");
+            Customer customer = new Customer(name,tel,location,0,new Date(),"");
             customer.setNotes("房屋报价");
             customerService.newCustomer(customer);
             UserInfo userInfo = userInfoService.queryByRoleId(8);
@@ -117,4 +118,20 @@ public class CustomerController {
         }
     }
 
+    /*
+    * 家博会入场卷
+    *
+    * */
+    @RequestMapping(value = "/homeFair",method = RequestMethod.POST)
+    public String homeFair(@RequestParam("name")String name,@RequestParam("tel")String tel,Model model){
+        try {
+            Customer customer = new Customer(name,tel,"山西长治",1,new Date(),"家博会入场卷");
+            customerService.newCustomer(customer);
+            aliyunMNService.SMSNotification(1,tel);
+            return "redirect:/homeFair";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "error";
+        }
+    }
 }

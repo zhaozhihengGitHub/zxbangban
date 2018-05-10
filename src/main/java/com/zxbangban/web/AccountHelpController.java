@@ -3,6 +3,7 @@ package com.zxbangban.web;
 import com.zxbangban.entity.WorkerInfo;
 import com.zxbangban.entity.WorkerProfile;
 import com.zxbangban.service.AliyunMNService;
+import com.zxbangban.service.WorkerProfileService;
 import com.zxbangban.util.MD5Util;
 import com.zxbangban.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class AccountHelpController {
     @Autowired
     private AliyunMNService aliyunMNService;
 
+    @Autowired
+    private WorkerProfileService workerProfileService;
+
 
     @RequestMapping("/help")
     public String help(){
@@ -35,7 +39,7 @@ public class AccountHelpController {
     @RequestMapping("/modify")
     public String modify(HttpServletRequest httpServletRequest, Model model){
        WorkerInfo workerInfo= (WorkerInfo) httpServletRequest.getSession().getAttribute("worker");
-        WorkerProfile workerProfile= (WorkerProfile) httpServletRequest.getSession().getAttribute("workerProfile");
+        WorkerProfile workerProfile= workerProfileService.queryByWorkerId(workerInfo.getWorkerId());
         model.addAttribute("workerInfo",workerInfo);
         model.addAttribute("workerProfile",workerProfile);
         return "account_support/modify";

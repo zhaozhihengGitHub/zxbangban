@@ -26,7 +26,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/my-account")
-@SessionAttributes({"uid", "headimg", "unionid"})
+@SessionAttributes({"uid", "headimg", "unionid","worker"})
 public class MyAccountController {
 
     @Autowired
