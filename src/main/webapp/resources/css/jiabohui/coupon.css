@@ -460,3 +460,82 @@
 .boom2-input .msg-box .msg i {
     margin-top: 3px;
 }
+/*领取成功 弹框*/
+.sptk .draw_box{
+    position: fixed;
+    top:50%;
+    left:50%;
+    background: #f1eff3;
+    width: 500px;
+    height:420px;
+    margin-left: -250px;
+    margin-top: -291px;
+}
+.sptk .draw_hd{
+    width: 500px;
+    height: 175px;
+    background: url(../../../resources/images/jbhimg/coupon-success.png) no-repeat;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    padding-top: 46px;
+    box-sizing: border-box;
+}
+.sptk .draw_brand{
+    font-size: 24px;
+    margin-top: 25px;
+}
+.sptk .draw_in{
+    padding:20px 20px 0px 20px;
+    box-sizing: border-box;
+}
+.sptk .draw_rule{
+    background: #fff;
+    padding:18px 18px 15px 18px;
+    box-sizing: border-box;
+}
+.sptk .draw_rule b{
+    font-size: 18px;
+    color: #333;
+    display: block;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+.sptk .draw_rule span{
+    display: block;
+    font-size: 12px;
+    color: #999;
+    line-height: 25px;
+}
+.sptk .draw_date{
+    margin-top: 12px;
+}
+.sptk .draw_date_r a{
+    font-size: 12px;
+    color: #4984ce;
+    text-decoration: underline;
+}
+.sptk .draw_btn{
+    width: 385px;
+    height: 45px;
+    margin-top: 47px;
+    margin-left: 39px;
+}
+.sptk .draw_btn button{
+    display: block;
+    width: 385px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #d70c19;
+    border-radius: 2px;
+    border:0;
+}
+.sptk .remind{
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 30px;
+}

@@ -21,7 +21,7 @@
         <div class="coupons" style="margin-top: 109px;">
             <div class="wrap">
                 <div class="banner">
-                    <img src="../../../resources/images/jbhimg/cbanner.jpg" height="400" width="1920">
+                    <img src="../../../resources/images/jbhimg/cbanner.png" height="400" width="1920">
                 </div>
                 <div class="wrap_in jb-w">
                     <div class="t_nav_out">

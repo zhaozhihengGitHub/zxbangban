@@ -4,8 +4,8 @@
 <mapper namespace="com.zxbangban.dao.CustomerDao">
     <insert id="newCustomer" parameterType="Customer">
         INSERT INTO customer
-        (name, telphone, program_address, create_time, notes)
-        VALUES (#{customer.name}, #{customer.telphone}, #{customer.programAddress}, #{customer.createTime},
+        (name, telphone, program_address,priority, create_time, notes)
+        VALUES (#{customer.name}, #{customer.telphone}, #{customer.programAddress},#{customer.priority},#{customer.createTime},
                 #{customer.notes})
     </insert>
 

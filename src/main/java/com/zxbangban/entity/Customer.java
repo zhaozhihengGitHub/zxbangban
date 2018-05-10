@@ -17,7 +17,7 @@ public class Customer {
 
     private String programAddress;
 
-    private Integer priority;
+    private Integer priority;//优先权
 
     private Date createTime;
 
@@ -82,6 +82,8 @@ public class Customer {
     public Customer() {
     }
 
+
+
     public Customer(String name, String telphone, String programAddress, Date createTime, String notes) {
         this.name = name;
         this.telphone = telphone;
@@ -90,9 +92,8 @@ public class Customer {
         this.notes = notes;
     }
 
-    public Customer(long id, String name, String telphone, String programAddress,
+    public Customer(String name, String telphone, String programAddress,
                     Integer priority, Date createTime, String notes) {
-        this.id = id;
         this.name = name;
         this.telphone = telphone;
         this.programAddress = programAddress;
