@@ -61,7 +61,7 @@
                 <div class="tic_btn">
                     <button type="submit" id="jiabohui" name="${jiabohui}" >免费索票</button>
                 </div>
-                <div class="tic_under"><p>温馨提示：索票成功后，我们的客服将通过021开头的上海电话与您联系，确认门票及展会资料快递地址。</p></div>
+                <div class="tic_under"><p>温馨提示：索票成功后，我们的客服将通过021开头的上海电话与您联系，确认门票及展会资料。</p></div>
                 </form>
             </div>
         </div>
@@ -510,7 +510,7 @@
                             </div>
                             <div class="title">免费索票</div>
                             <div class="num">1</div>
-                            <div class="content">通过客服电话确认，免费获取价值20元门票、快递资料。</div>
+                            <div class="content">通过客服电话确认，免费获取价值20元门票。</div>
                         </li>
                         <li>
                             <div class="img">
@@ -550,7 +550,7 @@
                             </div>
                             <div class="title">服务保障</div>
                             <div class="num">6</div>
-                            <div class="content">现场出售商品均享受60天无理由退换货服务（现场退换货可快速申请办理）。</div>
+                            <div class="content">现场出售商品均享受30天无理由换货服务。</div>
                         </li>
                         <li>
                             <div class="img">
@@ -558,7 +558,7 @@
                             </div>
                             <div class="title">更多活动</div>
                             <div class="num">7</div>
-                            <div class="content">关注家博官方微信，更多精彩活动等着您！</div>
+                            <div class="content">关注装修帮办官方微信，更多精彩活动等着您！</div>
                         </li>
                     </ul>
                 </div>
@@ -585,8 +585,8 @@
                     <li>
                         <img src="../../../resources/images/jbhimg/shou.png">
                         <div class="li-p" style="margin-left:168px; margin-top:10px; width:132px;">
-                            <p style="font-size:16px; color:#333;">60天无理由退换</p>
-                            <span style="font-size:12px; color:#666; display:block; margin-top:8px;">凭统一销售单，享60天无理由退换与先行赔付。</span>
+                            <p style="font-size:16px; color:#333;">30天无理由退换</p>
+                            <span style="font-size:12px; color:#666; display:block; margin-top:8px;">凭统一销售单，享30天无理由换货服务。</span>
                         </div>
                     </li>
                 </ul>
@@ -691,9 +691,6 @@
     <div class="righ-nav">
         <div class="right-nav-box">
             <div class="right-nav-menu">
-                <!--<a target="_blank" href="http://uchat.im-cc.com/webchat_new/static/html/index.html?ht=sh02&hastab=true">-->
-                    <!--<div class="qq"></div>-->
-                <!--</a>-->
                 <a href="#">
                     <div class="ticket"></div>
                 </a>
@@ -774,17 +771,17 @@
             $('.sptk').show();
         }
         var yhq='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 400px; margin-top: -200px; margin-left: -285px;"><div class="jb-modal-body"><div class="boom2"><div class="boom-hd clearfix"><div class="brand-img fl"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="brand-name"><p style="height:32px;overflow:hidden"> 方太电器200元优惠券</p><span>支付满5000.00减200.00</span><em>使用时间:04.29-05.01 使用地址:CBD国际会展中心</em> </div></div><div class="inpt-box"><div class="txt"><label class="lab fl">手机：</label><input type="tel" class="int-txt fl" name="coupon_mobile" id="coupon_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="txt"><label class="lab fl">验证码：</label><input type="text" class="int-txt2 fl code" name="coupon_code" id="coupon_code" maxlength="4" placeholder="请输入验证码"></div></div><div class="msg-box" style="margin:10px 0px 0px 110px;"><div class="msg msg-error hide" id="J_MsgCouponSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="bomm-btn2">立即领取</button><i class="i">同时免费索票价值20元的华夏家博会门票</i><div class="right-down"><div class="draw_tips"><a href="javascript:;" ">已有账号？<br>登录领取更方便！</a></div></div><div class="special-zero-close" onclick="closetk(this);"></div></div>';
-        $('.J_GetCoupon').click(function(){
+       /* $('.J_GetCoupon').click(function(){
             $('body').append(yhq);
-        })
+        })*/
         var yhq1='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 900px; min-height: 460px; margin-top: -230px; margin-left: -450px;"><div class="jb-modal-body"><div class="boom3"><div class="boom3-l fl"><div class="boom3-img"><img src="../../../resources/images/jbhimg/ftdq.jpg"></div><h5></h5><div class="clear"></div><div class="prize clearfix"><p style="width: 83%;font-size:18px;color: black;">方太厨电 油烟机EM23TS+灶具FD2B</p><p style="width: 83%;color: #999;margin: 10px 0;">油烟机EM23TS+灶具FD2B</p><p class="fl">抢购价: <b>4480.00</b></p><span class="fr"> 剩余3个</span></div><div class="boom3-l-down" style="margin-top: 1rem;">线上预约锁定，凭短信至展会现场下单</div></div><div class="boom3-r fl" id="reserve_modal"><div class="boom3-r-hd">爆品预约</div><div class="boom3-input"><div class="boom3-input-in clearfix"><label class="lab2 fl">姓名：</label><input type="text" class="boom3-txt" name="reserve_name" id="reserve_name" maxlength="12" placeholder="请输入收件人姓名" value=""></div><div class="boom3-input-in clearfix"><label class="lab2 fl">手机：</label><input type="text" class="boom3-txt" name="reserve_mobile" id="reserve_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="boom3-input-in clearfix"><label class="lab2 fl">验证码：</label><input type="text" class="boom3-txt2 fl code" name="reserve_code" id="reserve_code" maxlength="4" placeholder="请输入验证码"></div><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><input type="hidden" value="178726" name="source_id" id="source_id"><input type="hidden" name="reserve_ticket" id="reserve_ticket" value="1"><button class="boom3-btn">立即预约</button><span style="position: relative;top: 10px;left:10px; font-size: 14px;color: #999;"><p style="margin-top:10px;">√&nbsp;&nbsp;同时免费索票价值20元的华夏家博会门票</p><p style="margin-left: 1rem;">时间地点：04.29-05.01CBD国际会展中心</p></span></div></div><div class="special-zero-close" onclick="closetk(this)"></div></div>';
-        $('.B_GetCoupon').click(function(){
+       /* $('.B_GetCoupon').click(function(){
             $('body').append(yhq1);
-        })
-    var yhq2='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 564px; margin-top: -282px; margin-left: -285px;"><div class="jb-modal-body"><div class="supplier-box" id="reserve_modal_8_0"><div class="close" onclick="closetk(this);"></div><div class="dialog-hd">商户活动预约</div><div class="dialog-box-in clearfix"><div class="dialog-left"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="dialog-right"><span class="zhan-num">展位号TA29</span><span class="hx-time">4.29-5.1  CBD国际会展中心</span></div><div class="clearfix"></div><em class="activity-tips-title">活动详情：</em><div class="activity-tips"><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>2<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">不满意就退</span><span style="color: rgb(71,85,119);">:</span>热水器享受180天舒适后悔权，<span style="color: rgb(226,80,65);">180天内不舒服就退款</span></p></div><div class="ipt-box"><input type="hidden" value="8" name="source_id" id="source_id"><input type="text" name="reserve_mobile" id="reserve_mobile" maxlength="11" class="ipt-txt" placeholder="请输入您的手机号码"><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="ipt-btn" >立即预约</button><div class="ipt-bottom clearfix"><input name="reserve_checked" type="hidden" value="1" class="check-box" checked="checked"><span>√同时免费索取价值20元的华夏家博会门票</span><em>线上预约，凭短信至现场商户展位参与活动享优惠</em></div></div></div></div></div></div></div>';
-    $('.S_GetCoupon').click(function(){
+        })*/
+    var yhq2='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 564px; margin-top: -282px; margin-left: -285px;"><div class="jb-modal-body"><div class="supplier-box" id="reserve_modal_8_0"><div class="close" onclick="closetk(this);"></div><div class="dialog-hd">商户活动预约</div><div class="dialog-box-in clearfix"><div class="dialog-left"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="dialog-right"><span class="zhan-num">展位号TA29</span><span class="hx-time">4.29-5.1  CBD国际会展中心</span></div><div class="clearfix"></div><em class="activity-tips-title">活动详情：</em><div class="activity-tips"><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>2<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">不满意就退</span><span style="color: rgb(71,85,119);">:</span>热水器享受180天舒适后悔权，<span style="color: rgb(226,80,65);">180天内不舒服就退款</span></p></div><div class="ipt-box"><input type="hidden" value="8" name="source_id" id="source_id"><input type="text" name="reserve_mobile" id="reserve_mobile" maxlength="11" class="ipt-txt" placeholder="请输入您的手机号码"><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="ipt-btn" >立即预约</button><div class="ipt-bottom clearfix"><input name="reserve_checked" type="hidden" value="1" class="check-box" checked="checked"><span>√同时免费索取价值20元的家博会门票</span><em>线上预约，凭短信至现场商户展位参与活动享优惠</em></div></div></div></div></div></div></div>';
+   /* $('.S_GetCoupon').click(function(){
         $('body').append(yhq2);
-    })
+    })*/
     // 优惠券弹框 结束
 })
 
