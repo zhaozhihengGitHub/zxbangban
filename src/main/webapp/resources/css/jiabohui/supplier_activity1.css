@@ -26,7 +26,7 @@
 .dialog-left{
     border:#ddd solid 1px;
     width:150px;
-    height:70px;
+    height:74px;
     float:left;
 }
 .dialog-right{
@@ -34,7 +34,7 @@
     width:310px;
     padding-left:20px;
     box-sizing: border-box;
-    color:#999;
+    color:#000;
     margin-top:11px;
 }
 .dialog-right span{
