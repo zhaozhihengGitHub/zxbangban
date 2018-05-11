@@ -127,6 +127,9 @@
     height:70px;
     float:left;
 }
+.dialog-left img{
+    width:100%;
+}
 .dialog-right{
     float:left;
     width:310px;

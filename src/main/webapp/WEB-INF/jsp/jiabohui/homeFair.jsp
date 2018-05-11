@@ -317,7 +317,8 @@
                         <li>洁具</li>
                         <li>地板</li>
                         <li>橱柜</li>
-                        <li>定制家具</li>
+                        <li>定制家居</li>
+                        <li>家居</li>
                         <li>木门</li>
                         <li>吊顶</li>
                         <li>壁纸</li>
@@ -407,6 +408,10 @@
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_dpjj.jpg" width="150" alt="东鹏洁具"/></a>
                             </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_AOsms.jpg" width="150" alt="AO.史密斯"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
                             <li>
@@ -427,11 +432,41 @@
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_jjl.jpg" width="150" alt="家家乐橱柜"/></a>
                             </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_hd.jpg" width="150" alt="华帝高端智能厨电"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
                             <li>
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_sej.jpg" width="150" alt="适而居定制家具"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_htjj.jpg" width="150" alt="红田定制家具"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_wydz.jpg" width="150" alt="维意定制"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_jxdz.jpg" width="150" alt="匠芯定制"/></a>
+                            </li>
+                        </ul>
+                        <ul class="work_con clearfix">
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_mgjj.jpg" width="150" alt="米柜家居"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_spzp.jpg" width="150" alt="尚品宅配"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_mfjs.jpg" width="150" alt="明峰家私"/></a>
                             </li>
                         </ul>
                         <ul class="work_con clearfix">
@@ -446,6 +481,30 @@
                             <li>
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_jmkx.jpg" width="150" alt="京门凯旋木门"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_zzth.jpg" width="150" alt="展志天华木门"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_gcmn.jpg" width="150" alt="古川木门"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_symm.jpg" width="150" alt="三意木门"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_sbmm.jpg" width="150" alt="尚邦木门"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_xwmm.jpg" width="150" alt="鑫旺木门"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_gsmm.jpg" width="150" alt="郭氏木门"/></a>
                             </li>
                         </ul>
                         <ul class="work_con clearfix">
@@ -492,6 +551,34 @@
                             <li>
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_shsc.jpg" width="150" alt="森海饰材"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_bcjc.jpg" width="150" alt="板川集成灶"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_mdjc.jpg" width="150" alt="美多集成灶"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_rsdq.jpg" width="150" alt="容声厨卫电器"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_rsd.jpg" width="150" alt="荣事达智能淋浴屏"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_mssj.jpg" width="150" alt="米素空间设计"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_cykjgdmc.jpg" width="150" alt="创意空间高端门窗"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_jsyh.jpg" width="150" alt="中国建设银行装修贷款"/></a>
                             </li>
                         </ul>
                         
