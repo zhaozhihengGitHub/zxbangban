@@ -278,6 +278,12 @@ public class HomeController {
      *
      * @return 家博会
      */
+    @RequestMapping("/thomeFair")
+    public String thomeFair(){return "jiabohui/thomeFair";}
+    /**
+     *
+     * @return 家博会
+     */
     @RequestMapping("/coupons")
     public String coupons(){return "jiabohui/coupons";}
     /**
