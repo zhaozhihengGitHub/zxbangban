@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../common/tag.jsp"%>
+<%--<%@include file="../common/tag.jsp"%>--%>
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -418,6 +418,12 @@
             margin:0 auto;
             margin-top:25%;
         }
+        .mask h3{
+            font-size:20px;
+            text-align:center;
+            margin-bottom:30px;
+            margin-top:0;
+        }
         .mask input{
             width:100%;
             border:1px solid #ccc;
@@ -439,11 +445,20 @@
         }
         .closebt{
             position:absolute;
-            width:10px;
-            height:10px;
+            width:20px;
+            height:28px;
             top:10px;
             right:20px;
             font-size:28px;
+        }
+        .yhdec{
+            width:100%;
+            font-size:14px;
+            margin-bottom:20px;
+            color:#d80c18;
+        }
+        .yhdec i{
+            font-style:normal;
         }
     </style>
     <script src="../../../resources/js/jquery-1.12.0.min.js"></script>
@@ -575,7 +590,7 @@
                     <div class="t_l fl">
                         <span>100<b>¥</b> &nbsp;&nbsp;</span>
                         <i></i>
-                        <em>支付满4000可用</em>
+                        <em>支付满5000可用</em>
                     </div>
                     <div class="t_r fl">
                         <p>宏陶陶瓷</p>
@@ -587,7 +602,7 @@
                     <div class="t_l fl">
                         <span>300<b>¥</b> &nbsp;&nbsp;</span>
                         <i></i>
-                        <em>支付满10000可用</em>
+                        <em>支付满5000可用</em>
                     </div>
                     <div class="t_r fl">
                         <p>新罗马瓷砖</p>
@@ -599,24 +614,16 @@
         </div>
     </div>
 </div>
-<div class="mask-box">
-    <div class="mask">
-        <p class="closebt">X</p>
-        <form action="">
-            <input type="text" placeholder="姓名">
-            <input type="text" placeholder="手机">
-            <button type="submit">确&nbsp;&nbsp;认</button>
-        </form>
-    </div>
-</div>
+
 <%@include file="../common/footer.jsp" %>
 <script>
+    function closebt(){
+        $('.mask-box').remove();
+    }
     $(function(){
         $(".tankg").click(function(){
-            $(".mask-box").show();
-        })
-        $(".closebt").click(function(){
-            $(".mask-box").hide();
+            var xx='<div class="mask-box"><div class="mask"><p class="closebt" onclick="closebt();">X</p><form action=""><h3>金丝玉玛</h3><input type="text" placeholder="姓名"><input type="text" placeholder="手机"><p class="yhdec">优惠信息：装修帮办为您提供支付满<i>5000</i>减<i>200</i>的优惠券</p><button type="submit">确&nbsp;&nbsp;认</button></form></div></div>';
+            $("body").append(xx);
         })
     })
 </script>
