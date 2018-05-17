@@ -1,0 +1,21 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxbangban.dao.CouponDao">
+    <select id="queryAllCoupons" resultType="Coupon">
+        SELECT  id,brandName,beginTime,endTime,totalMoney,preferentialMoney,receiveCount,score from Coupon ORDER by score limit 20;
+    </select>
+    <!--<insert id="addCoupon" parameterType="Coupon">
+        INSERT INTO Coupon(brandName,totalMoney,preferentialMoney,receiveCount,score)
+        VALUES (#{},#{});
+    </insert>-->
+    <delete id="delete" parameterType="long">
+        DELETE FROM Coupon
+        WHERE id = #{id}
+    </delete>
+
+    <update id="updateReceiveCount" parameterType="Long">
+        UPDATE Coupon set receiveCount = #{count} where id = #{id}
+    </update>
+
+</mapper>
