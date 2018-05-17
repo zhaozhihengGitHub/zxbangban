@@ -178,7 +178,6 @@
             height: 40px;
             font-size:12px;
         }
-
         .explosive_box .price{
             overflow:hidden;
         }
@@ -243,7 +242,6 @@
             height:24px;
             position: relative;
         }
-
         .t_sale_li li span b {
             font-size: 18px;
             width: 10px;
@@ -251,7 +249,6 @@
             position: absolute;
             bottom: 5px;
         }
-
         .t_sale_li li .t_r button {
             display: block;
             width: 70px;
@@ -272,8 +269,8 @@
             position: absolute;
             background: #eee;
             left:70px;
+            top:0;
         }
-
         .t_r {
             width:90px;
             position: absolute;
@@ -281,7 +278,6 @@
             right: 4px;
             top: 5px;
         }
-
         .t_r p {
             width: 70px;
             font-size: 12px;
@@ -293,11 +289,9 @@
             white-space: nowrap;
             float: right;
         }
-
         .t_sale_li li .t_r button.over {
             background: #cccccc;
         }
-
         .ling {
             font-size: 12px;
             color: #999;
@@ -306,7 +300,6 @@
             bottom: 2px;
             right: 7px;
         }
-
         .t_l em {
             color: #333;
             display: block;
@@ -320,16 +313,13 @@
             width:70px;
             text-align: center;
         }
-
         /*厨房卫浴*/
         .t_sale_li li.kitchen {
             border: #d0e4fd solid 2px;
         }
-
         .t_sale_li li.kitchen span {
             color: #2b86f4;
         }
-
         .t_sale_li li.kitchen .ling e {
             color: #2b86f4;
         }
@@ -341,15 +331,12 @@
         .t_sale_li li.floor {
             border: #c6e9eb solid 2px;
         }
-
         .t_sale_li li.floor span {
             color: #00c1ca;
         }
-
         .t_sale_li li.floor .ling e {
             color: #00c1ca;
         }
-
         .t_sale_li li.floor .t_r button {
             background: #00c1ca;
         }
@@ -357,15 +344,12 @@
         .t_sale_li li.fitment {
             border: #fdd1d0 solid 2px;
         }
-
         .t_sale_li li.fitment span {
             color: #d80c18;
         }
-
         .t_sale_li li.fitment .ling e {
             color: #d80c18;
         }
-
         .t_sale_li li.fitment .t_r button {
             background: #d80c18;
         }
@@ -373,15 +357,12 @@
         .t_sale_li li.build {
             border: #fccaeb solid 2px;
         }
-
         .t_sale_li li.build span {
             color: #d2389d;
         }
-
         .t_sale_li li.build .ling e {
             color: #d2389d;
         }
-
         .t_sale_li li.build .t_r button {
             background: #d2389d;
         }
@@ -389,15 +370,12 @@
         .t_sale_li li.electrical {
             border: #f4e2c6 solid 2px;
         }
-
         .t_sale_li li.electrical span {
             color: #ed8c00;
         }
-
         .t_sale_li li.electrical .ling e {
             color: #ed8c00;
         }
-
         .t_sale_li li.electrical .t_r button {
             background: #ed8c00;
         }
