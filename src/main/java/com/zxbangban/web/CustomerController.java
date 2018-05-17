@@ -3,10 +3,7 @@ package com.zxbangban.web;
 import com.zxbangban.entity.Customer;
 import com.zxbangban.entity.UserInfo;
 import com.zxbangban.entity.WorkerInfo;
-import com.zxbangban.service.AliyunMNService;
-import com.zxbangban.service.CustomerService;
-import com.zxbangban.service.UserInfoService;
-import com.zxbangban.service.WorkerInfoService;
+import com.zxbangban.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +32,9 @@ public class CustomerController {
 
     @Autowired
     private UserInfoService userInfoService;
+
+    @Autowired
+    private CouponService couponService;
 
 
     /**
@@ -70,6 +70,18 @@ public class CustomerController {
             return "appointment/appointmentsuccess";
         }
 
+    }
+
+    /*
+    * 优惠卷
+    * */
+    @RequestMapping(value = "coupon",method = RequestMethod.POST)
+    public String coupon(@RequestParam("id")long id,@RequestParam("brandname")String brandName,@RequestParam("count")long count,@RequestParam("username")String userName,@RequestParam("telphone")String telphpne){
+        Customer customer = new Customer(userName,telphpne,"",2,new Date(),brandName);
+        customerService.newCustomer(customer);
+        long receive=count+1;
+        couponService.updateReceiveCount(id,receive);
+        return "redirect:/thomeFair";
     }
 
     @RequestMapping(value = "/appoint/workerid={workerid}/free")
@@ -129,6 +141,23 @@ public class CustomerController {
             customerService.newCustomer(customer);
             aliyunMNService.SMSNotification(1,tel);
             return "redirect:/homeFair";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "error";
+        }
+    }
+
+    /*
+    * 手机家博会入场卷
+    *
+    * */
+    @RequestMapping(value = "/thomeFair",method = RequestMethod.POST)
+    public String thomeFair(@RequestParam("name")String name,@RequestParam("tel")String tel,Model model){
+        try {
+            Customer customer = new Customer(name,tel,"山西长治",1,new Date(),"家博会入场卷");
+            customerService.newCustomer(customer);
+            aliyunMNService.SMSNotification(1,tel);
+            return "redirect:/thomeFair";
         }catch (Exception e){
             e.printStackTrace();
             return "error";

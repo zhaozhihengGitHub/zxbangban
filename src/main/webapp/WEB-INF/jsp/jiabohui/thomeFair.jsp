@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@include file="../common/tag.jsp"%>--%>
 <!doctype html>
@@ -469,7 +470,7 @@
 <div class="container">
     <div class="row">
         <div class="ttic_login" id="expo_home">
-            <form role="form" method="post">
+            <form action="${pageContext.request.contextPath}/c/thomeFair" method="post">
                 <div class="tic_title">免费索票</div>
                 <div class="tic_num">已有<em>408</em>人索票</div>
                 <div class="tic_input">
@@ -506,7 +507,7 @@
             </form>
         </div>
     </div>
-    <div class="row">
+    <%--<div class="row">
         <div class="t_con explosive_box">
             <h3  class="t_con_tit"><a href="javascript:;">爆品预约</a></h3>
             <ul class="odds_li clearfix">
@@ -569,47 +570,25 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div>--%>
     <div class="row">
         <div class="t_con explosive_box">
             <h3  class="t_con_tit"><a href="javascript:;">抢优惠券</a></h3>
             <ul class="t_sale_li clearfix">
-                <li class="clearfix kitchen">
-                    <div class="t_l fl">
-                        <span>200<b>¥</b> &nbsp;&nbsp;</span>
-                        <i></i>
-                        <em>支付满5000可用</em>
-                    </div>
-                    <div class="t_r fl">
-                        <p>王者陶瓷</p>
-                        <button class="J_GetCoupon tankg">立即领取</button>
-                    </div>
-                    <div class="ling fr">已领<e>184</e>张</div>
-                </li>
-                <li class="clearfix fitment">
-                    <div class="t_l fl">
-                        <span>100<b>¥</b> &nbsp;&nbsp;</span>
-                        <i></i>
-                        <em>支付满5000可用</em>
-                    </div>
-                    <div class="t_r fl">
-                        <p>宏陶陶瓷</p>
-                        <button class="J_GetCoupon tankg">立即领取</button>
-                    </div>
-                    <div class="ling fr">已领<e>75</e>张</div>
-                </li>
-                <li class="clearfix build">
-                    <div class="t_l fl">
-                        <span>300<b>¥</b> &nbsp;&nbsp;</span>
-                        <i></i>
-                        <em>支付满5000可用</em>
-                    </div>
-                    <div class="t_r fl">
-                        <p>新罗马瓷砖</p>
-                        <button class="J_GetCoupon tankg">立即领取</button>
-                    </div>
-                    <div class="ling fr">已领<e>49</e>张</div>
-                </li>
+                <c:forEach var="coupon" items="${coupons}">
+                    <li class="clearfix kitchen">
+                        <div class="t_l fl">
+                            <span>${coupon.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                            <i></i>
+                            <em>支付满${coupon.totalMoney}可用</em>
+                        </div>
+                        <div class="t_r fl">
+                            <p>${coupon.brandName}</p>
+                            <button id="${coupon.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                        </div>
+                        <div class="ling fr">已领<e>${coupon.receiveCount}</e>张</div>
+                    </li>
+                </c:forEach>
             </ul>
         </div>
     </div>
@@ -617,15 +596,72 @@
 
 <%@include file="../common/footer.jsp" %>
 <script>
+    $(function () {
+        appointment.detail.validata();
+    })
     function closebt(){
         $('.mask-box').remove();
     }
-    $(function(){
-        $(".tankg").click(function(){
-            var xx='<div class="mask-box"><div class="mask"><p class="closebt" onclick="closebt();">X</p><form action=""><h3>金丝玉玛</h3><input type="text" placeholder="姓名"><input type="text" placeholder="手机"><p class="yhdec">优惠信息：装修帮办为您提供支付满<i>5000</i>减<i>200</i>的优惠券</p><button type="submit">确&nbsp;&nbsp;认</button></form></div></div>';
+    function recieve(param){
+            var id=$(param).attr("id");
+            var brandname=$(param).siblings("p").text();
+            var count=$(param).parent().siblings(".fr").find("e").text();
+            var xx='<div class="mask-box"><div class="mask"><p class="closebt" onclick="closebt();">x</p><form action="${pageContext.request.contextPath}/c/coupon" method="post"><h3>'+brandname+'</h3><input type="hidden" name="id" value="'+id+'"><input type="hidden" name="brandname" value="'+brandname+'"><input type="hidden" name="count" value="'+ count +'"><input type="text" name="username" placeholder="姓名"><input type="text" name="telphone" placeholder="手机"><p class="yhdec">优惠信息：装修帮办为您提供支付满<i>5000</i>减<i>200</i>的优惠券</p><button type="submit" onclick="return confirm()">确&nbsp;&nbsp;认</button></form></div></div>';
             $("body").append(xx);
-        })
-    })
+    }
+    function confirm() {
+        if (valiName() === false) {
+            return false;
+        }
+        if (valiTel() === false) {
+            return false;
+        }
+        if(valiName() === true && valiTel() === true){
+            alert("领取成功！");
+        }
+    };
+
+    function valiName() {
+        var $name = $("input[name=username]");
+        var $temp = $name.val();
+        var $nameRegular = /^[\u4e00-\u9fa5\\w]+$/;
+        if ($temp.length === 0) {
+            $name.attr("placeholder", "名字不能为空！");
+            return false;
+        } else if ($temp.length < 2) {
+            $name.val("");
+            $name.attr("placeholder", "名字不能少于两个字");
+            return false;
+        } else if ($temp.length > 6) {
+            $name.val("");
+            $name.attr("placeholder", "名字太长了！");
+            return false;
+        } else if (!($nameRegular.test($temp))) {
+            $name.val("");
+            $name.attr("placeholder", "名字只可以是中文！");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function valiTel() {
+        var $tel = $("input[name=telphone]");
+        var $temp = $tel.val();
+        var $telRegular = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
+        if ($temp.length === 0) {
+            $tel.val("");
+            $tel.attr("placeholder","手机号还没写！");
+            return false;
+        } else if (!($telRegular.test($temp))) {
+            $tel.val("");
+            $tel.attr("placeholder", "手机号输入有误，请重新输入！");
+            return false;
+        } else {
+            $telChChe = $temp;
+            return true;
+        }
+    }
+
 </script>
 </body>
 <%@include file="../common/script.jsp" %>
