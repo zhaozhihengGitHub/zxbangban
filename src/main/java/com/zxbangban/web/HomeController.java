@@ -274,12 +274,7 @@ public class HomeController {
      */
     @RequestMapping("/homeFair")
     public String homeFair(){return "jiabohui/homeFair";}
-    /**
-     *
-     * @return 家博会
-     */
-    @RequestMapping("/thomeFair")
-    public String thomeFair(){return "jiabohui/thomeFair";}
+
     /**
      *
      * @return 家博会
