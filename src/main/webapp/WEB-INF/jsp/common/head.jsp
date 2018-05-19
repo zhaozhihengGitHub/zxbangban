@@ -11,8 +11,8 @@
 <meta property="og:title" content="装修帮办">
 <meta property="og:locale" content="zh_CH">
 <meta property="og:url" content="https://www.zxbangban.com">
+<meta http-equiv=“Content-Security-Policy” content=“upgrade-insecure-requests” />
 <link rel="shortcut icon" href="https://zxbangban.oss-cn-beijing.aliyuncs.com/zxbangbanico.ico">
-
 <%@include file="head_part1.jsp"%>
 <style type="text/css">
     .ribbon {
