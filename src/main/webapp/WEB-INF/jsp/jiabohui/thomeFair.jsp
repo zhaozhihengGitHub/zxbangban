@@ -5,7 +5,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>公司动态 | 装修帮办服务平台</title>
+    <title>优惠券领取 | 装修帮办家博会</title>
     <style>
         .fl{float:left;}
         .fr{float:right;}
@@ -89,7 +89,6 @@
             outline: none;
             height: 38px;
             line-height: 38px;
-            width: 220px;
             float: left;
             border: 0;
         }
@@ -178,7 +177,6 @@
             height: 40px;
             font-size:12px;
         }
-
         .explosive_box .price{
             overflow:hidden;
         }
@@ -243,7 +241,6 @@
             height:24px;
             position: relative;
         }
-
         .t_sale_li li span b {
             font-size: 18px;
             width: 10px;
@@ -251,7 +248,6 @@
             position: absolute;
             bottom: 5px;
         }
-
         .t_sale_li li .t_r button {
             display: block;
             width: 70px;
@@ -272,8 +268,8 @@
             position: absolute;
             background: #eee;
             left:70px;
+            top:0;
         }
-
         .t_r {
             width:90px;
             position: absolute;
@@ -281,7 +277,6 @@
             right: 4px;
             top: 5px;
         }
-
         .t_r p {
             width: 70px;
             font-size: 12px;
@@ -293,11 +288,9 @@
             white-space: nowrap;
             float: right;
         }
-
         .t_sale_li li .t_r button.over {
             background: #cccccc;
         }
-
         .ling {
             font-size: 12px;
             color: #999;
@@ -306,7 +299,6 @@
             bottom: 2px;
             right: 7px;
         }
-
         .t_l em {
             color: #333;
             display: block;
@@ -320,16 +312,13 @@
             width:70px;
             text-align: center;
         }
-
         /*厨房卫浴*/
         .t_sale_li li.kitchen {
             border: #d0e4fd solid 2px;
         }
-
         .t_sale_li li.kitchen span {
             color: #2b86f4;
         }
-
         .t_sale_li li.kitchen .ling e {
             color: #2b86f4;
         }
@@ -341,15 +330,12 @@
         .t_sale_li li.floor {
             border: #c6e9eb solid 2px;
         }
-
         .t_sale_li li.floor span {
             color: #00c1ca;
         }
-
         .t_sale_li li.floor .ling e {
             color: #00c1ca;
         }
-
         .t_sale_li li.floor .t_r button {
             background: #00c1ca;
         }
@@ -357,15 +343,12 @@
         .t_sale_li li.fitment {
             border: #fdd1d0 solid 2px;
         }
-
         .t_sale_li li.fitment span {
             color: #d80c18;
         }
-
         .t_sale_li li.fitment .ling e {
             color: #d80c18;
         }
-
         .t_sale_li li.fitment .t_r button {
             background: #d80c18;
         }
@@ -373,15 +356,12 @@
         .t_sale_li li.build {
             border: #fccaeb solid 2px;
         }
-
         .t_sale_li li.build span {
             color: #d2389d;
         }
-
         .t_sale_li li.build .ling e {
             color: #d2389d;
         }
-
         .t_sale_li li.build .t_r button {
             background: #d2389d;
         }
@@ -389,15 +369,12 @@
         .t_sale_li li.electrical {
             border: #f4e2c6 solid 2px;
         }
-
         .t_sale_li li.electrical span {
             color: #ed8c00;
         }
-
         .t_sale_li li.electrical .ling e {
             color: #ed8c00;
         }
-
         .t_sale_li li.electrical .t_r button {
             background: #ed8c00;
         }
@@ -425,16 +402,7 @@
             margin-bottom:30px;
             margin-top:0;
         }
-        .mask input{
-            width:100%;
-            border:1px solid #ccc;
-            height:40px;
-            line-height:40px;
-            margin-bottom:30px;
-            border-radius:5px;
-            text-indent:10px;
-        }
-        .mask button{
+        .mask button.mask-btn{
             background:#d80c18;
             width:100%;
             height:40px;
@@ -471,12 +439,12 @@
     <div class="row">
         <div class="ttic_login" id="expo_home">
             <form action="${pageContext.request.contextPath}/c/thomeFair" method="post">
-                <div class="tic_title">免费索票</div>
+                <div class="tic_title">家博会免费索票</div>
                 <div class="tic_num">已有<em>408</em>人索票</div>
                 <div class="tic_input">
                     <label class="ipt-label">姓名：</label>
                     <div class="ipt-box">
-                        <input type="text" name="name" class="ipt_txt" placeholder="请输入收件人姓名" id="reserve_name"/>
+                        <input type="text" name="name" class="ipt_txt" placeholder="请输入姓名" id="reserve_name"/>
                     </div>
                 </div>
                 <div class="tic_input">
@@ -503,7 +471,7 @@
                 <div class="tic_btn">
                     <button type="submit" id="jiabohui" name="${jiabohui}" >免费索票</button>
                 </div>
-                <div class="tic_under"><p>温馨提示：索票成功后，我们的客服将与您电话联系，确认门票及展会资料。</p></div>
+                <div class="tic_under"><p>温馨提示：索票成功后，我们的客服将使用0355-8881777电话与您联系，请保持电话畅通。</p></div>
             </form>
         </div>
     </div>
@@ -530,44 +498,7 @@
                         <p style="margin:5px 0 0 0;">剩余 8 个 </p>
                     </div>
                 </li>
-                <li>
-                    <div>
-                        <a href="javascript:;;">
-                            <img src="../../../resources/images/jbhimg/ftdq.jpg" width="100%"/></a>
-                        <div class="odds_under">
-                            <div class="small_img">
-                                <span class="show_goods_name">方太厨电 油烟机EM23TS+灶具FD2B</span>
-                            </div>
-                            <div class="price">
-                                <p><i>¥</i><del>4480.00</del><e style="font-size:14px;"><i>¥</i>1899</e></p>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price_box">
-                        <button class="red_button tankg">立即预约</button>
-                        <p style="margin:5px 0 0 0;">剩余 8 个 </p>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a href="javascript:;;">
-                            <img src="../../../resources/images/jbhimg/ftdq.jpg" width="100%"/></a>
-                        <div class="odds_under">
-                            <div class="small_img">
-                                <span class="show_goods_name">方太厨电 油烟机EM23TS+灶具FD2B</span>
-                            </div>
-                            <div class="price">
-                                <p><i>¥</i><del>4480.00</del><e style="font-size:14px;"><i>¥</i>1899</e></p>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price_box">
-                        <button class="red_button tankg">立即预约</button>
-                        <p style="margin:5px 0 0 0;">剩余 8 个 </p>
-                    </div>
-                </li>
+
             </ul>
         </div>
     </div>--%>
@@ -603,11 +534,15 @@
         $('.mask-box').remove();
     }
     function recieve(param){
-            var id=$(param).attr("id");
-            var brandname=$(param).siblings("p").text();
-            var count=$(param).parent().siblings(".fr").find("e").text();
-            var xx='<div class="mask-box"><div class="mask"><p class="closebt" onclick="closebt();">x</p><form action="${pageContext.request.contextPath}/c/coupon" method="post"><h3>'+brandname+'</h3><input type="hidden" name="id" value="'+id+'"><input type="hidden" name="brandname" value="'+brandname+'"><input type="hidden" name="count" value="'+ count +'"><input type="text" name="username" placeholder="姓名"><input type="text" name="telphone" placeholder="手机"><p class="yhdec">优惠信息：装修帮办为您提供支付满<i>5000</i>减<i>200</i>的优惠券</p><button type="submit" onclick="return confirm()">确&nbsp;&nbsp;认</button></form></div></div>';
-            $("body").append(xx);
+        var id=$(param).attr("id");
+        var brandname=$(param).siblings("p").text();
+        var count=$(param).parent().siblings(".fr").find("e").text();
+
+        var xx='<div class="mask-box"><div class="mask"><p class="closebt" onclick="closebt();">x</p><form action="${pageContext.request.contextPath}/c/coupon" method="post"><h3>'+brandname+'</h3><input type="hidden" name="id" value="'+id+'"><input type="hidden" name="brandname" value="'+brandname+'"><input type="hidden" name="count" value="'+ count +'"><input type="text" name="username" placeholder="姓名"><input type="text" name="telphone" placeholder="手机"><p class="yhdec">优惠信息：装修帮办为您提供支付满<i>5000</i>减<i>200</i>的优惠券</p><button type="submit" onclick="return confirm()">确&nbsp;&nbsp;认</button></form></div></div>';
+
+
+        var xx1='<div class="mask-box"><div class="mask"><p class="closebt" onclick="closebt();">x</p><form action="${pageContext.request.contextPath}/c/coupon" method="post"><h3>'+brandname+'</h3><input type="hidden" name="id" value='+id+'><input type="hidden" name="brandname" value='+brandname+'><input type="hidden" name="count" value='+ count +'><div class="tic_input"><div class="ipt-box"><input type="text" name="username" class="ipt_txt" placeholder="请输入姓名" id="reserve_name"/></div></div><div class="tic_input"><div class="ipt-box"><input type="text" name="telphone" class="ipt_txt short" placeholder="请输入手机号码" maxlength="11"/></div><div class="test"><button class="btn btn-primary btn-yzm" type="button" id="codebt"  onclick="sendCode()">验证码</button></div></div><div class="tic_input"><div class="ipt-box"><input type="text" id="a" name="tcode"  class="ipt_txt" placeholder="请输入验证码"/></div></div><p class="yhdec">优惠信息：装修帮办为您提供支付满<i>5000</i>减<i>200</i>的优惠券,可在各品牌专卖店或平台举办的团购活动中使用，详情咨询0355-8881777</p><button class="mask-btn" type="submit" onclick="return confirm()">确&nbsp;&nbsp;认</button></form></div>'
+        $("body").append(xx1);
     }
     function confirm() {
         if (valiName() === false) {
@@ -616,8 +551,11 @@
         if (valiTel() === false) {
             return false;
         }
+        if (valiTelCode() === false) {
+            return false;
+        }
         if(valiName() === true && valiTel() === true){
-            alert("领取成功！");
+            alert("恭喜您！优惠券领取成功，稍后我们的客服会用0355-8881777电话与您联系，请保持电话畅通");
         }
     };
 
@@ -657,11 +595,61 @@
             $tel.attr("placeholder", "手机号输入有误，请重新输入！");
             return false;
         } else {
-            $telChChe = $temp;
             return true;
         }
     }
 
+    function sendCode(){
+        var telphone = $("input[name=telphone]").val();
+        if (telphone.length > 0) {
+            var count = 60;
+            var $codeBtn = $("#codebt");
+            $codeBtn.addClass("disabled");
+            var timer = setInterval(function () {
+                count = count - 1;
+                $codeBtn.text(count + "秒后重发");
+                if (count <= 0) {
+                    $codeBtn.text("验证码");
+                    $codeBtn.removeClass("disabled");
+                    clearInterval(timer);
+                }
+            }, 1000)
+            $.ajax({
+                beforeSend: function () {
+                    valiTel();
+                },
+                url: "/valitel/aliyunMNSValidate",
+                data: {
+                    "tel": telphone
+                },
+                type: "get",
+                success: function (data) {
+                    var $telCodeTemp = data;
+                    $("input[name=tcode]").attr("id",$telCodeTemp);
+                },
+                error: function (xhr) {
+                    alert(xhr.status + " " + xhr.statusText);
+                }
+            });
+        }
+    };
+    function valiTelCode() {
+        var $telCodeTemp=$("input[name=tcode]").attr("id");
+        var $telCode = $("input[name=tcode]");
+        if ($telCode.val() !== "" && $telCodeTemp !== "") {
+            if ($telCode.val() === $telCodeTemp) {
+                return true;
+            } else {
+                $telCode.val("");
+                $telCode.attr("placeholder", "手机验证码不正确！");
+                return false;
+            }
+        } else {
+            $telCode.val("");
+            $telCode.attr("placeholder","请填写6位的手机验证码！");
+            return false;
+        }
+    }
 </script>
 </body>
 <%@include file="../common/script.jsp" %>

@@ -2,11 +2,9 @@
 <head>
     <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8" %>
     <meta charset="UTF-8">
-    <%--<title>长治装修帮办家博会_长治装修帮办家博会门票</title>--%>
-    <%--<meta name="keywords" content="长治装修帮办家博会_长治装修帮办家博会门票"/>--%>
-    <%--<meta name="description" content="长治装修帮办家博会_长治装修帮办家博会门票"/>--%>
-    <%--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>--%>
-    <%--<script src="../../../resources/js/jiabohui/jb.js" type="text/javascript"></script>--%>
+    <title>长治装修帮办家博会_长治装修帮办家博会门票</title>
+    <meta name="keywords" content="长治装修帮办家博会_长治装修帮办家博会门票"/>
+    <meta name="description" content="长治装修帮办家博会_长治装修帮办家博会门票"/>
     <link href="../../../resources/css/jiabohui/base.css" rel="stylesheet" type="text/css"/>
     <link href="../../../resources/css/jiabohui/coupons.css" rel="stylesheet" type="text/css"/>
     <link href="../../../resources/css/jiabohui/coupon.css" rel="stylesheet" type="text/css"/>

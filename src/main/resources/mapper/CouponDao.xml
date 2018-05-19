@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zxbangban.dao.CouponDao">
     <select id="queryAllCoupons" resultType="Coupon">
-        SELECT  id,brandName,beginTime,endTime,totalMoney,preferentialMoney,receiveCount,score from Coupon ORDER by score limit 20;
+        SELECT  id,brandName,beginTime,endTime,totalMoney,preferentialMoney,receiveCount,score from Coupon ORDER by score;
     </select>
     <!--<insert id="addCoupon" parameterType="Coupon">
         INSERT INTO Coupon(brandName,totalMoney,preferentialMoney,receiveCount,score)
