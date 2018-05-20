@@ -17,11 +17,23 @@ public class Customer {
 
     private String programAddress;
 
-    private Integer priority;//优先权
+    private Integer priority;//类型：0代表业主预约1代表入场卷领取2代表优惠卷领取3代表主材预约
 
     private Date createTime;
 
     private String notes;
+
+    private int count;
+
+
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public long getId() {
         return id;
@@ -79,11 +91,6 @@ public class Customer {
         this.notes = notes;
     }
 
-    public Customer() {
-    }
-
-
-
     public Customer(String name, String telphone, String programAddress, Date createTime, String notes) {
         this.name = name;
         this.telphone = telphone;
@@ -100,6 +107,17 @@ public class Customer {
         this.priority = priority;
         this.createTime = createTime;
         this.notes = notes;
+    }
+
+
+    public Customer(String name, String telphone, String programAddress, Integer priority, Date createTime, String notes, int count) {
+        this.name = name;
+        this.telphone = telphone;
+        this.programAddress = programAddress;
+        this.priority = priority;
+        this.createTime = createTime;
+        this.notes = notes;
+        this.count = count;
     }
 
     @Override

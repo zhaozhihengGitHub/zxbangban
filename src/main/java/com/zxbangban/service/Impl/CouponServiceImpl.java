@@ -14,12 +14,17 @@ public class CouponServiceImpl implements CouponService {
     private CouponDao couponDao;
 
     @Override
-    public List<Coupon> queryAllCoupons() {
-        return couponDao.queryAllCoupons();
+    public List<Coupon> queryAllCoupons(Integer mid) {
+        return couponDao.queryAllCoupons(mid);
     }
 
     public int updateReceiveCount(long id,long count){
         int i=couponDao.updateReceiveCount(id,count);
+        return i;
+    }
+
+    public int addCoupon(Coupon coupon){
+        int i=couponDao.addCoupon(coupon);
         return i;
     }
 }

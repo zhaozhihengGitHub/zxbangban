@@ -2,7 +2,7 @@
 <head>
     <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8" %>
     <meta charset="UTF-8">
-    <%--<title>长治装修帮办家博会_长治装修帮办家博会门票</title>--%>
+    <title>长治装修帮办家博会_长治装修帮办家博会门票</title>
     <%--<meta name="keywords" content="长治装修帮办家博会_长治装修帮办家博会门票"/>--%>
     <%--<meta name="description" content="长治装修帮办家博会_长治装修帮办家博会门票"/>--%>
     <%--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>--%>
@@ -21,7 +21,7 @@
 <div style="background:#eee;">
     <div class="t_banner">
         <div class="t_banner_bg">
-            <img src="../../../resources/images/jbhimg/banner.jpg" height="446" width="1920">
+            <img src="https://zxbangban.oss-cn-beijing.aliyuncs.com/home/banner.png" height="446" width="1920">
         </div>
         <div class="t_banner_in">
             <p class="top_title"></p>
@@ -30,7 +30,7 @@
             <div class="tic_login end" id="expo_home">
                 <form role="form"  action="${pageContext.request.contextPath}/c/homeFair" method="post">
                 <div class="tic_title">免费索票</div>
-                <div class="tic_num">已有<em>408</em>人索票</div>
+                <div class="tic_num">已有<em>${count}</em>人索票</div>
                 <div class="tic_input">
                     <label class="ipt-label">姓名：</label>
                     <div class="ipt-box">
@@ -581,7 +581,7 @@
                                     <img src="../../../resources/images/jbhimg/hz_jsyh.jpg" width="150" alt="中国建设银行装修贷款"/></a>
                             </li>
                         </ul>
-                        
+
                     </div>
                 </div>
             </div>
@@ -845,7 +845,7 @@
             }
         })
     }*/
-    
+
     function closetk(o){
         $(o).parents('.tankuang').remove();
     }

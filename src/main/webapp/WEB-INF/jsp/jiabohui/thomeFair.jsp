@@ -440,7 +440,7 @@
         <div class="ttic_login" id="expo_home">
             <form action="${pageContext.request.contextPath}/c/thomeFair" method="post">
                 <div class="tic_title">家博会免费索票</div>
-                <div class="tic_num">已有<em>408</em>人索票</div>
+                <div class="tic_num">已有<em>${count}</em>人索票</div>
                 <div class="tic_input">
                     <label class="ipt-label">姓名：</label>
                     <div class="ipt-box">
@@ -505,19 +505,105 @@
     <div class="row">
         <div class="t_con explosive_box">
             <h3  class="t_con_tit"><a href="javascript:;">抢优惠券</a></h3>
+            瓷砖
             <ul class="t_sale_li clearfix">
-                <c:forEach var="coupon" items="${coupons}">
+                <c:forEach var="ceramicTitle" items="${ceramicTitles}">
                     <li class="clearfix kitchen">
                         <div class="t_l fl">
-                            <span>${coupon.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                            <span>${ceramicTitle.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
-                            <em>支付满${coupon.totalMoney}可用</em>
+                            <em>支付满${ceramicTitle.totalMoney}可用</em>
                         </div>
                         <div class="t_r fl">
-                            <p>${coupon.brandName}</p>
-                            <button id="${coupon.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                            <p>${ceramicTitle.brandName}</p>
+                            <button id="${ceramicTitle.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
                         </div>
-                        <div class="ling fr">已领<e>${coupon.receiveCount}</e>张</div>
+                        <div class="ling fr">已领<e>${ceramicTitle.receiveCount}</e>张</div>
+                    </li>
+                </c:forEach>
+            </ul>
+            橱柜
+            <ul class="t_sale_li clearfix">
+                <c:forEach var="cupboard" items="${cupboards}">
+                    <li class="clearfix kitchen">
+                        <div class="t_l fl">
+                            <span>${cupboard.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                            <i></i>
+                            <em>支付满${cupboard.totalMoney}可用</em>
+                        </div>
+                        <div class="t_r fl">
+                            <p>${cupboard.brandName}</p>
+                            <button id="${cupboard.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                        </div>
+                        <div class="ling fr">已领<e>${cupboard.receiveCount}</e>张</div>
+                    </li>
+                </c:forEach>
+            </ul>
+           木门
+            <ul class="t_sale_li clearfix">
+                <c:forEach var="woodenDoor" items="${woodenDoors}">
+                    <li class="clearfix kitchen">
+                        <div class="t_l fl">
+                            <span>${woodenDoor.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                            <i></i>
+                            <em>支付满${woodenDoor.totalMoney}可用</em>
+                        </div>
+                        <div class="t_r fl">
+                            <p>${woodenDoor.brandName}</p>
+                            <button id="${woodenDoor.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                        </div>
+                        <div class="ling fr">已领<e>${woodenDoor.receiveCount}</e>张</div>
+                    </li>
+                </c:forEach>
+            </ul>
+            洁具卫浴
+            <ul class="t_sale_li clearfix">
+                <c:forEach var="sanitaryAppliance" items="${sanitaryAppliances}">
+                    <li class="clearfix kitchen">
+                        <div class="t_l fl">
+                            <span>${sanitaryAppliance.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                            <i></i>
+                            <em>支付满${sanitaryAppliance.totalMoney}可用</em>
+                        </div>
+                        <div class="t_r fl">
+                            <p>${sanitaryAppliance.brandName}</p>
+                            <button id="${sanitaryAppliance.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                        </div>
+                        <div class="ling fr">已领<e>${sanitaryAppliance.receiveCount}</e>张</div>
+                    </li>
+                </c:forEach>
+            </ul>
+            家具
+            <ul class="t_sale_li clearfix">
+                <c:forEach var="funiture" items="${funitures}">
+                    <li class="clearfix kitchen">
+                        <div class="t_l fl">
+                            <span>${funiture.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                            <i></i>
+                            <em>支付满${funiture.totalMoney}可用</em>
+                        </div>
+                        <div class="t_r fl">
+                            <p>${funiture.brandName}</p>
+                            <button id="${funiture.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                        </div>
+                        <div class="ling fr">已领<e>${funiture.receiveCount}</e>张</div>
+                    </li>
+                </c:forEach>
+            </ul>
+            其他
+            <ul class="t_sale_li clearfix">
+                <c:forEach var="other" items="${others}">
+                    <li class="clearfix kitchen">
+                        <div class="t_l fl">
+                            <span>${other.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                            <i></i>
+                            <em>支付满${other.totalMoney}可用</em>
+                        </div>
+                        <div class="t_r fl">
+                            <p>${other.brandName}</p>
+                            <button id="${other.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                        </div>
+                        <div class="ling fr">已领<e>${other.receiveCount}</e>张</div>
                     </li>
                 </c:forEach>
             </ul>

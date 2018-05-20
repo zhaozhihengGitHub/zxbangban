@@ -4,9 +4,9 @@
 <mapper namespace="com.zxbangban.dao.CustomerDao">
     <insert id="newCustomer" parameterType="Customer">
         INSERT INTO customer
-        (name, telphone, program_address,priority, create_time, notes)
+        (name, telphone, program_address,priority, create_time, notes,count)
         VALUES (#{customer.name}, #{customer.telphone}, #{customer.programAddress},#{customer.priority},#{customer.createTime},
-                #{customer.notes})
+                #{customer.notes},#{customer.count})
     </insert>
 
     <select id="queryAll" resultType="Customer">
@@ -50,6 +50,10 @@
             create_time
         FROM customer WHERE notes = #{notes}
         ORDER  BY  create_time DESC  LIMIT 0,4;
+    </select>
+
+    <select id="queryByprority" resultType="Integer">
+        SELECT count FROM customer where priority=1 ORDER BY id DESC LIMIT 0,1 ;
     </select>
 
 </mapper>
