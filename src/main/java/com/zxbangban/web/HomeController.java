@@ -268,12 +268,6 @@ public class HomeController {
     public String invest(){
         return "shop/home";
     }
-    /**
-     *
-     * @return 家博会
-     */
-    @RequestMapping("/homeFair")
-    public String homeFair(){return "jiabohui/homeFair";}
 
     /**
      *
