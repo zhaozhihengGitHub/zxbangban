@@ -33,4 +33,6 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     public List<Customer> queryByNotes(String notes){return customerDao.queryByNotes(notes);};
+
+    public int queryByprority(){return customerDao.queryByprority();}
 }
