@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface CouponDao {
-    List<Coupon> queryAllCoupons();
+    List<Coupon> queryAllCoupons(@Param("mid")Integer mid);
     int updateReceiveCount(@Param("id")long id,@Param("count")long count);
+    int addCoupon(@Param("coupon")Coupon coupon);
 }

@@ -1,5 +1,6 @@
 package com.zxbangban.web;
 
+import com.zxbangban.entity.Coupon;
 import com.zxbangban.entity.Customer;
 import com.zxbangban.entity.UserInfo;
 import com.zxbangban.entity.WorkerInfo;
@@ -137,9 +138,12 @@ public class CustomerController {
     @RequestMapping(value = "/homeFair",method = RequestMethod.POST)
     public String homeFair(@RequestParam("name")String name,@RequestParam("tel")String tel,Model model){
         try {
-            Customer customer = new Customer(name,tel,"山西长治",1,new Date(),"家博会入场卷");
-            customerService.newCustomer(customer);
-            aliyunMNService.SMSNotification(1,tel);
+            int count=customerService.queryByprority();
+            if(count>0) {
+                Customer customer = new Customer(name, tel, "山西长治", 1, new Date(), "家博会入场卷", count+1);
+                customerService.newCustomer(customer);
+                //aliyunMNService.SMSNotification(1,tel);
+            }
             return "redirect:/homeFair";
         }catch (Exception e){
             e.printStackTrace();
@@ -154,9 +158,12 @@ public class CustomerController {
     @RequestMapping(value = "/thomeFair",method = RequestMethod.POST)
     public String thomeFair(@RequestParam("name")String name,@RequestParam("tel")String tel,Model model){
         try {
-            Customer customer = new Customer(name,tel,"山西长治",1,new Date(),"家博会入场卷");
-            customerService.newCustomer(customer);
-            aliyunMNService.SMSNotification(1,tel);
+            int count=customerService.queryByprority();
+            if(count>0) {
+                Customer customer = new Customer(name, tel, "山西长治", 1, new Date(), "家博会入场卷", count++);
+                customerService.newCustomer(customer);
+                //aliyunMNService.SMSNotification(1,tel);
+            }
             return "redirect:/thomeFair";
         }catch (Exception e){
             e.printStackTrace();

@@ -15,4 +15,5 @@ public interface CustomerService {
     List<Customer> queryByTel(String tel);
     int delete(long id);
     List<Customer> queryByNotes(String notes);
+    int queryByprority();
 }

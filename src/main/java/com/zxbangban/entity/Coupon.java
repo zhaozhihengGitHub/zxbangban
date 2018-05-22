@@ -16,8 +16,29 @@ public class Coupon {
     private  Integer score;//优先级得分
     private  String area;
     private Date createTime;
+    private Integer mid;//主材分类id
 
-    public Coupon() {
+    public Coupon(long id, String brandName, String beginTime, String endTime, long totalMoney, long preferentialMoney, long receiveCount, Integer score, Integer mid) {
+        this.id = id;
+        this.brandName = brandName;
+        this.beginTime = beginTime;
+        this.endTime = endTime;
+        this.totalMoney = totalMoney;
+        this.preferentialMoney = preferentialMoney;
+        this.receiveCount = receiveCount;
+        this.score = score;
+        this.mid = mid;
+    }
+
+    public Coupon(long id, String brandName, long totalMoney, long preferentialMoney, long receiveCount, Integer score, Date createTime, Integer mid) {
+        this.id = id;
+        this.brandName = brandName;
+        this.totalMoney = totalMoney;
+        this.preferentialMoney = preferentialMoney;
+        this.receiveCount = receiveCount;
+        this.score = score;
+        this.createTime = createTime;
+        this.mid = mid;
     }
 
     public Coupon(long id, String brandName, String beginTime, String endTime, long totalMoney, long preferentialMoney, long receiveCount, Integer score, String area, Date createTime) {
@@ -43,6 +64,17 @@ public class Coupon {
         this.receiveCount = receiveCount;
         this.score = score;
         this.createTime = createTime;
+    }
+
+    public Coupon(long id, String brandName, String beginTime, String endTime, long totalMoney, long preferentialMoney, long receiveCount, Integer score) {
+        this.id = id;
+        this.brandName = brandName;
+        this.beginTime = beginTime;
+        this.endTime = endTime;
+        this.totalMoney = totalMoney;
+        this.preferentialMoney = preferentialMoney;
+        this.receiveCount = receiveCount;
+        this.score = score;
     }
 
     public long getId() {
@@ -123,5 +155,13 @@ public class Coupon {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Integer getMid() {
+        return mid;
+    }
+
+    public void setMid(Integer mid) {
+        this.mid = mid;
     }
 }
