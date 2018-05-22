@@ -151,7 +151,7 @@
             width:49%;
             margin-right:1%;
             display: block;
-            margin-top: 10px;
+            margin-top: 5px;
             border:1px solid #ccc;
         }
         .explosive_box .odds_under{
@@ -205,14 +205,16 @@
             color: #fff;
         }
         /*优惠券*/
+        .explosive_box h4.t_sale_type{
+            padding-left:20px;
+            font-size:16px;
+            margin-bottom:0;
+        }
         .t_sale_li{
             overflow: hidden;
             width: 100%;
             display: block;
             padding: 0 15px;
-        }
-        .t_sale_li {
-            margin-top:10px;
         }
         .t_sale_li li {
             float: left;
@@ -378,6 +380,20 @@
         .t_sale_li li.electrical .t_r button {
             background: #ed8c00;
         }
+        /*其他*/
+
+        .t_sale_li li.other {
+            border: #c26dec solid 2px;
+        }
+        .t_sale_li li.other span {
+            color: #c26dec;
+        }
+        .t_sale_li li.other .ling e {
+            color: #c26dec;
+        }
+        .t_sale_li li.other .t_r button {
+            background: #c26dec;
+        }
         /*弹框*/
         .mask-box{
             width:100%;
@@ -505,10 +521,10 @@
     <div class="row">
         <div class="t_con explosive_box">
             <h3  class="t_con_tit"><a href="javascript:;">抢优惠券</a></h3>
-            瓷砖
+            <h4 class="t_sale_type">瓷砖</h4>
             <ul class="t_sale_li clearfix">
                 <c:forEach var="ceramicTitle" items="${ceramicTitles}">
-                    <li class="clearfix kitchen">
+                    <li class="clearfix floor">
                         <div class="t_l fl">
                             <span>${ceramicTitle.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -522,7 +538,7 @@
                     </li>
                 </c:forEach>
             </ul>
-            橱柜
+            <h4 class="t_sale_type">橱柜</h4>
             <ul class="t_sale_li clearfix">
                 <c:forEach var="cupboard" items="${cupboards}">
                     <li class="clearfix kitchen">
@@ -539,10 +555,10 @@
                     </li>
                 </c:forEach>
             </ul>
-           木门
+            <h4 class="t_sale_type">木门</h4>
             <ul class="t_sale_li clearfix">
                 <c:forEach var="woodenDoor" items="${woodenDoors}">
-                    <li class="clearfix kitchen">
+                    <li class="clearfix build">
                         <div class="t_l fl">
                             <span>${woodenDoor.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -556,10 +572,10 @@
                     </li>
                 </c:forEach>
             </ul>
-            洁具卫浴
+            <h4 class="t_sale_type">洁具卫浴</h4>
             <ul class="t_sale_li clearfix">
                 <c:forEach var="sanitaryAppliance" items="${sanitaryAppliances}">
-                    <li class="clearfix kitchen">
+                    <li class="clearfix fitment">
                         <div class="t_l fl">
                             <span>${sanitaryAppliance.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -573,10 +589,10 @@
                     </li>
                 </c:forEach>
             </ul>
-            家具
+            <h4 class="t_sale_type">家具</h4>
             <ul class="t_sale_li clearfix">
                 <c:forEach var="funiture" items="${funitures}">
-                    <li class="clearfix kitchen">
+                    <li class="clearfix electrical">
                         <div class="t_l fl">
                             <span>${funiture.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -590,10 +606,10 @@
                     </li>
                 </c:forEach>
             </ul>
-            其他
+            <h4 class="t_sale_type">其他</h4>
             <ul class="t_sale_li clearfix">
                 <c:forEach var="other" items="${others}">
-                    <li class="clearfix kitchen">
+                    <li class="clearfix other">
                         <div class="t_l fl">
                             <span>${other.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
