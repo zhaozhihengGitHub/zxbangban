@@ -1,5 +1,7 @@
 package com.zxbangban.web;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zxbangban.entity.Coupon;
 import com.zxbangban.entity.Customer;
 import com.zxbangban.enums.MaterialType;
@@ -11,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -24,12 +27,14 @@ public class CouponController {
 
     @RequestMapping(value ="/thomeFair")
     public String thomeFair(Model model){
-        List<Coupon> ceramicTitles = couponService.queryAllCoupons(1);
-        List<Coupon> cupboards = couponService.queryAllCoupons(3);
-        List<Coupon> funitures = couponService.queryAllCoupons(4);
-        List<Coupon> woodenDoors = couponService.queryAllCoupons(6);
-        List<Coupon> sanitaryAppliances = couponService.queryAllCoupons(7);
-        List<Coupon> others = couponService.queryAllCoupons(8);
+        Integer a=0;
+        Integer b=4;
+        List<Coupon> ceramicTitles = couponService.queryAllCoupons(1,a,b);
+        List<Coupon> cupboards = couponService.queryAllCoupons(3,a,b);
+        List<Coupon> funitures = couponService.queryAllCoupons(4,a,b);
+        List<Coupon> woodenDoors = couponService.queryAllCoupons(6,a,b);
+        List<Coupon> sanitaryAppliances = couponService.queryAllCoupons(7,a,b);
+        List<Coupon> others = couponService.queryAllCoupons(8,a,b);
         int count = customerService.queryByprority();
         model.addAttribute("ceramicTitles",ceramicTitles);
         model.addAttribute("cupboards",cupboards);
@@ -43,12 +48,14 @@ public class CouponController {
 
     @RequestMapping(value ="/homeFair")
     public String homeFair(Model model){
-        List<Coupon> ceramicTitles = couponService.queryAllCoupons(1);
-        List<Coupon> cupboards = couponService.queryAllCoupons(3);
-        List<Coupon> funitures = couponService.queryAllCoupons(4);
-        List<Coupon> woodenDoors = couponService.queryAllCoupons(6);
-        List<Coupon> sanitaryAppliances = couponService.queryAllCoupons(7);
-        List<Coupon> others = couponService.queryAllCoupons(8);
+        Integer a=0;
+        Integer b=4;
+        List<Coupon> ceramicTitles = couponService.queryAllCoupons(1,a,b);
+        List<Coupon> cupboards = couponService.queryAllCoupons(3,a,b);
+        List<Coupon> funitures = couponService.queryAllCoupons(4,a,b);
+        List<Coupon> woodenDoors = couponService.queryAllCoupons(6,a,b);
+        List<Coupon> sanitaryAppliances = couponService.queryAllCoupons(7,a,b);
+        List<Coupon> others = couponService.queryAllCoupons(8,a,b);
         int count = customerService.queryByprority();
         model.addAttribute("ceramicTitles",ceramicTitles);
         model.addAttribute("cupboards",cupboards);
@@ -58,6 +65,17 @@ public class CouponController {
         model.addAttribute("others",others);
         model.addAttribute("count",count);
         return "jiabohui/homeFair";
+    }
+    
+    @RequestMapping(value = "/queryCoupons",method = RequestMethod.GET,produces = "text/html;charset=utf8")
+    @ResponseBody
+    public String queryCoupons(@RequestParam("mid")Integer mid) throws JsonProcessingException {
+        Integer a =0;
+        Integer b =1000;
+        List<Coupon> coupons = couponService.queryAllCoupons(mid, a, b);
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        return objectMapper.writeValueAsString(coupons);
     }
 
 }

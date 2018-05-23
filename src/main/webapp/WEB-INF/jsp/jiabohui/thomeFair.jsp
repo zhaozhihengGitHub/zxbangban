@@ -216,6 +216,14 @@
             display: block;
             padding: 0 15px;
         }
+        .t_sale_li .moreyhq{
+            float:left;
+            text-align:center;
+            line-height:30px;
+            width:100%;
+            margin:10px 0 5px 0;
+            background:#eee;
+        }
         .t_sale_li li {
             float: left;
             width: 49%;
@@ -225,11 +233,6 @@
             box-sizing: border-box;
             border: 1px solid #000;
             position: relative;
-        }
-        .t_sale_li li:nth-child(4), .t_sale_li li:nth-child(8), .t_sale_li li:nth-child(12),
-        .t_sale_li li:nth-child(16), .t_sale_li li:nth-child(18), .t_sale_li li:nth-child(22),
-        .t_sale_li li:last-child {
-            margin-right: 0px;
         }
         .t_sale_li li em {
             display: block;
@@ -523,8 +526,8 @@
             <h3  class="t_con_tit"><a href="javascript:;">抢优惠券</a></h3>
             <h4 class="t_sale_type">瓷砖</h4>
             <ul class="t_sale_li clearfix">
-                <c:forEach var="ceramicTitle" items="${ceramicTitles}">
-                    <li class="clearfix floor">
+                <c:forEach var="ceramicTitle" items="${ceramicTitles}" varStatus="vs">
+                    <li class="clearfix kitchen">
                         <div class="t_l fl">
                             <span>${ceramicTitle.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -536,29 +539,35 @@
                         </div>
                         <div class="ling fr">已领<e>${ceramicTitle.receiveCount}</e>张</div>
                     </li>
+                    <c:if test="${vs.count==4}">
+                        <div class="moreyhq" id="${ceramicTitle.mid}" onclick="show(this)">更多>></div>
+                    </c:if>
                 </c:forEach>
             </ul>
             <h4 class="t_sale_type">橱柜</h4>
             <ul class="t_sale_li clearfix">
-                <c:forEach var="cupboard" items="${cupboards}">
-                    <li class="clearfix kitchen">
-                        <div class="t_l fl">
-                            <span>${cupboard.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满${cupboard.totalMoney}可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p>${cupboard.brandName}</p>
-                            <button id="${cupboard.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>${cupboard.receiveCount}</e>张</div>
-                    </li>
+                <c:forEach var="cupboard" items="${cupboards}" varStatus="vs">
+                        <li class="clearfix kitchen">
+                            <div class="t_l fl">
+                                <span>${cupboard.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                                <i></i>
+                                <em>支付满${cupboard.totalMoney}可用</em>
+                            </div>
+                            <div class="t_r fl">
+                                <p>${cupboard.brandName}</p>
+                                <button id="${cupboard.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                            </div>
+                            <div class="ling fr">已领<e>${cupboard.receiveCount}</e>张</div>
+                        </li>
+                    <c:if test="${vs.count}==4">
+                        <div id="${cupboard.mid}" onclick="show(this)">更多>></div>
+                    </c:if>
                 </c:forEach>
             </ul>
             <h4 class="t_sale_type">木门</h4>
             <ul class="t_sale_li clearfix">
-                <c:forEach var="woodenDoor" items="${woodenDoors}">
-                    <li class="clearfix build">
+                <c:forEach var="woodenDoor" items="${woodenDoors}" varStatus="vs">
+                    <li class="clearfix kitchen">
                         <div class="t_l fl">
                             <span>${woodenDoor.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -570,12 +579,15 @@
                         </div>
                         <div class="ling fr">已领<e>${woodenDoor.receiveCount}</e>张</div>
                     </li>
+                    <c:if test="${vs.count}==4">
+                        <div id="${woodenDoor.mid}" onclick="show(this)">更多>></div>
+                    </c:if>
                 </c:forEach>
             </ul>
             <h4 class="t_sale_type">洁具卫浴</h4>
             <ul class="t_sale_li clearfix">
-                <c:forEach var="sanitaryAppliance" items="${sanitaryAppliances}">
-                    <li class="clearfix fitment">
+                <c:forEach var="sanitaryAppliance" items="${sanitaryAppliances}" varStatus="vs">
+                    <li class="clearfix kitchen">
                         <div class="t_l fl">
                             <span>${sanitaryAppliance.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -587,12 +599,15 @@
                         </div>
                         <div class="ling fr">已领<e>${sanitaryAppliance.receiveCount}</e>张</div>
                     </li>
+                    <c:if test="${vs.count}==4">
+                        <div id="${sanitaryAppliance.mid}" onclick="show(this)">更多>></div>
+                    </c:if>
                 </c:forEach>
             </ul>
             <h4 class="t_sale_type">家具</h4>
             <ul class="t_sale_li clearfix">
-                <c:forEach var="funiture" items="${funitures}">
-                    <li class="clearfix electrical">
+                <c:forEach var="funiture" items="${funitures}" varStatus="vs">
+                    <li class="clearfix kitchen">
                         <div class="t_l fl">
                             <span>${funiture.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -604,12 +619,15 @@
                         </div>
                         <div class="ling fr">已领<e>${funiture.receiveCount}</e>张</div>
                     </li>
+                    <c:if test="${vs.count}==4">
+                        <div id="${funiture.mid}" onclick="show(this)">更多>></div>
+                    </c:if>
                 </c:forEach>
             </ul>
             <h4 class="t_sale_type">其他</h4>
             <ul class="t_sale_li clearfix">
-                <c:forEach var="other" items="${others}">
-                    <li class="clearfix other">
+                <c:forEach var="other" items="${others}" varStatus="vs">
+                    <li class="clearfix kitchen">
                         <div class="t_l fl">
                             <span>${other.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
                             <i></i>
@@ -621,6 +639,9 @@
                         </div>
                         <div class="ling fr">已领<e>${other.receiveCount}</e>张</div>
                     </li>
+                    <c:if test="${vs.count}==4">
+                        <div id="${other.mid}" onclick="show(this)">更多>></div>
+                    </c:if>
                 </c:forEach>
             </ul>
         </div>
@@ -632,6 +653,35 @@
     $(function () {
         appointment.detail.validata();
     })
+
+    function show(param) {
+        var mid=$(param).attr("id");
+       $(param).parent().find('li').remove();
+       $(param).hide();
+        $.ajax({
+            url:"${pageContext.request.contextPath}/queryCoupons",
+            data:{"mid":mid},
+            type:"GET",
+            dataType: "json",
+            success:function (data) {
+                $.each(data,function (index,coupon) {
+                    $(param).parent().append("<li class=\"clearfix kitchen\">\n" +
+                        "                        <div class=\"t_l fl\">\n" +
+                        "                            <span>"+coupon.preferentialMoney+"<b>¥</b> &nbsp;&nbsp;</span>\n" +
+                        "                            <i></i>\n" +
+                        "                            <em>支付满"+coupon.totalMoney+"可用</em>\n" +
+                        "                        </div>\n" +
+                        "                        <div class=\"t_r fl\">\n" +
+                        "                            <p>"+coupon.brandName+"</p>\n" +
+                        "                            <button id=\""+coupon.id+"\" class=\"J_GetCoupon tankg\" onclick=\"recieve(this)\">立即领取</button>\n" +
+                        "                        </div>\n" +
+                        "                        <div class=\"ling fr\">已领<e>"+coupon.receiveCount+"</e>张</div>\n" +
+                        "                    </li>");
+                })
+
+            }
+        })
+    }
     function closebt(){
         $('.mask-box').remove();
     }
