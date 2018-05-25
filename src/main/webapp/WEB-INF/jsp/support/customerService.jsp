@@ -92,7 +92,7 @@
             <div class="jumbotron">
                 <h1 class="qr_code">使用微信扫描二维码，登录微信客服中心</h1>
                 <%--<h2>8:30 - 18:30</h2>--%>
-                <img src="${pageContext.request.contextPath}/resources/images/common/QR_2.jpg" alt="" class="img-responsive">
+                <img src="${pageContext.request.contextPath}/resources/images/common/QR_2.png" alt="" class="img-responsive">
             </div>
         </div>
     </div>

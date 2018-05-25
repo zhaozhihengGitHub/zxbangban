@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <head>
     <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8" %>
@@ -72,7 +73,6 @@
                 <li id="J_EactNav1" class="J_EactNav" data-id="1" style="width:148px">活动亮点</li>
                 <li id="J_EactNav2" class="J_EactNav" data-id="2" style="width:148px">电子优惠券</li>
                 <li id="J_EactNav3" class="J_EactNav" data-id="3" style="width:148px">爆品预约</li>
-                <li id="J_EactNav4" class="J_EactNav" data-id="4" style="width:148px">商户活动预约</li>
                 <li id="J_EactNav5" class="J_EactNav" data-id="5" style="width:148px">合作品牌</li>
                 <li id="J_EactNav6" class="J_EactNav" data-id="6" style="width:148px">采购指南</li>
                 <li id="J_EactNav7" class="J_EactNav" data-id="7" style="width:148px">服务保障</li>
@@ -139,102 +139,20 @@
             <div class="t_sale" id="J_Eact2">
                 <div class="t_hd"><a class="more-nav-coupon" href="${pageContext.request.contextPath}/coupons">抢优惠券&nbsp;<e class="more-nav"></e></a></div>
                 <ul class="t_sale_li clearfix">
-                    <li class="clearfix kitchen">
-                        <div class="t_l fl">
-                            <span>200<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满5000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p>王者陶瓷</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>184</e>张</div>
-                    </li>
-                    <li class="clearfix kitchen">
-                        <div class="t_l fl">
-                            <span>200<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满5000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p> 冠珠陶瓷</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>80</e>张</div>
-                    </li>
-                    <li class="clearfix fitment">
-                        <div class="t_l fl">
-                            <span>100<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满4000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p>宏陶陶瓷</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>75</e>张</div>
-                    </li>
-                    <li class="clearfix kitchen">
-                        <div class="t_l fl">
-                            <span>100<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满3000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p>平米瓷砖</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>63</e>张</div>
-                    </li>
-                    <li class="clearfix kitchen">
-                        <div class="t_l fl">
-                            <span>100<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满5000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p>罗马瓷砖</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>86</e>张</div>
-                    </li>
-                    <li class="clearfix kitchen">
-                        <div class="t_l fl">
-                            <span>100<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满3000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p> 东鹏瓷砖</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>40</e>张</div>
-                    </li>
-                    <li class="clearfix kitchen">
-                        <div class="t_l fl">
-                            <span>100<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满3000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p>郎宝陶瓷</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>78</e>张</div>
-                    </li>
-                    <li class="clearfix build">
-                        <div class="t_l fl">
-                            <span>300<b>¥</b> &nbsp;&nbsp;</span>
-                            <i></i>
-                            <em>支付满10000可用</em>
-                        </div>
-                        <div class="t_r fl">
-                            <p>新罗马瓷砖</p>
-                            <button class="J_GetCoupon">立即领取</button>
-                        </div>
-                        <div class="ling fr">已领<e>49</e>张</div>
-                    </li>
+                    <c:forEach var="coupon" items="${coupons}" varStatus="vs">
+                        <li class="clearfix kitchen">
+                            <div class="t_l fl">
+                                <span>${coupon.preferentialMoney}<b>¥</b> &nbsp;&nbsp;</span>
+                                <i></i>
+                                <em>支付满${coupon.totalMoney}可用</em>
+                            </div>
+                            <div class="t_r fl">
+                                <p>${coupon.brandName}</p>
+                                <button id="${coupon.id}" class="J_GetCoupon tankg" onclick="recieve(this)">立即领取</button>
+                            </div>
+                            <div class="ling fr">已领<e>${coupon.receiveCount}</e>张</div>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
             <!-- 优惠券结束 -->
@@ -274,7 +192,7 @@
                 </ul>
             </div>
             <!-- 厨房卫浴 -->
-            <!-- 爆品预约 -->
+            <%--<!-- 爆品预约 -->
             <div class="content-in" id="J_Eact4">
                 <div class="t_hd">
                     <a class="more-nav-supplier" href="javascript:;">商户活动预约&nbsp;<e class="more-nav"></e></a>
@@ -306,7 +224,7 @@
                         </li>
                     </div>
                 </ul>
-            </div>
+            </div>--%>
             <!-- 合作品牌 -->
             <div class="work_hx" id="J_Eact5">
                 <div class="t_hd">合作品牌</div>
@@ -846,25 +764,130 @@
         })
     }*/
 
-    function closetk(o){
-        $(o).parents('.tankuang').remove();
+    function closebt(){
+        $('.mask-box').remove();
     }
     function hidetk(o){
         $(o).parents('.sptk').hide();
+    }
+    function recieve(param){
+        var id=$(param).attr("id");
+        var brandname=$(param).siblings("p").text();
+        var count=$(param).parent().siblings(".fr").find("e").text();
+        var xx1='<div class="mask-box"><div class="mask"><p class="closebt" onclick="closebt();">x</p><form action="${pageContext.request.contextPath}/c/comCoupon" method="post"><h3>'+brandname+'</h3><input type="hidden" name="id" value='+id+'><input type="hidden" name="brandname" value='+brandname+'><input type="hidden" name="count" value='+ count +'><div class="tic_input"><div class="ipt-box"><input type="text" name="username" class="ipt_txt" placeholder="请输入姓名" id="reserve_name"/></div></div><div class="tic_input"><div class="ipt-box"><input type="text" name="telphone" class="ipt_txt short" placeholder="请输入手机号码" maxlength="11"/></div><div class="test"><button class="btn btn-primary btn-yzm" type="button" id="codebt"  onclick="sendCode()">验证码</button></div></div><div class="tic_input"><div class="ipt-box"><input type="text" id="a" name="tcode"  class="ipt_txt" placeholder="请输入验证码"/></div></div><p class="yhdec">优惠信息：装修帮办为您提供支付满<i>5000</i>减<i>200</i>的优惠券,可在各品牌专卖店或平台举办的团购活动中使用，详情咨询0355-8881777</p><button class="mask-btn" type="submit" onclick="return confirm()">确&nbsp;&nbsp;认</button></form></div>'
+        $("body").append(xx1);
+    }
+    function confirm() {
+        if (valiName() === false) {
+            return false;
+        }
+        if (valiTel() === false) {
+            return false;
+        }
+        if (valiTelCode() === false) {
+            return false;
+        }
+        if(valiName() === true && valiTel() === true){
+            alert("恭喜您！优惠券领取成功，稍后我们的客服会用0355-8881777电话与您联系，请保持电话畅通");
+        }
+    };
+
+    function valiName() {
+        var $name = $("input[name=username]");
+        var $temp = $name.val();
+        var $nameRegular = /^[\u4e00-\u9fa5\\w]+$/;
+        if ($temp.length === 0) {
+            $name.attr("placeholder", "名字不能为空！");
+            return false;
+        } else if ($temp.length < 2) {
+            $name.val("");
+            $name.attr("placeholder", "名字不能少于两个字");
+            return false;
+        } else if ($temp.length > 6) {
+            $name.val("");
+            $name.attr("placeholder", "名字太长了！");
+            return false;
+        } else if (!($nameRegular.test($temp))) {
+            $name.val("");
+            $name.attr("placeholder", "名字只可以是中文！");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function valiTel() {
+        var $tel = $("input[name=telphone]");
+        var $temp = $tel.val();
+        var $telRegular = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
+        if ($temp.length === 0) {
+            $tel.val("");
+            $tel.attr("placeholder","手机号还没写！");
+            return false;
+        } else if (!($telRegular.test($temp))) {
+            $tel.val("");
+            $tel.attr("placeholder", "手机号输入有误，请重新输入！");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function sendCode(){
+        var telphone = $("input[name=telphone]").val();
+        if (telphone.length > 0) {
+            var count = 60;
+            var $codeBtn = $("#codebt");
+            $codeBtn.addClass("disabled");
+            var timer = setInterval(function () {
+                count = count - 1;
+                $codeBtn.text(count + "秒后重发");
+                if (count <= 0) {
+                    $codeBtn.text("验证码");
+                    $codeBtn.removeClass("disabled");
+                    clearInterval(timer);
+                }
+            }, 1000)
+            $.ajax({
+                beforeSend: function () {
+                    valiTel();
+                },
+                url: "/valitel/aliyunMNSValidate",
+                data: {
+                    "tel": telphone
+                },
+                type: "get",
+                success: function (data) {
+                    var $telCodeTemp = data;
+                    $("input[name=tcode]").attr("id",$telCodeTemp);
+                },
+                error: function (xhr) {
+                    alert(xhr.status + " " + xhr.statusText);
+                }
+            });
+        }
+    };
+    function valiTelCode() {
+        var $telCodeTemp = $("input[name=tcode]").attr("id");
+        var $telCode = $("input[name=tcode]");
+        if ($telCode.val() !== "" && $telCodeTemp !== "") {
+            if ($telCode.val() === $telCodeTemp) {
+                return true;
+            } else {
+                $telCode.val("");
+                $telCode.attr("placeholder", "手机验证码不正确！");
+                return false;
+            }
+        } else {
+            $telCode.val("");
+            $telCode.attr("placeholder", "请填写6位的手机验证码！");
+            return false;
+        }
     }
     $(function () {
         appointment.detail.validata();
         if($("#jiabohui").attr("name")=="jiabohiu"){
             $('.sptk').show();
         }
-        var yhq='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 400px; margin-top: -200px; margin-left: -285px;"><div class="jb-modal-body"><div class="boom2"><div class="boom-hd clearfix"><div class="brand-img fl"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="brand-name"><p style="height:32px;overflow:hidden"> 方太电器200元优惠券</p><span>支付满5000.00减200.00</span><em>使用时间:04.29-05.01 使用地址:CBD国际会展中心</em> </div></div><div class="inpt-box"><div class="txt"><label class="lab fl">手机：</label><input type="tel" class="int-txt fl" name="coupon_mobile" id="coupon_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="txt"><label class="lab fl">验证码：</label><input type="text" class="int-txt2 fl code" name="coupon_code" id="coupon_code" maxlength="4" placeholder="请输入验证码"></div></div><div class="msg-box" style="margin:10px 0px 0px 110px;"><div class="msg msg-error hide" id="J_MsgCouponSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="bomm-btn2">立即领取</button><i class="i">同时免费索票价值20元的华夏家博会门票</i><div class="right-down"><div class="draw_tips"><a href="javascript:;" ">已有账号？<br>登录领取更方便！</a></div></div><div class="special-zero-close" onclick="closetk(this);"></div></div>';
-       /* $('.J_GetCoupon').click(function(){
-            $('body').append(yhq);
-        })*/
-        var yhq1='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 900px; min-height: 460px; margin-top: -230px; margin-left: -450px;"><div class="jb-modal-body"><div class="boom3"><div class="boom3-l fl"><div class="boom3-img"><img src="../../../resources/images/jbhimg/ftdq.jpg"></div><h5></h5><div class="clear"></div><div class="prize clearfix"><p style="width: 83%;font-size:18px;color: black;">方太厨电 油烟机EM23TS+灶具FD2B</p><p style="width: 83%;color: #999;margin: 10px 0;">油烟机EM23TS+灶具FD2B</p><p class="fl">抢购价: <b>4480.00</b></p><span class="fr"> 剩余3个</span></div><div class="boom3-l-down" style="margin-top: 1rem;">线上预约锁定，凭短信至展会现场下单</div></div><div class="boom3-r fl" id="reserve_modal"><div class="boom3-r-hd">爆品预约</div><div class="boom3-input"><div class="boom3-input-in clearfix"><label class="lab2 fl">姓名：</label><input type="text" class="boom3-txt" name="reserve_name" id="reserve_name" maxlength="12" placeholder="请输入收件人姓名" value=""></div><div class="boom3-input-in clearfix"><label class="lab2 fl">手机：</label><input type="text" class="boom3-txt" name="reserve_mobile" id="reserve_mobile" maxlength="11" placeholder="请输入手机号码" value=""><button class="btn btn-primary btn-yzm" type="button" id="codebtn">验证码</button></div><div class="boom3-input-in clearfix"><label class="lab2 fl">验证码：</label><input type="text" class="boom3-txt2 fl code" name="reserve_code" id="reserve_code" maxlength="4" placeholder="请输入验证码"></div><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><input type="hidden" value="178726" name="source_id" id="source_id"><input type="hidden" name="reserve_ticket" id="reserve_ticket" value="1"><button class="boom3-btn">立即预约</button><span style="position: relative;top: 10px;left:10px; font-size: 14px;color: #999;"><p style="margin-top:10px;">√&nbsp;&nbsp;同时免费索票价值20元的华夏家博会门票</p><p style="margin-left: 1rem;">时间地点：04.29-05.01CBD国际会展中心</p></span></div></div><div class="special-zero-close" onclick="closetk(this)"></div></div>';
-       /* $('.B_GetCoupon').click(function(){
-            $('body').append(yhq1);
-        })*/
     var yhq2='<div class="tankuang"><div class="jb-modal-blind"></div><div class="jb-modal-primary" style="width: 570px; min-height: 564px; margin-top: -282px; margin-left: -285px;"><div class="jb-modal-body"><div class="supplier-box" id="reserve_modal_8_0"><div class="close" onclick="closetk(this);"></div><div class="dialog-hd">商户活动预约</div><div class="dialog-box-in clearfix"><div class="dialog-left"><img src="../../../resources/images/jbhimg/ftdq_logo.jpg"></div><div class="dialog-right"><span class="zhan-num">展位号TA29</span><span class="hx-time">4.29-5.1  CBD国际会展中心</span></div><div class="clearfix"></div><em class="activity-tips-title">活动详情：</em><div class="activity-tips"><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>1<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">买就送</span><span style="color: rgb(85,57,130);">:</span><span style="color: rgb(0,0,0);">下单即送</span>价值398元服务大礼包；购买蒸箱烤箱赠送价值300元蒸烤柜；两件套送价值199元刀具七件套；三件套加送价值880元汤奶锅两件套；四件套加送价值1280元双立人单锅；五件套以上加送价值3280元双立人套锅</p><p>2<span style="color: rgb(0,0,0);">.</span><span style="color: rgb(226,80,65);">不满意就退</span><span style="color: rgb(71,85,119);">:</span>热水器享受180天舒适后悔权，<span style="color: rgb(226,80,65);">180天内不舒服就退款</span></p></div><div class="ipt-box"><input type="hidden" value="8" name="source_id" id="source_id"><input type="text" name="reserve_mobile" id="reserve_mobile" maxlength="11" class="ipt-txt" placeholder="请输入您的手机号码"><div class="msg-box"><div class="msg msg-error hide" id="J_MsgReserveSubmit"><i></i><div class="msg-cnt"></div></div></div><button class="ipt-btn" >立即预约</button><div class="ipt-bottom clearfix"><input name="reserve_checked" type="hidden" value="1" class="check-box" checked="checked"><span>√同时免费索取价值20元的家博会门票</span><em>线上预约，凭短信至现场商户展位参与活动享优惠</em></div></div></div></div></div></div></div>';
    /* $('.S_GetCoupon').click(function(){
         $('body').append(yhq2);

@@ -91,6 +91,27 @@ public class Customer {
         this.notes = notes;
     }
 
+    public Customer() {
+    }
+
+    public Customer(long id, String name, String telphone, String programAddress, Date createTime) {
+        this.id = id;
+        this.name = name;
+        this.telphone = telphone;
+        this.programAddress = programAddress;
+        this.createTime = createTime;
+    }
+
+    public Customer(long id, String name, String telphone, String programAddress, Integer priority, Date createTime, String notes) {
+        this.id = id;
+        this.name = name;
+        this.telphone = telphone;
+        this.programAddress = programAddress;
+        this.priority = priority;
+        this.createTime = createTime;
+        this.notes = notes;
+    }
+
     public Customer(String name, String telphone, String programAddress, Date createTime, String notes) {
         this.name = name;
         this.telphone = telphone;

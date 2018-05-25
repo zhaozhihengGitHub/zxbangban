@@ -46,7 +46,7 @@
 						<li><h3 style="text-align: center;">公众号</h3></li>
 						<li style="text-align: center;">
 							<span>
-								<img src="https://zxbangban.com/resources/images/common/QR_2.jpg"/>
+								<img src="/resources/images/common/QR_2.png"/>
 							</span>
 						</li>
 						<li><p>扫一扫关注二维码</p></li>

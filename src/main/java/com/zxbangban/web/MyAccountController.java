@@ -321,10 +321,10 @@ public class MyAccountController {
     public String managerAppoint(@RequestParam("roleid") Integer roleid, @RequestParam("uid") String uid) {
         int i = roleid;
         if (3 < i && i < 10) {
+            try {
             List<Customer> list = customerService.queryAll();
             ObjectMapper objectMapper = new ObjectMapper();
-            try {
-                return objectMapper.writeValueAsString(list);
+            return objectMapper.writeValueAsString(list);
             } catch (JsonProcessingException e) {
                 return "";
             }

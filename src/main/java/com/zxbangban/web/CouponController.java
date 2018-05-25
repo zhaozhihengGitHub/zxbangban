@@ -48,8 +48,21 @@ public class CouponController {
 
     @RequestMapping(value ="/homeFair")
     public String homeFair(Model model){
+        List<Coupon> coupons = couponService.queryCoupons();
+        int count = customerService.queryByprority();
+        model.addAttribute("coupons",coupons);
+        model.addAttribute("count",count);
+        return "jiabohui/homeFair";
+    }
+
+    /**
+     *
+     * @return 家博会
+     */
+    @RequestMapping("/coupons")
+    public String coupons(Model model){
         Integer a=0;
-        Integer b=4;
+        Integer b=100;
         List<Coupon> ceramicTitles = couponService.queryAllCoupons(1,a,b);
         List<Coupon> cupboards = couponService.queryAllCoupons(3,a,b);
         List<Coupon> funitures = couponService.queryAllCoupons(4,a,b);
@@ -63,8 +76,7 @@ public class CouponController {
         model.addAttribute("woodenDoors",woodenDoors);
         model.addAttribute("sanitaryAppliances",sanitaryAppliances);
         model.addAttribute("others",others);
-        model.addAttribute("count",count);
-        return "jiabohui/homeFair";
+        return "jiabohui/coupons";
     }
     
     @RequestMapping(value = "/queryCoupons",method = RequestMethod.GET,produces = "text/html;charset=utf8")
