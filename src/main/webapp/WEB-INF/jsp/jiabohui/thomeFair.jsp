@@ -413,7 +413,7 @@
             padding:60px 20px;
             background:#fff;
             margin:0 auto;
-            margin-top:25%;
+            margin-top:15%;
         }
         .mask h3{
             font-size:20px;
