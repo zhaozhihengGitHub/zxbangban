@@ -101,7 +101,7 @@
 .shop_coupons li{
     width: 378px;
     float: left;
-    height: 168px;
+    height: 120px;
     border:1px solid #e1e1e1;
     margin-left: 30px;
     background-color: #fff;
@@ -117,13 +117,13 @@
 .shop_coupons_right {
     width: 70px;
     background: url(../../../resources/images/jbhimg/coupons.png) no-repeat;
-    height: 168px;
+    height: 120px;
     border: medium none;
     font-size: 16px;
     color: #fff;
-    line-height: 30px;
+    line-height: 22px;
     text-align: center;
-    padding: 20px;
+    padding:15px 20px;
 }
 
 .shop_coupons_right.out {
@@ -132,7 +132,7 @@
 }
 .shop_coupons_left_left{
     width: 139px;
-    height: 128px;
+    height: 80px;
     border-right: 1px solid #f3f3f3;
     padding-left: 10px;
     padding-right: 10px;

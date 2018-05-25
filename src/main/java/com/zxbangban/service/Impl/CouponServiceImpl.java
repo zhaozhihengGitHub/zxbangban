@@ -18,6 +18,10 @@ public class CouponServiceImpl implements CouponService {
         return couponDao.queryAllCoupons(mid,a,b);
     }
 
+    public List<Coupon> queryCoupons() {
+        return couponDao.queryCoupons();
+    }
+
     public int updateReceiveCount(long id,long count){
         int i=couponDao.updateReceiveCount(id,count);
         return i;

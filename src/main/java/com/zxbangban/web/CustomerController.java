@@ -74,7 +74,7 @@ public class CustomerController {
     }
 
     /*
-    * 优惠卷
+    * 手机端优惠卷
     * */
     @RequestMapping(value = "coupon",method = RequestMethod.POST)
     public String coupon(@RequestParam("id")long id,@RequestParam("brandname")String brandName,@RequestParam("count")long count,@RequestParam("username")String userName,@RequestParam("telphone")String telphpne){
@@ -84,6 +84,34 @@ public class CustomerController {
         couponService.updateReceiveCount(id,receive);
         return "redirect:/thomeFair";
     }
+
+
+    /*
+    * 电脑端优惠卷
+    * */
+    @RequestMapping(value = "comCoupon",method = RequestMethod.POST)
+    public String comCoupon(@RequestParam("id")long id,@RequestParam("brandname")String brandName,@RequestParam("count")long count,@RequestParam("username")String userName,@RequestParam("telphone")String telphpne){
+        Customer customer = new Customer(userName,telphpne,"",2,new Date(),brandName);
+        customerService.newCustomer(customer);
+        long receive=count+1;
+        couponService.updateReceiveCount(id,receive);
+        return "redirect:/homeFair";
+    }
+
+
+    /*
+    * 电脑端所有优惠卷
+    * */
+    @RequestMapping(value = "allCoupon",method = RequestMethod.POST)
+    public String allCoupon(@RequestParam("id")long id,@RequestParam("brandname")String brandName,@RequestParam("count")long count,@RequestParam("username")String userName,@RequestParam("telphone")String telphpne){
+        Customer customer = new Customer(userName,telphpne,"",2,new Date(),brandName);
+        customerService.newCustomer(customer);
+        long receive=count+1;
+        couponService.updateReceiveCount(id,receive);
+        return "redirect:/coupons";
+    }
+
+
 
     @RequestMapping(value = "/appoint/workerid={workerid}/free")
     public String appointWorker(@PathVariable("workerid") String workerid,Model model){

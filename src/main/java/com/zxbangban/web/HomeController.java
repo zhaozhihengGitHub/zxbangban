@@ -271,12 +271,6 @@ public class HomeController {
 
     /**
      *
-     * @return 家博会
-     */
-    @RequestMapping("/coupons")
-    public String coupons(){return "jiabohui/coupons";}
-    /**
-     *
      * @return 施工队详情跳转
      */
     @RequestMapping("/foreman")
