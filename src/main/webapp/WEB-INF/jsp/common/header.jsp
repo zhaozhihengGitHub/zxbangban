@@ -85,6 +85,7 @@
 					<li><a href="${pageContext.request.contextPath}/homeFair">团购活动</a></li>
 					<li><a href="${pageContext.request.contextPath}/homeFair">家博会</a></li>
 					<li><a href="${pageContext.request.contextPath}/queryAllComments">评论</a></li>
+					<li><a href="${pageContext.request.contextPath}/loan">装修贷款</a></li>
 				</ul>
 			</div>
 		</div>
@@ -111,6 +112,7 @@
 		<li><a href="${pageContext.request.contextPath}/thomeFair">团购活动</a></li>
 		<li><a href="${pageContext.request.contextPath}/thomeFair">家博会</a></li>
 		<li><a href="${pageContext.request.contextPath}/queryAllComments">评论</a></li>
+		<li><a href="${pageContext.request.contextPath}/loan">装修贷款</a></li>
 	</ul>
 </div>
 <script>
