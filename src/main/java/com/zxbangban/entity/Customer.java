@@ -17,7 +17,7 @@ public class Customer {
 
     private String programAddress;
 
-    private Integer priority;//类型：0代表业主预约1代表入场卷领取2代表优惠卷领取3代表主材预约
+    private Integer priority;//类型：0代表业主预约1代表入场卷领取2代表优惠卷领取3代表主材预约4代表贷款申请
 
     private Date createTime;
 

@@ -74,6 +74,18 @@ public class CustomerController {
     }
 
     /*
+    *
+    * 装修贷款申请
+    * */
+    @RequestMapping(value = "loan",method = RequestMethod.POST)
+    public String loan(@RequestParam("name")String name,@RequestParam("tel")String tel,@RequestParam("loan")String loan,@RequestParam("address")String address,Model model){
+        Customer customer = new Customer(name, tel, address,4, new Date(), "贷款金额："+loan);
+        customerService.newCustomer(customer);
+        model.addAttribute("temp","恭喜您！装修贷款申请成功，稍后我们客服将会联系您！");
+        return "ok";
+    }
+
+    /*
     * 手机端优惠卷
     * */
     @RequestMapping(value = "coupon",method = RequestMethod.POST)

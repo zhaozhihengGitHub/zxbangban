@@ -8,10 +8,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>OK</title>
+    <title>${temp}</title>
+    <%@include file="common/head.jsp"%>
+    <style>
+        .jumbotron{
+            margin-top: 25%;
+            margin-bottom: 15%;
+            background:transparent;
+        }
+        @media screen and (min-width: 1200px) {
+            .jumbotron{
+                margin-top: 15%;
+                margin-bottom: 15%;
+                background:transparent;
+            }
+        }
+        .jumbotron h1 {
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>OK</h1>
-    <h2></h2>
+<%@include file="common/header.jsp"%>
+<div class="container-fluid"  style="background-image:url(../../resources/images/loan_bg.jpg);background-repeat: no-repeat;height: 450px ">
+    <div class="jumbotron">
+        <h1>${temp}</h1>
+    </div>
+</div>
+<%@include file="common/footer.jsp"%>
 </body>
+<%@include file="common/script.jsp"%>
 </html>
+
