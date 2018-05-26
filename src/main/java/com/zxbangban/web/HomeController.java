@@ -289,7 +289,13 @@ public class HomeController {
      */
     @RequestMapping("/newsDetails")
     public String newsDetails(){return "newsList/newsDetails";}
+    /**
+     *
+     * @return 贷款页面跳转
+     */
 
+    @RequestMapping("/loan")
+    public String loan(){return "loan";}
     /**
      *
      * @return 装修效果图页面
