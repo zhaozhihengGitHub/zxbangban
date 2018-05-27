@@ -210,4 +210,17 @@ public class CustomerController {
             return "error";
         }
     }
+
+    /*
+    *
+    * 装修保
+    * */
+    @RequestMapping(value = "safeguard",method = RequestMethod.POST)
+    public String safeguard(@RequestParam("name")String name,@RequestParam("tel")String tel,@RequestParam("address")String address,@RequestParam("style")String style,@RequestParam("area")String area,@RequestParam("mode")String mode,Model model){
+        String notes="装修风格："+style+"; 装修面积："+area+"; 装修方式："+mode;
+        Customer customer = new Customer(name, tel, address, 5, new Date(), notes);
+        customerService.newCustomer(customer);
+        model.addAttribute("temp","恭喜您成功领取我们为您提供的价值598元的装修保，详情可在公众号回复：装修保！");
+        return "ok";
+    }
 }

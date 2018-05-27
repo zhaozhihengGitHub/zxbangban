@@ -148,6 +148,15 @@ public class HomeController {
     public String customerService(){
         return "support/customerService";
     }
+
+    /*
+    *
+    * 装修保
+    * */
+    @RequestMapping("/safeguard")
+    public String safeguard(){
+        return "company/zxbao";
+    }
     /**
      *材料品质有保证
      */
