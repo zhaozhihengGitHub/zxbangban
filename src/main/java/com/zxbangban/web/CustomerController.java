@@ -81,7 +81,7 @@ public class CustomerController {
     public String loan(@RequestParam("name")String name,@RequestParam("tel")String tel,@RequestParam("loan")String loan,@RequestParam("address")String address,Model model){
         Customer customer = new Customer(name, tel, address,4, new Date(), "贷款金额："+loan);
         customerService.newCustomer(customer);
-        model.addAttribute("temp","恭喜您！装修贷款申请成功，稍后我们客服将会联系您！");
+        model.addAttribute("temp","恭喜您！您的装修贷款申请预约成功，稍后我们的银行工作人员将会联系您！");
         return "ok";
     }
 

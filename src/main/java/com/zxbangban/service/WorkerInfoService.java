@@ -79,6 +79,8 @@ public interface WorkerInfoService {
 
    List<WorkerInfo> queryByTel(String tel);
 
+    List<WorkerInfo> queryByWorkerName(String workerName);
+
     int updateWorkerState(boolean state,long workerId);
 
     int updateProjectImg(long workerId,String projectImg);

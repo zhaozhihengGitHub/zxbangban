@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/worker-console")
-@SessionAttributes({"uid", "auth"})
+@SessionAttributes({"uid", "auth","jobs"})
 public class WorkerServiceController {
     @Autowired
     private WorkerService workerService;
@@ -91,6 +91,38 @@ public class WorkerServiceController {
         }
 
     }
+
+    @RequestMapping(value = "/byPhone",method = RequestMethod.POST)
+    public String byPhone(@SessionAttribute("jobs")List<Jobs> jobsList,@RequestParam("tel")String tel,Model model){
+        try {
+            List<WorkerInfo> workers = workerInfoService.queryByTel(tel);
+            model.addAttribute("count","");
+            model.addAttribute("jobs",jobsList);
+            model.addAttribute("workers", workers);
+            return "account/worker_service_home";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "signin";
+        }
+
+    }
+
+    @RequestMapping(value = "/byWorkername",method = RequestMethod.POST)
+    public String byWorkername(@SessionAttribute("jobs")List<Jobs> jobsList,@RequestParam("workerName")String workerName,Model model){
+        try {
+            System.out.println(workerName);
+            List<WorkerInfo> workers = workerInfoService.queryByWorkerName(workerName);
+            model.addAttribute("count","");
+            model.addAttribute("jobs",jobsList);
+            model.addAttribute("workers", workers);
+            return "account/worker_service_home";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "signin";
+        }
+
+    }
+
     @RequestMapping(value = "/changeStateTrue",method = RequestMethod.GET,produces = "text/html;charset=utf8")
     @ResponseBody
     public String changeStateTrue(@RequestParam("wid") long wid){
