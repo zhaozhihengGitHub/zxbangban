@@ -2,7 +2,7 @@
 <%@include file="common/tag.jsp" %>
 <html>
 <head>
-    <title>个人主页 | 装修帮办服务平台</title>
+    <title>个人主页 | 装修帮办专业施工平台</title>
     <style>
 
         .comment-box{margin-top:110px;}

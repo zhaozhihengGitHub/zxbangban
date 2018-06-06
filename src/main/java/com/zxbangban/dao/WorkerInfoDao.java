@@ -174,6 +174,8 @@ public interface WorkerInfoDao {
 
     List<WorkerInfo> queryByTel(@Param("tel") String tel);
 
+    List<WorkerInfo> queryByWorkerName(@Param("workerName") String workerName);
+
     int updateWorkerState(@Param("state")boolean state,@Param("workerId")long workerId);
 
     int updateProjectImg(@Param("workerid") long workerId,@Param("project_img_url") String projectImg);

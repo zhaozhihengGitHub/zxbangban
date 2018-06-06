@@ -34,6 +34,8 @@
     <div class="jumbotron">
         <h1>${temp}</h1>
     </div>
+    <%String str="abc";%>
+    <%=abc;%><%out;%>
 </div>
 <%@include file="common/footer.jsp"%>
 </body>

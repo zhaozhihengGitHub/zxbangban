@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>信息中心 | 装修帮办服务平台</title>
+	<title>信息中心 | 装修帮办专业施工平台</title>
 	<%@include file="common/head.jsp"%>
 </head>
 <body>

@@ -158,6 +158,8 @@ public class WorkerInfoServiceImpl implements WorkerInfoService{
 
     public  List<WorkerInfo> queryByTel(String tel){ return  workerInfoDao.queryByTel(tel);};
 
+    public  List<WorkerInfo> queryByWorkerName(String workerName){ return  workerInfoDao.queryByWorkerName(workerName);};
+
     public int updateWorkerState(boolean state,long workerId){ return workerInfoDao.updateWorkerState(state, workerId);};
 
     public int updateProjectImg(long workerId,String projectImg){return  workerInfoDao.updateProjectImg(workerId,projectImg);};

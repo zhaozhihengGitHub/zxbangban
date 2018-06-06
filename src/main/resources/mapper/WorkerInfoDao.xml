@@ -324,10 +324,40 @@
         SELECT over_all_rating FROM workerinfo WHERE workerId = #{workerid}
     </select>
 
-    <select id="queryByTel" parameterType="String" resultType="WorkerInfo">
-        SELECT `workerId`,`name`,`state`
-        FROM workerinfo
-        WHERE `tel` = #{tel}
+    <select id="queryByTel" parameterType="String" resultType="Worker">
+        SELECT
+        w.workerId as id,
+        w.name,
+        w.head_img_url,
+        j.des as job,
+        w.pr,
+        w.authenticated,
+        w.certificated,
+        w.location,
+        w.state,
+        w.create_time,
+        w.tel as telPhone,
+        w.is_show
+        FROM workerinfo AS w INNER JOIN jobs as j ON
+         w.job_id = j.id AND w.`tel` = #{tel}
+    </select>
+
+    <select id="queryByWorkerName" parameterType="String" resultType="Worker">
+        SELECT
+        w.workerId as id,
+        w.name,
+        w.head_img_url,
+        j.des as job,
+        w.pr,
+        w.authenticated,
+        w.certificated,
+        w.location,
+        w.state,
+        w.create_time,
+        w.tel as telPhone,
+        w.is_show
+        FROM workerinfo AS w INNER JOIN jobs as j ON
+        w.job_id = j.id AND w.`name` LIKE "%"#{workerName}"%"
     </select>
 
     <update id="updateWorkerState">

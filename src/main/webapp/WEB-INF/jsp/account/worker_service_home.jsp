@@ -27,6 +27,10 @@
             text-align: center;
             font-size: 22px;
         }
+        .panel-tel {
+            text-align: center;
+            font-size: 18px;
+        }
         .panel-default>.panel-heading{
             background-color: white;
         }
@@ -38,11 +42,24 @@
 <body>
 <%@include file="../common/header.jsp" %>
 <div class="page-wrapper">
+    <div  class="panel-body" style="padding:15px 200px">
+        <form action="${pageContext.request.contextPath}/worker-console/byPhone" method="post" style="width:50%;float:left;">
+            <span class="panel-tel">请输入手机号查询：</span>
+            <input type="tel" name="tel">
+            <input type="submit" value="查询">
+        </form>
+        <form action="${pageContext.request.contextPath}/worker-console/byWorkername" method="post"  style="width:50%;float:left;">
+            <span class="panel-tel">请输入工人姓名查询：</span>
+            <input type="text" name="workerName">
+            <input type="submit" value="查询">
+        </form>
+    </div>
     <div class="row clearfix">
         <div class="col-lg-2 col-md-2 column">
             <div class="jumbotron">
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
+
                         <div class="panel-heading">
                             <h3 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -51,9 +68,10 @@
                             </h3>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
+
                             <div class="panel-body">
-                                <c:set var="job" scope="session" value="${jobs}"/>
-                                <c:if test="${job.size() > 0}">
+                                <%--<c:set var="job" scope="session" value="${jobs}"/>--%>
+                                <c:if test="${jobs.size() > 0}">
                                     <div class="btn-group-vertical">
                                         <button type="button" class="btn btn-default job-btn"
                                                 value="ALL">所有工人</button>

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>装修保 | 装修帮办服务平台</title>
+    <title>装修保 | 装修帮办专业施工平台</title>
     <%@include file="../common/head.jsp"%>
     <style type="text/css">
         .jumbotron{
