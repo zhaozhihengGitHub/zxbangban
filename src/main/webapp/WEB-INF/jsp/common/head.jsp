@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <meta name="baidu-site-verification" content="ZDXzPfUB7d" />
 
-<meta name="description" content="我们对自己所要追求的目标充满信心">
-<meta name="keywords" content="装修帮办，长治装修，家装，工人，家居">
+<meta name="description" content="我们致力于通过互联网线上服务平台，以装配式家装模式为服务主体，以平台担保支付为服务保障，为广大消费者提供价格透明、施工保障、省钱省心的装修服务!我们对自己所要追求的目标充满信心">
+<meta name="keywords" content="装修帮办，长治装修，家装，装修，施工队，工人，家居，山西互联网装修，山西互联网装修平台，长治互联网装修，长治互联网装修智选平台，长治家居，长治装修，长治建材">
 <meta name="apple-mobile-web-app-title" content="装修帮办">
 <meta property="og:site_name" content="装修帮办">
 <meta property="og:title" content="装修帮办">
