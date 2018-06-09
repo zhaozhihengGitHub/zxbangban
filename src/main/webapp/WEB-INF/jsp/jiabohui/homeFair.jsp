@@ -62,7 +62,7 @@
                 <div class="tic_btn">
                     <button type="submit" id="jiabohui" name="${jiabohui}" >免费索票</button>
                 </div>
-                <div class="tic_under"><p>温馨提示：索票成功后，我们的客服将通过021开头的上海电话与您联系，确认门票及展会资料。</p></div>
+                <div class="tic_under"><p>温馨提示：索票成功后，我们的客服将通过电话0355-8881777与您联系，确认门票及展会资料。</p></div>
                 </form>
             </div>
         </div>
@@ -340,6 +340,10 @@
                                 <a href="javascript:;">
                                 <img src="../../../resources/images/jbhimg/hz_sydb.jpg" width="150" alt="世友地板"/></a>
                             </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_yzdb.jpg" width="150" alt="扬子地板"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
                             <li>
@@ -353,6 +357,10 @@
                             <li>
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_hd.jpg" width="150" alt="华帝高端智能厨电"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_hpcd.jpg" width="150" alt="韩派厨电"/></a>
                             </li>
                         </ul>
                         <ul class="work_con clearfix">
@@ -371,6 +379,10 @@
                             <li>
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_jxdz.jpg" width="150" alt="匠芯定制"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_dall.jpg" width="150" alt="德奥罗兰全铝定制"/></a>
                             </li>
                         </ul>
                         <ul class="work_con clearfix">
@@ -430,24 +442,32 @@
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_opdd.jpg" width="150" alt="欧普吊顶"/></a>
                             </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_jbl.jpg" width="150" alt="吉栢利集成吊顶"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
                             <li>
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_sdn.jpg" width="150" alt="圣蒂诺壁纸"/></a>
                             </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_ajbz.jpg" width="150" alt="爱家壁纸"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
-                            <%--<li>--%>
-                                <%--<a href="javascript:;">--%>
-                                    <%--<img src="../../../resources/images/jbhimg/ftdq_logo.jpg" width="150" alt="方太"/></a>--%>
-                            <%--</li>--%>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_lcyjcl.jpg" width="150" alt="帘创优家窗帘"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
-                            <%--<li>--%>
-                                <%--<a href="javascript:;">--%>
-                                    <%--<img src="../../../resources/images/jbhimg/ftdq_logo.jpg" width="150" alt="方太"/></a>--%>
-                            <%--</li>--%>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_adbds.jpg" width="150" alt="爱登堡灯饰"/></a>
+                            </li>
                         </ul>
                         <ul class="work_con clearfix">
                             <li>
@@ -498,6 +518,14 @@
                                 <a href="javascript:;">
                                     <img src="../../../resources/images/jbhimg/hz_jsyh.jpg" width="150" alt="中国建设银行装修贷款"/></a>
                             </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_ltjs.jpg" width="150" alt="力拓时代"/></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="../../../resources/images/jbhimg/hz_odj.jpg" width="150" alt="欧帝洁集成热水器"/></a>
+                            </li>
                         </ul>
 
                     </div>
@@ -523,7 +551,7 @@
                             </div>
                             <div class="title">前往展馆</div>
                             <div class="num">2</div>
-                            <div class="content">长治市西环路北段123号(佰合园北侧，乘25、26路到佰合园下车十字路口往北200米)</div>
+                            <div class="content">长治市西环路北段123号(佰合园北侧，乘25路到佰合园下车十字路口往北200米)</div>
                         </li>
                         <li>
                             <div class="img">
@@ -584,7 +612,7 @@
                         <img src="../../../resources/images/jbhimg/jia.png">
                         <div class="li-p" style="margin-left:168px; margin-top:10px; width:132px;">
                             <p style="font-size:16px; color:#333;">全城价格保障</p>
-                            <span style="font-size:12px; color:#666; display:block; margin-top:8px;">展会期间商品不高于同期门店价，差价三倍赔偿（最低赔1000元）。</span>
+                            <span style="font-size:12px; color:#666; display:block; margin-top:8px;">展会期间商品不高于同期门店价，差价三倍赔偿。</span>
                         </div>
                     </li>
                     <li>
