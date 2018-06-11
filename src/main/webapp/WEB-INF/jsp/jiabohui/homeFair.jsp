@@ -414,7 +414,7 @@
                             </li>
                             <li>
                                 <a href="javascript:;">
-                                    <img src="../../../resources/images/jbhimg/hz_zzth.jpg" width="150" alt="展志天华木门"/></a>
+                                    <img src="../../../resources/images/jbhimg/hz_zzthmm.jpg" width="150" alt="展志天华木门"/></a>
                             </li>
                             <li>
                                 <a href="javascript:;">

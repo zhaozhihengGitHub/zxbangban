@@ -946,7 +946,8 @@ button.btn-yzm{
     width: 150px;
     /*height: 58px;*/
     float: left;
-    border: #eee solid 1px;
+    border-radius:5px;
+    overflow:hidden;
     margin-right: 15px;
     margin-bottom: 15px;
 }
@@ -966,7 +967,7 @@ button.btn-yzm{
 .work_con li a img {
     width: 150px;
     height: 71px;
-    border-right: #eee solid 1px;
+    /*border-right: #eee solid 1px;*/
 }
 
 .work_none {
