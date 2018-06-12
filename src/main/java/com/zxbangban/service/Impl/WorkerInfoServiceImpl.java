@@ -48,8 +48,8 @@ public class WorkerInfoServiceImpl implements WorkerInfoService{
         return workerInfoDao.queryNew();
     }
 
-    public List<Worker> queryAll() {
-        return workerInfoDao.queryAll();
+    public List<Worker> queryAll(PageBean pageBean) {
+        return workerInfoDao.queryAll(pageBean);
     }
 
     public List<Worker> queryByJobId(Integer jobId) {
@@ -57,8 +57,8 @@ public class WorkerInfoServiceImpl implements WorkerInfoService{
     }
 
     @Override
-    public List<Worker> queryByJobName(String jobName) {
-        return workerInfoDao.queryByJobName(jobName);
+    public List<Worker> queryByJobName(String jobName,PageBean pageBean) {
+        return workerInfoDao.queryByJobName(jobName,pageBean);
     }
 
     public int countWorkers() {

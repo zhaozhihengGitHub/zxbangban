@@ -4,7 +4,6 @@
 <head>
     <title>装修帮办-装修找帮办,省钱又省心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-
     <link rel="stylesheet" type="text/css" href="resources/css/index.css" />
 
     <script src="resources/js/tab.js"></script>
@@ -871,7 +870,6 @@
                     <p>设计师</p>
                 </div>
             </li>
-
         </ul>
         <span class="next"> </span>
         <span class="prev"></span>

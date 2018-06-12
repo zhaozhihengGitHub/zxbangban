@@ -66,7 +66,7 @@
             <div class="col-md-8 col-sm-8 col-xs-12 column">
                 <div class="jumbotron" style="height: 210px">
                     <h4><span>最近工人信息</span><span class="pull-right"><a
-                            href="${pageContext.request.contextPath}/worker-console/home?j=ALL">管理中心</a></span></h4>
+                            href="${pageContext.request.contextPath}/worker-console/home?j=ALL&pageNumber=1">管理中心00</a></span></h4>
                     <div class="workerinfo">
                         <h5 class="loading">正在检查中</h5>
                     </div>

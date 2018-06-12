@@ -40,21 +40,25 @@ public class WorkerServiceController {
     private JobsService jobsService;
 
     @RequestMapping(value = "/home",method = RequestMethod.GET, produces = "text/html;charset=utf8")
-    public String home(@SessionAttribute("uid") String uid,@RequestParam("j") String j, Model model) {
+    public String home(@SessionAttribute("uid") String uid,@RequestParam("j") String j,@RequestParam("pageNumber")Integer pageNumber,Model model) {
         try{
             UserInfo userInfo = userInfoService.queryByUsername(uid);
             Integer roleId = userInfo.getRoleId();
             if (roleId.equals(5) || roleId.equals(7) || roleId.equals(8)) {
-                List<Worker> workers = workerService.queryWorkersByJob(j);
+                PageBean pageBean = new PageBean();
+                pageBean.setPageNumber(pageNumber);
+                List<Worker> workers = workerService.queryWorkersByJob(j,pageBean);
                 int count;
                 if(j.equals("ALL")){
                     count = workerInfoService.countWorkers();
+                    model.addAttribute("jobId","ALL");
                 }else {
                     count = workerInfoService.countWorkersByJobName(j);
+                    model.addAttribute("jobId",j);
                 }
-
+                pageBean.setTotalRecoed(count);
                 List<Jobs> jobsList = jobsService.getJobs();
-                model.addAttribute("count",count);
+                model.addAttribute("pageBean",pageBean);
                 model.addAttribute("jobs",jobsList);
                 model.addAttribute("workers", workers);
 
@@ -71,7 +75,31 @@ public class WorkerServiceController {
 
     }
 
+    /*@RequestMapping(value = "/wlistPage",method = RequestMethod.GET, produces = "text/html;charset=utf8")
+    public String wlistPage(@RequestParam("j") String j,@RequestParam("pageNumber")Integer pageNumber,Model model) {
+        try{
+                PageBean pageBean = new PageBean();
+                pageBean.setPageNumber(pageNumber);
+                List<Worker> workers = workerService.queryWorkersByJob(j,pageBean);
+                int count;
+                if(j.equals("ALL")){
+                    count = workerInfoService.countWorkers();
+                }else {
+                    count = workerInfoService.countWorkersByJobName(j);
+                }
+                pageBean.setTotalRecoed(count);
+                List<Jobs> jobsList = jobsService.getJobs();
+                model.addAttribute("pageBean",pageBean);
+                model.addAttribute("jobs",jobsList);
+                model.addAttribute("workers", workers);
+                return "account/worker_service_home";
+        }catch (NullPointerException e){
+            e.printStackTrace();
+            return "signin";
+        }
 
+
+    }*/
 
     @RequestMapping(value = "/notification", method = RequestMethod.GET, produces = "text/html;charset=utf8")
     @ResponseBody
@@ -99,6 +127,7 @@ public class WorkerServiceController {
             model.addAttribute("count","");
             model.addAttribute("jobs",jobsList);
             model.addAttribute("workers", workers);
+            model.addAttribute("tel",tel);
             return "account/worker_service_home";
         }catch (Exception e){
             e.printStackTrace();
@@ -115,6 +144,7 @@ public class WorkerServiceController {
             model.addAttribute("count","");
             model.addAttribute("jobs",jobsList);
             model.addAttribute("workers", workers);
+            model.addAttribute("workerName",workerName);
             return "account/worker_service_home";
         }catch (Exception e){
             e.printStackTrace();
