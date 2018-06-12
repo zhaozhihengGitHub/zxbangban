@@ -49,7 +49,7 @@ public interface WorkerInfoDao {
      * 查询所有工人信息
      * @return List<WorkerInfo>
      */
-    List<Worker> queryAll();
+    List<Worker> queryAll(@Param("pageBean")PageBean pageBean);
 
     /**
      * 查询对应工种下的所有工人信息
@@ -57,7 +57,7 @@ public interface WorkerInfoDao {
      */
     List<Worker> queryByJobId(Integer jobId);
 
-    List<Worker> queryByJobName(String jobName);
+    List<Worker> queryByJobName(@Param("jobName") String jobName,@Param("pageBean")PageBean pageBean);
 
     int countWorkers();
 

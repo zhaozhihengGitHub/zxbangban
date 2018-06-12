@@ -1,5 +1,6 @@
 package com.zxbangban.service.Impl;
 
+import com.zxbangban.entity.PageBean;
 import com.zxbangban.entity.Worker;
 import com.zxbangban.entity.WorkerInfo;
 import com.zxbangban.service.WorkerInfoService;
@@ -23,12 +24,12 @@ public class WorkerServiceImpl implements WorkerService {
         return countRate(worker,w);
     }
 
-    public List<Worker> queryWorkersByJob(String str) {
+    public List<Worker> queryWorkersByJob(String str,PageBean pageBean) {
         List<Worker> workers;
         if(str.equals("ALL")){
-            workers = workerInfoService.queryAll();
+            workers = workerInfoService.queryAll(pageBean);
         }else {
-            workers = workerInfoService.queryByJobName(str);
+            workers = workerInfoService.queryByJobName(str,pageBean);
         }
 
         return workers;
