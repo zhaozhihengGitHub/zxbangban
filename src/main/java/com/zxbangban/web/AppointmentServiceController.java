@@ -37,6 +37,44 @@ public class AppointmentServiceController {
         }
 
     }
+    /*
+   * 简单报价
+   * */
+    @RequestMapping(value = "/simpleQueted")
+    public String simpleQueted(@SessionAttribute("uid") String uid, Model model) {
+        UserInfo userInfo = userInfoService.queryByUsername(uid);
+        Integer roleId = userInfo.getRoleId();
+        if (roleId.equals(4) || roleId.equals(7) || roleId.equals(8)) {
+            List<Customer> customers = customerService.queryByProrityAndNotes(0);
+            model.addAttribute("customers",customers);
+            return "account/appoint_service_home";
+        } else {
+            model.addAttribute("msg", "权限等级不够!");
+            return "account/appoint_service_home";
+        }
+
+    }
+
+
+    /*
+    * 精准报价
+    * */
+    @RequestMapping(value = "/accurateQueted")
+    public String accurateQueted(@SessionAttribute("uid") String uid, Model model) {
+        UserInfo userInfo = userInfoService.queryByUsername(uid);
+        Integer roleId = userInfo.getRoleId();
+        if (roleId.equals(4) || roleId.equals(7) || roleId.equals(8)) {
+            List<Customer> customers = customerService.queryByNotes("房屋报价");
+
+            model.addAttribute("customers",customers);
+            return "account/appoint_service_home";
+        } else {
+            model.addAttribute("msg", "权限等级不够!");
+            return "account/appoint_service_home";
+        }
+
+    }
+
 
     @RequestMapping(value = "/delete",method = RequestMethod.GET,produces = "text/html;charset=utf8")
     @ResponseBody

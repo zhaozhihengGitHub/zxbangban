@@ -11,5 +11,6 @@
     function getOnload() {
         window.location.href='${pageContext.request.contextPath}/home';
     }
+
 </script>
 </html>

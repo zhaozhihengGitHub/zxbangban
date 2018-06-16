@@ -46,13 +46,19 @@
                     <h4><img src="https://zxbangban.oss-cn-beijing.aliyuncs.com/user.png"><span class="pull-right">${userinfo.username}</span></h4>
                     <h4><img src="https://zxbangban.oss-cn-beijing.aliyuncs.com/password.png"><span class="pull-right"><a class="" href="#">更改密码</a></span></h4>
                 </div>
-                <div class="jumbotron">
+                <%--<div class="jumbotron">
                     <h4>钱包和礼品卡</h4>
                     <hr/>
                     <h5><a class="text-muted" href="#">兑换礼品卡</a></h5>
+                </div>--%>
+                <div class="jumbotron" >
+                    <h4>网站总浏览量：${applicationScope.get("totalCount")}</h4>
+                    <h4>电脑端浏览量：${applicationScope.get("computerCount")}</h4>
+                    <h4>手机端浏览量：${applicationScope.get("telphoneCount")}</h4>
                 </div>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-12 column">
+
                 <div class="jumbotron" style="height: auto">
                     <h4><span>最近预约</span><span class="pull-right"><a href="${pageContext.request.contextPath}/appoint-console/home">管理中心</a></span></h4>
                     <div class="appoint">
