@@ -11,6 +11,21 @@
 <head>
     <title>装修帮办账号|预约客服中心|主页</title>
     <%@include file="../common/head.jsp" %>
+    <style>
+        .panel-heading{
+            margin-top: 40px;
+            padding:10px 0 10px 10px ;
+        }
+        .panel-heading .quoted{
+            display:block;
+            border:1px solid #ccc;
+            font-size:14px;
+            line-height:30px;
+            color:#333;
+            margin-top:-1px;
+            text-align:center;
+        }
+    </style>
 </head>
 <body>
 <%@include file="../common/header.jsp" %>
@@ -96,8 +111,16 @@
                     </div>
                 </div>
             </div>
+
         </div>
-        <div class="col-md-12 column">
+        <div class="col-md-1 column">
+            <div class="panel-heading">
+                <a class="quoted" href="${pageContext.request.contextPath}/appoint-console/home" >全部报价</a>
+                <a class="quoted" href="${pageContext.request.contextPath}/appoint-console/simpleQueted" >简单报价</a>
+                <a class="quoted" href="${pageContext.request.contextPath}/appoint-console/accurateQueted">精准报价</a>
+            </div>
+        </div>
+        <div class="col-md-11 column">
             <h1>${msg}</h1>
             <c:set var="customer" scope="page" value="${customers}"/>
             <c:if test="${customer.size() > 0}">
@@ -105,7 +128,7 @@
                 <table class="table table-condensed table-hover">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th style="width:34px;">序号</th>
                         <th>姓名</th>
                         <th>手机号</th>
                         <th>工程地址</th>
