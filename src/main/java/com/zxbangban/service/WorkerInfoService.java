@@ -1,6 +1,7 @@
 package com.zxbangban.service;
 
 import com.zxbangban.entity.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,11 +26,11 @@ public interface WorkerInfoService {
 
     List<WorkerInfo> queryNew();
 
-    List<Worker> queryAll();
+    List<Worker> queryAll(@Param("pageBean")PageBean pageBean);
 
     List<Worker> queryByJobId(Integer jobId);
 
-    List<Worker> queryByJobName(String jobName);
+    List<Worker> queryByJobName(String jobName,@Param("pageBean") PageBean pageBean);
 
     int countWorkers();
 

@@ -37,6 +37,9 @@
         .panel-default>.panel-heading .badge{
             background-color: #e48632;
         }
+        .table-responsive a{
+            height:40px; background: #719974; color: #FFFFFF;  padding:10px;  margin-left:15px
+        }
     </style>
 </head>
 <body>
@@ -45,12 +48,12 @@
     <div  class="panel-body" style="padding:15px 200px">
         <form action="${pageContext.request.contextPath}/worker-console/byPhone" method="post" style="width:50%;float:left;">
             <span class="panel-tel">请输入手机号查询：</span>
-            <input type="tel" name="tel">
+            <input type="tel" name="tel" value="${tel}">
             <input type="submit" value="查询">
         </form>
         <form action="${pageContext.request.contextPath}/worker-console/byWorkername" method="post"  style="width:50%;float:left;">
             <span class="panel-tel">请输入工人姓名查询：</span>
-            <input type="text" name="workerName">
+            <input type="text" name="workerName" value="${workerName}">
             <input type="submit" value="查询">
         </form>
     </div>
@@ -63,7 +66,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    工种信息<span class="badge">${count}</span>
+                                    工种信息<span class="badge">${pageBean.totalRecoed}</span>
                                 </a>
                             </h3>
                         </div>
@@ -96,7 +99,7 @@
                 <table class="table table-condensed table-hover">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th>序号</th>
                         <th>姓名</th>
                         <th>头像</th>
                         <th>手机号</th>
@@ -191,6 +194,22 @@
                     </c:forEach>
                     </tbody>
                 </table>
+                <a href="${pageContext.request.contextPath}/worker-console/home?j=${jobId}&pageNumber=1">首页</a>
+                <c:if test="${pageBean.pageNumber!=1}">
+                    <a href="${pageContext.request.contextPath}/worker-console/home?j=${jobId}&pageNumber=${pageBean.pageNumber-1}">上一页</a>
+                </c:if>
+                <c:forEach var="i" begin="1" end="${pageBean.totalPage}">
+                    <c:if test="${pageBean.pageNumber!=i}">
+                    <a href="${pageContext.request.contextPath}/worker-console/home?j=${jobId}&pageNumber=${i}">${i}</a>
+                    </c:if>
+                    <c:if test="${pageBean.pageNumber==i}">
+                        <a style="height:40px; background:#FFFFFF; color: #992990;   padding:10px;  margin-left:15px">${i}</a>
+                    </c:if>
+                </c:forEach>
+                <c:if test="${pageBean.pageNumber!=pageBean.totalPage}">
+                <a href="${pageContext.request.contextPath}/worker-console/home?j=${jobId}&pageNumber=${pageBean.pageNumber+1}">下一页</a>
+                </c:if>
+                <a href="${pageContext.request.contextPath}/worker-console/home?j=${jobId}&pageNumber=${pageBean.totalPage}">尾页</a>
             </div>
         </div>
     </div>
@@ -416,7 +435,7 @@
         var $btns = $(".job-btn");
         for(var i = 0;i < $btns.length;i ++){
             $btns[i].onclick = function () {
-                window.location.href="${pageContext.request.contextPath}/worker-console/home?j="+this.value;
+                window.location.href="${pageContext.request.contextPath}/worker-console/home?j="+this.value+"&pageNumber=1";
             }
         }
         $(".btn-warning").click(function () {
