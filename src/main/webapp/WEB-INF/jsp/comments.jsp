@@ -20,7 +20,7 @@
 <body>
 <%@include file="common/header.jsp" %>
 <div class="comment-box">
-<div class="commentAll" style="border:0;margin-top:0;">
+<div class="commentAll" style="border:0;margin-top:0;max-width:1200px;">
     <div class="comment-show">
     <c:forEach var="comment" items="${comments}" varStatus="stat" >
         <div class="comment-show-con clearfix">
@@ -59,3 +59,4 @@
 </div>
 <%@include file="common/footer.jsp" %>
 </body>
+<%@include file="common/script.jsp" %>
