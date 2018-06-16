@@ -51,7 +51,6 @@ public class MyAccountController {
                 model.addAttribute("userinfo", userInfo);
                 model.addAttribute("headimg", userInfo.getHeadImgUrl());
                 Integer roleId = userInfo.getRoleId();
-
                 //权限不同，访问不同
                 if (roleId.equals(RolesAuth.rolesAuthOf(1).getRoleId())) {
                     return "account/normal_home";

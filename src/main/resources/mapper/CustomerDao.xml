@@ -43,11 +43,13 @@
 
     <select id="queryByNotes" parameterType="String" resultType="Customer">
         SELECT
-            id,
+             `id`,
             name,
             program_address,
             telphone,
-            create_time
+            priority,
+            create_time,
+            notes
         FROM customer WHERE notes = #{notes}
         ORDER  BY  create_time DESC  LIMIT 0,4;
     </select>
@@ -56,4 +58,14 @@
         SELECT count FROM customer where priority=1 ORDER BY id DESC LIMIT 0,1 ;
     </select>
 
+    <select id="queryByProrityAndNotes" parameterType="Integer" resultType="Customer">
+        SELECT   `id`,
+            name,
+            program_address,
+            telphone,
+            priority,
+            create_time,
+            notes
+        FROM customer where priority=#{priority} AND notes != '房屋报价'ORDER BY  create_time DESC;
+    </select>
 </mapper>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +38,19 @@ public class HomeController {
      */
     @RequestMapping("/home")
     public String home(HttpServletRequest request, Model model) throws UnsupportedEncodingException {
+        ServletContext servletContext = request.getServletContext();
+        String computerCount = (String)servletContext.getAttribute("computerCount");
+        String totalCount = (String)servletContext.getAttribute("totalCount");
+        System.out.println(totalCount+computerCount);
+        try {
+            int computerCounts = Integer.valueOf(computerCount).intValue();
+            int totalCounts = Integer.valueOf(totalCount).intValue();
+            totalCounts++;computerCounts++;
+            servletContext.setAttribute("totalCount",String.valueOf(totalCounts));
+            servletContext.setAttribute("computerCount",String.valueOf(computerCounts));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         Cookie[] cookies=request.getCookies();
         //查询工长，水电工，铺地工，腻子工
         WorkerDetail workerDetail = new WorkerDetail();
@@ -80,7 +94,19 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/home",method = RequestMethod.POST,produces = "text/html;charset=utf8")
-    public String home(@RequestParam("location") String location, HttpServletResponse httpServletResponse, Model model) throws UnsupportedEncodingException {
+    public String home(@RequestParam("location") String location,HttpServletRequest request, HttpServletResponse httpServletResponse, Model model) throws   UnsupportedEncodingException {   ServletContext servletContext = request.getServletContext();
+        String telphoneCount = (String)servletContext.getAttribute("telphoneCount");
+        String totalCount = (String)servletContext.getAttribute("totalCount");
+        System.out.println(totalCount+telphoneCount);
+        try {
+            int telphoneCounts = Integer.valueOf(telphoneCount).intValue();
+            int totalCounts = Integer.valueOf(totalCount).intValue();
+            totalCounts++;telphoneCounts++;
+            servletContext.setAttribute("totalCount",String.valueOf(totalCounts));
+            servletContext.setAttribute("telphoneCount",String.valueOf(telphoneCounts));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         String location1 = location.replaceAll("-", "");
         //String location2=location1.replaceAll("","以");
         //查询工长，水电工，铺地工，腻子工  1company,2industry,3project,4 decorate
