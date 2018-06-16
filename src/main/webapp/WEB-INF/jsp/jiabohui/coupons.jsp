@@ -279,6 +279,8 @@
     <%@include file="../common/footer.jsp" %>
     <%--<%@include file="../common/script.jsp" %>--%>
 </div>
+</body>
+<%@include file="../common/script.jsp" %>
 <script src="../../../resources/js/jiabohui/jquery.smint.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
