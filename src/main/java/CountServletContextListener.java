@@ -1,10 +1,13 @@
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
 import java.io.*;
 import java.util.Properties;
 
-public class CountServletContextListener implements ServletContextListener{
+public class CountServletContextListener implements ServletContextListener,HttpSessionListener {
 
     // Public constructor is required by servlet spec
     public CountServletContextListener() {
@@ -70,5 +73,21 @@ public class CountServletContextListener implements ServletContextListener{
             e.printStackTrace();
             System.out.println("异常！！");
         }
+    }
+    // Public constructor is required by servlet spec
+    // -------------------------------------------------------
+    // HttpSessionListener implementation
+    // -------------------------------------------------------
+    public void sessionCreated(HttpSessionEvent se) {
+        HttpSession session = se.getSession();
+        ServletContext servletContext = se.getSession().getServletContext();
+        String totalCount = (String)servletContext.getAttribute("totalCount");
+        int i = Integer.parseInt(totalCount);
+        i++;
+        servletContext.setAttribute("totalCount",String.valueOf(i));
+    }
+
+    public void sessionDestroyed(HttpSessionEvent se) {
+      /* Session is destroyed. */
     }
 }

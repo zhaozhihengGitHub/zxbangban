@@ -53,8 +53,6 @@
                 </div>--%>
                 <div class="jumbotron" >
                     <h4>网站总浏览量：${applicationScope.get("totalCount")}</h4>
-                    <h4>电脑端浏览量：${applicationScope.get("computerCount")}</h4>
-                    <h4>手机端浏览量：${applicationScope.get("telphoneCount")}</h4>
                 </div>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-12 column">
