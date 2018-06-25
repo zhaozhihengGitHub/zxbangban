@@ -69,7 +69,8 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-xs-12 column">
                         <div class="jumbotron" style="border-left: #ccc dashed 2px;">
-                            <h4 style="color: #e48632;text-align: center;margin-bottom: 20px">完善信息免费获取三个以上金牌工长报价</h4>
+                            <h4 style="text-align: center;margin-bottom: 20px">只差一步即可赢取价值5000元的主材补贴</h4>
+                            <h4 style="color: #e48632;text-align: center;margin-bottom: 20px">完善信息，预约3个施工队免费上门量房获取精准报价</h4>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3 column">
 

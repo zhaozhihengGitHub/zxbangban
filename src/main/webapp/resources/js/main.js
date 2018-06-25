@@ -35,10 +35,10 @@ var navbar = {
                     "\t\t\t\t\t<a class=\"\" href=\"/account/signup\">免费注册</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
-                    "\t\t\t\t\t<a class=\"\" href=\"/account/signin\">用户登录</a>\n" +
+                    "\t\t\t\t\t<a class=\"\" href=\"/w/workerlogin\">用户登录</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
-                    "\t\t\t\t\t<a class=\"work_login\" href=\"/account/signin\">工人登录</a>\n" +
+                    "\t\t\t\t\t<a class=\"work_login\" href=\"/w/workerlogin\">工人登录</a>\n" +
                     "\t\t\t\t</li>\n" +
                     "\t\t\t\t<li>\n" +
                     "\t\t\t\t\t<a target=\"\" href=\"/jobs/register\">施工队入驻</a>\n" +

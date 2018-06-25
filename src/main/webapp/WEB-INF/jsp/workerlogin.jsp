@@ -39,9 +39,14 @@
                                  </span>
                             </div>
                             <div class="input-group input-group-lg" style="margin-bottom: 20px">
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-success btn-block">登陆</button>
-                        </span>
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-success btn-block">登陆</button>
+                                </span>
+                            </div>
+                            <div class="input-group input-group-lg" style="margin-bottom: 20px">
+                                  <span class="input-group-addon">
+                                      <a href="${pageContext.request.contextPath}/account/signin">账号密码登录</a>
+                                  </span>
                             </div>
                         </form>
                     </div>

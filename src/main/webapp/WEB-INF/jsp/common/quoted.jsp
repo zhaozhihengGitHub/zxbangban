@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zxbangban
-  Date: 2017/11/16
-  Time: 17:57
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="container-fluid" id="abc" style="background-color: rgba(0,0,0,0.5);width: 100%;color: #ffdd54;position: fixed;z-index: 2;bottom: 0;">
@@ -20,7 +13,8 @@
         <div class="row clearfix">
             <div class="col-md-3 column">
                 <div class="" style="background: transparent;text-align: center;color: white">
-                    <h2 class="ads_h2">金牌工人<span style="color: #ffdd54;font-size: 1.1em">3秒</span>报价</h2>
+                    <h2 class="ads_h2">金牌施工队<span style="color: #ffdd54;font-size: 1.1em">3秒</span>报价</h2>
+                    <h3 style="color:aliceblue">赢取5000元主材补贴</h3>
                 </div>
             </div>
             <div class="col-md-9 column">

@@ -30,4 +30,5 @@
             <bean class="com.zxbangban.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
 </beans>

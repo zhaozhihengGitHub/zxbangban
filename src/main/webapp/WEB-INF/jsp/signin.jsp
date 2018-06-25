@@ -30,14 +30,14 @@
                                     登录装修帮办会员
                                 </a>
                             </li>
-                            <li id="WxTab">
+                            <%--<li id="WxTab">
                                 <a href="#weixin" data-toggle="tab">
                                     <span class="fa fa-weixin" aria-hidden="true"
                                        style="color: #83d944;">
                                     </span>
                                     <span style="color: #555">微信</span>
                                 </a>
-                            </li>
+                            </li>--%>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade in active" id="home">
