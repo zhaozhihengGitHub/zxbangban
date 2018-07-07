@@ -65,7 +65,6 @@ public class AppointmentServiceController {
         Integer roleId = userInfo.getRoleId();
         if (roleId.equals(4) || roleId.equals(7) || roleId.equals(8)) {
             List<Customer> customers = customerService.queryByNotes("房屋报价");
-
             model.addAttribute("customers",customers);
             return "account/appoint_service_home";
         } else {

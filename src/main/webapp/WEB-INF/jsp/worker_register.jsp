@@ -161,7 +161,10 @@
                             </div>
                             <div id="loc" class="input-group input-group-lg" style="margin-bottom: 20px">
                                 <span class="input-group-addon">工作地址：</span>
-                                <input type="text" id="loction"  class="form-control" placeholder="请输入地址" name="location" onmouseup="getChangeCity()">
+                                <input type="text" id="loction"  class="form-control" placeholder="请输入地址" name="location" onmouseup="getChangeCity()" readonly="readonly">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button" onclick="changeCity()">修改</button>
+                                </span>
                             </div>
                             <div class="input-group input-group-lg" style="margin-bottom: 20px">
                                 <span class="input-group-btn">
